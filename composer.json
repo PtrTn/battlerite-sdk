@@ -1,0 +1,41 @@
+{
+  "name": "ptrtn/battlerite",
+  "description": "A php-based client wrapping the battlerite API",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Peter Ton",
+      "email": "mail@peterton.nl"
+    }
+  ],
+  "require": {
+    "guzzlehttp/guzzle": "^6.2",
+    "webmozart/assert": "^1.2"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^5.7",
+    "phpmd/phpmd": "^2.6",
+    "squizlabs/php_codesniffer": "^2.8",
+    "mockery/mockery": "^0.9.9"
+  },
+  "scripts": {
+    "test": [
+      "@phpcs",
+      "@phpmd",
+      "@phpunit"
+    ],
+    "phpunit": "vendor/bin/phpunit -c phpunit.xml",
+    "phpmd": "vendor/bin/phpmd src text phpmd.xml --suffixes php",
+    "phpcs": "vendor/bin/phpcs --report=full --standard=ruleset.xml src"
+  },
+  "autoload": {
+    "psr-4": {
+      "": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "": "tests/"
+    }
+  }
+}
