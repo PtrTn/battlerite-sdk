@@ -1,2 +1,2 @@
-# battlerite-sdk
-SDK for battlerite API
+# Battlerite-sdk
+PHP-based SDK for Battlerite API
