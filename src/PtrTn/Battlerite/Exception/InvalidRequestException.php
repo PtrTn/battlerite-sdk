@@ -10,4 +10,9 @@ class InvalidRequestException extends Exception
     {
         return new self('Invalid Api key');
     }
+
+    public static function rateLimitReached(): self
+    {
+        return new self('Rate limit reached');
+    }
 }

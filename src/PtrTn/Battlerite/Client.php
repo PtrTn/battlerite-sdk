@@ -62,7 +62,9 @@ class Client
             if ($e->getResponse()->getStatusCode() === 401) {
                 throw InvalidRequestException::invalidApiKey();
             }
-            // Todo, check what rate limit response is.
+            if ($e->getResponse()->getStatusCode() === 429) {
+                throw InvalidRequestException::rateLimitReached();
+            }
 
             throw FailedRequestException::createForException($e);
         }
