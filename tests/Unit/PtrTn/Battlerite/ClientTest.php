@@ -13,6 +13,7 @@ use PtrTn\Battlerite\Dto\Match;
 use PtrTn\Battlerite\Dto\Matches;
 use PtrTn\Battlerite\Exception\FailedRequestException;
 use PtrTn\Battlerite\Exception\InvalidRequestException;
+use PtrTn\Battlerite\Query\MatchesQuery;
 
 class ClientTest extends \PHPUnit_Framework_TestCase
 {
@@ -48,6 +49,47 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expectedScheme, $request->getUri()->getScheme());
         $this->assertEquals($expectedHost, $request->getUri()->getHost());
         $this->assertEquals($expectedPath, $request->getUri()->getPath());
+    }
+
+    /**
+     * @test
+     */
+    public function shouldRetrieveMatchesForQuery()
+    {
+        $expectedMethod = 'GET';
+        $expectedScheme = 'https';
+        $expectedHost = 'api.dc01.gamelockerapp.com';
+        $expectedPath = '/shards/global/matches';
+        $expectedQuery = 'page[offset]=1&page[limit]=6';
+
+        $historyContainer = [];
+        $history = Middleware::history($historyContainer);
+        $mockHandler = new MockHandler([
+            new Response(
+                200,
+                [],
+                file_get_contents(__DIR__ . '/fixtures/matches-response.json')
+            )
+        ]);
+        $handler = HandlerStack::create($mockHandler);
+        $handler->push($history);
+        $mockClient = new GuzzleClient(['handler' => $handler]);
+        $apiClient = new Client($mockClient, 'fake-api-key');
+
+        $query = MatchesQuery::create()
+            ->withOffset(1)
+            ->withLimit(6)
+        ;
+        $apiClient->getMatches($query);
+
+        $this->assertCount(1, $historyContainer);
+        /** @var Request $request */
+        $request = $historyContainer[0]['request'];
+        $this->assertEquals($expectedMethod, $request->getMethod());
+        $this->assertEquals($expectedScheme, $request->getUri()->getScheme());
+        $this->assertEquals($expectedHost, $request->getUri()->getHost());
+        $this->assertEquals($expectedPath, $request->getUri()->getPath());
+        $this->assertEquals($expectedQuery, urldecode($request->getUri()->getQuery()));
     }
 
     /**

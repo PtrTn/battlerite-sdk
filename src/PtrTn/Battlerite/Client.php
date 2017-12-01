@@ -11,6 +11,7 @@ use PtrTn\Battlerite\Dto\Match;
 use PtrTn\Battlerite\Dto\Matches;
 use PtrTn\Battlerite\Exception\FailedRequestException;
 use PtrTn\Battlerite\Exception\InvalidRequestException;
+use PtrTn\Battlerite\Query\MatchesQuery;
 
 class Client
 {
@@ -31,9 +32,12 @@ class Client
         $this->apiKey = $apiKey;
     }
 
-    public function getMatches(): Matches
+    public function getMatches(MatchesQuery $query = null): Matches
     {
-        $request = $this->createRequestForEndpoint('/matches');
+        $request = $this->createRequestForEndpoint(
+            '/matches',
+            $query ? $query->toQueryString() : null
+        );
         $response = $this->sendRequest($request);
 
         $responseData = $this->getDataFromResponse($response);
@@ -49,11 +53,16 @@ class Client
         return Match::createFromArray($responseData['data']);
     }
 
-    private function createRequestForEndpoint(string $endpoint): Request
+    private function createRequestForEndpoint(string $endpoint, string $query = null): Request
     {
+        $uri = self::BASE_URL . $endpoint;
+        if (isset($query)) {
+            $uri .= '?' . $query;
+        }
+
         return new Request(
             'GET',
-            self::BASE_URL . $endpoint,
+            $uri,
             [
                 'Accept' => 'application/json',
                 'Authorization' => $this->apiKey

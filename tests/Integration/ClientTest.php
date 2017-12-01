@@ -1,7 +1,9 @@
 <?php
 namespace Tests\Integration;
 
+use DateTime;
 use PtrTn\Battlerite\Dto\Match;
+use PtrTn\Battlerite\Query\MatchesQuery;
 
 class ClientTestTest extends \PHPUnit_Framework_TestCase
 {
@@ -20,7 +22,7 @@ class ClientTestTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('QUICK2V2', $matches->matches[0]->map->type);
     }
     /**
-     * @group runme
+     * @group integration
      * @test
      */
     public function shouldRetrieveMatchData()
@@ -34,5 +36,26 @@ class ClientTestTest extends \PHPUnit_Framework_TestCase
 
         $this->assertInstanceOf(Match::class, $match);
         $this->assertEquals($matchId, $match->id);
+    }
+
+    /**
+     * @group integration
+     * @test
+     */
+    public function shouldFilterMatchesForQuery()
+    {
+        $client = new \PtrTn\Battlerite\Client(
+            new \GuzzleHttp\Client(),
+            getenv('APIKEY')
+        );
+        $matches = $client->getMatches(
+            MatchesQuery::create()
+            ->withEndDate(new DateTime('-20 days'))
+        );
+
+        $this->assertNotEquals(0, count($matches->matches));
+        foreach ($matches->matches as $match) {
+            $this->assertTrue(new DateTime('-20 days') < $match->createdAt);
+        }
     }
 }
