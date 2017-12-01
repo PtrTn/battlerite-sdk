@@ -22,7 +22,7 @@ PHP-based SDK for Battlerite API
 ```php
 $client = new \PtrTn\Battlerite\Client(
     new \GuzzleHttp\Client(),
-    getenv('APIKEY')
+    'enter-your-api-key-here'
 );
 $matches = $client->getMatches();
 echo $matches->matches[0]->map->type;
