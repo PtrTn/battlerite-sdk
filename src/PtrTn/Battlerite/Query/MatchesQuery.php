@@ -132,10 +132,10 @@ class MatchesQuery
             $query['sort'] = $this->sortBy;
         }
         if (isset($this->startDate)) {
-            $query['filter[createdAt-start]'] = $this->startDate->format('c');
+            $query['filter[createdAt-start]'] = $this->startDate->format(DateTime::ISO8601);
         }
         if (isset($this->endDate)) {
-            $query['filter[createdAt-end]'] = $this->endDate->format('c');
+            $query['filter[createdAt-end]'] = $this->endDate->format(DateTime::ISO8601);
         }
         if (!empty($this->playerIds)) {
             $query['filter[playerIds]'] = implode($this->playerIds);

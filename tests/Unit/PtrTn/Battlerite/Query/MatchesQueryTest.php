@@ -44,18 +44,6 @@ class MatchesQueryTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function shouldFormatDate()
-    {
-        $expectedQuery = 'filter[createdAt-end]=1991-10-26T12:24:00+01:00';
-
-        $query = MatchesQuery::create()
-            ->withEndDate(new DateTime('26-10-1991 12:24'));
-        $this->assertEquals($expectedQuery, urldecode($query->toQueryString()));
-    }
-
-    /**
-     * @test
-     */
     public function shouldNotAllowStartDateAfterEndDate()
     {
         $this->expectExceptionMessage(InvalidArgumentException::class);
