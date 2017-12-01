@@ -115,6 +115,10 @@ class MatchesQuery
         return $this;
     }
 
+    /**
+     * @SuppressWarnings(PHPMD.CyclomaticComplexity)
+     * @SuppressWarnings(PHPMD.NPathComplexity)
+     */
     public function toQueryString(): ?string
     {
         $query = [];

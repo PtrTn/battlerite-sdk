@@ -5,10 +5,12 @@ use DateTime;
 use PtrTn\Battlerite\Dto\Match;
 use PtrTn\Battlerite\Query\MatchesQuery;
 
+/**
+ * @group integration
+ */
 class ClientTestTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @group integration
      * @test
      */
     public function shouldRetrieveMatchesData()
@@ -22,7 +24,6 @@ class ClientTestTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('QUICK2V2', $matches->matches[0]->map->type);
     }
     /**
-     * @group integration
      * @test
      */
     public function shouldRetrieveMatchData()
@@ -39,7 +40,6 @@ class ClientTestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @group integration
      * @test
      */
     public function shouldFilterMatchesForQuery()
