@@ -12,6 +12,10 @@ coding_style:
             around_operators:
                 concatenation: true
 build:
+    environment:
+        php:
+            ini:
+                'date.timezone': 'Europe/Berlin'
     tests:
         override:
             -
