@@ -10,93 +10,116 @@ class Match
     /**
      * @var string
      */
+    public $type;
+    /**
+     * @var string
+     */
     public $id;
-
     /**
      * @var DateTime
      */
     public $createdAt;
-
     /**
      * @var int
      */
     public $duration;
-
     /**
      * @var string
      */
     public $gameMode;
-
     /**
      * @var string
      */
     public $patchVersion;
-
     /**
      * @var string
      */
     public $shardId;
     /**
-     * @var string[]
+     * @var Map
      */
-    private $rosterIds;
+    public $map;
     /**
-     * @var string[]
+     * @var Assets
      */
-    private $roundIds;
+    public $assets;
+    /**
+     * @var Rosters
+     */
+    public $rosters;
+    /**
+     * @var Rounds
+     */
+    public $rounds;
+    /**
+     * @var Spectators
+     */
+    public $spectators;
+    /**
+     * @var string
+     */
+    public $titleId;
 
     private function __construct(
+        string $type,
         string $id,
         DateTime $createdAt,
         int $duration,
         string $gameMode,
         string $patchVersion,
         string $shardId,
-        array $rosterIds,
-        array $roundIds
+        Map $map,
+        Assets $assets,
+        Rosters $rosters,
+        Rounds $rounds,
+        Spectators $spectators,
+        string $titleId
     ) {
+        $this->type = $type;
         $this->id = $id;
         $this->createdAt = $createdAt;
         $this->duration = $duration;
         $this->gameMode = $gameMode;
         $this->patchVersion = $patchVersion;
         $this->shardId = $shardId;
-        $this->rosterIds = $rosterIds;
-        $this->roundIds = $roundIds;
+        $this->map = $map;
+        $this->assets = $assets;
+        $this->rosters = $rosters;
+        $this->rounds = $rounds;
+        $this->spectators = $spectators;
+        $this->titleId = $titleId;
     }
 
-    public static function createFromArray(array $match)
+    public static function createFromArray(array $match): self
     {
-        Assert::notNull($match['id']);
-        Assert::notNull($match['attributes']['createdAt']);
-        Assert::notNull($match['attributes']['duration']);
-        Assert::notNull($match['attributes']['gameMode']);
-        Assert::notNull($match['attributes']['patchVersion']);
-        Assert::notNull($match['attributes']['shardId']);
-
-        $rosterIds = [];
-        Assert::notNull($match['relationships']['rosters']['data']);
-        foreach ($match['relationships']['rosters']['data'] as $roster) {
-            Assert::notNull($roster['id']);
-            $rosterIds[] = $roster['id'];
-        }
-
-        $roundIds = [];
-        Assert::notNull($match['relationships']['rounds']['data']);
-        foreach ($match['relationships']['rounds']['data'] as $round) {
-            Assert::notNull($round['id']);
-            $roundIds[] = $round['id'];
-        }
+        Assert::string($match['type']);
+        Assert::string($match['id']);
+        Assert::string($match['attributes']['createdAt']);
+        Assert::integer($match['attributes']['duration']);
+        Assert::string($match['attributes']['gameMode']);
+        Assert::string($match['attributes']['patchVersion']);
+        Assert::string($match['attributes']['shardId']);
+        Assert::isArray($match['attributes']['stats']);
+        Assert::isArray($match['relationships']['assets']['data']);
+        Assert::isArray($match['relationships']['rosters']['data']);
+        Assert::isArray($match['relationships']['rounds']['data']);
+        Assert::isArray($match['relationships']['spectators']['data']);
+        Assert::string($match['attributes']['titleId']);
 
         return new self(
+            $match['type'],
             $match['id'],
             new DateTime($match['attributes']['createdAt']),
             $match['attributes']['duration'],
             $match['attributes']['gameMode'],
             $match['attributes']['patchVersion'],
             $match['attributes']['shardId'],
-            $rosterIds,
-            $roundIds
+            Map::createFromArray($match['attributes']['stats']),
+            Assets::createFromArray($match['relationships']['assets']['data']),
+            Rosters::createFromArray($match['relationships']['rosters']['data']),
+            Rounds::createFromArray($match['relationships']['rounds']['data']),
+            Spectators::createFromArray($match['relationships']['spectators']['data']),
+            $match['attributes']['titleId']
         );
     }
 }

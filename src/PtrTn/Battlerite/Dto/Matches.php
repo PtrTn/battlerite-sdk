@@ -9,16 +9,23 @@ class Matches
     /**
      * @var Match[]
      */
-    private $matches;
+    public $matches;
 
-    public function __construct(array $matches = [])
+    private function __construct(array $matches)
     {
         Assert::allIsInstanceOf($matches, Match::class);
+
         $this->matches = $matches;
     }
 
-    public function addMatch(Match $match)
+    public static function createFromArray(array $matches): self
     {
-        $this->matches[] = $match;
+        Assert::notNull($matches['data']);
+
+        $createdMatches = [];
+        foreach ($matches['data'] as $match) {
+            $createdMatches[] = Match::createFromArray($match);
+        }
+        return new self($createdMatches);
     }
 }
