@@ -60,6 +60,9 @@ class Match
      */
     public $titleId;
 
+    /**
+     * @SuppressWarnings(PHPMD.ExcessiveParameterList)
+     */
     private function __construct(
         string $type,
         string $id,
