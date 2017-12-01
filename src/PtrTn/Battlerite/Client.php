@@ -7,6 +7,7 @@ use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Psr7\Request;
 use InvalidArgumentException;
 use Psr\Http\Message\ResponseInterface;
+use PtrTn\Battlerite\Dto\Match;
 use PtrTn\Battlerite\Dto\Matches;
 use PtrTn\Battlerite\Exception\FailedRequestException;
 use PtrTn\Battlerite\Exception\InvalidRequestException;
@@ -33,12 +34,19 @@ class Client
     public function getMatches(): Matches
     {
         $request = $this->createRequestForEndpoint('/matches');
-
         $response = $this->sendRequest($request);
 
         $responseData = $this->getDataFromResponse($response);
-
         return Matches::createFromArray($responseData);
+    }
+
+    public function getMatch(string $matchId): Match
+    {
+        $request = $this->createRequestForEndpoint('/matches/' . $matchId);
+        $response = $this->sendRequest($request);
+
+        $responseData = $this->getDataFromResponse($response);
+        return Match::createFromArray($responseData['data']);
     }
 
     private function createRequestForEndpoint(string $endpoint): Request

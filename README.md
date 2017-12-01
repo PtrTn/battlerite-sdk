@@ -7,9 +7,9 @@ PHP-based SDK for Battlerite API
 
 ## Features
 - Retrieve data for random matches
+- Retrieve data for specific matches
 
 ## Todo
-- Retrieve data for specific matches
 - Retrieve data for players
 
 ## Requirements
