@@ -2,7 +2,7 @@
 
 namespace PtrTn\Battlerite;
 
-use GuzzleHttp\Client as GuzzleClient;
+use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Psr7\Request;
 use InvalidArgumentException;
@@ -10,24 +10,23 @@ use Psr\Http\Message\ResponseInterface;
 use PtrTn\Battlerite\Dto\Matches;
 use PtrTn\Battlerite\Exception\FailedRequestException;
 use PtrTn\Battlerite\Exception\InvalidRequestException;
-use PtrTn\Battlerite\Factory\MatchesFactory;
 
 class Client
 {
     private const BASE_URL = 'https://api.dc01.gamelockerapp.com/shards/global';
 
     /**
-     * @var GuzzleClient
+     * @var ClientInterface
      */
-    private $guzzle;
+    private $httpClient;
     /**
      * @var string
      */
     private $apiKey;
 
-    public function __construct(GuzzleClient $guzzle, string $apiKey)
+    public function __construct(ClientInterface $httpClient, string $apiKey)
     {
-        $this->guzzle = $guzzle;
+        $this->httpClient = $httpClient;
         $this->apiKey = $apiKey;
     }
 
@@ -39,7 +38,7 @@ class Client
 
         $responseData = $this->getDataFromResponse($response);
 
-        return MatchesFactory::createMatchesFromArray($responseData);
+        return Matches::createFromArray($responseData);
     }
 
     private function createRequestForEndpoint(string $endpoint): Request
@@ -57,7 +56,7 @@ class Client
     private function sendRequest($request): ResponseInterface
     {
         try {
-            return $this->guzzle->send($request);
+            return $this->httpClient->send($request);
         } catch (ClientException $e) {
             if ($e->getResponse()->getStatusCode() === 401) {
                 throw InvalidRequestException::invalidApiKey();
@@ -73,7 +72,7 @@ class Client
     private function getDataFromResponse(ResponseInterface $response): array
     {
         $responseBody = $response->getBody()->getContents();
-        if (empty($responseBody)) {
+        if (!isset($responseBody)) {
             throw new FailedRequestException('No response');
         }
 
@@ -83,10 +82,6 @@ class Client
             throw FailedRequestException::invalidResponseJson($e);
         }
 
-        if (empty($responseData['data'])) {
-            throw new FailedRequestException('No response');
-        }
-
-        return $responseData['data'];
+        return $responseData;
     }
 }
