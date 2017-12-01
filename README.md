@@ -20,10 +20,12 @@ PHP-based SDK for Battlerite API
 
 ## Usage
 ```php
-$client = new \PtrTn\Battlerite\Client
+$client = new \PtrTn\Battlerite\Client(
+    new \GuzzleHttp\Client(),
+    getenv('APIKEY')
+);
 $matches = $client->getMatches();
-echo $matches[0]->map->type;
-// QUICK2V2
+$this->assertEquals('QUICK2V2', $matches->matches[0]->map->type);
 ```
 
 
