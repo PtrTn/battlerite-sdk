@@ -25,7 +25,8 @@ $client = new \PtrTn\Battlerite\Client(
     getenv('APIKEY')
 );
 $matches = $client->getMatches();
-$this->assertEquals('QUICK2V2', $matches->matches[0]->map->type);
+echo $matches->matches[0]->map->type;
+// QUICK2V2
 ```
 
 
