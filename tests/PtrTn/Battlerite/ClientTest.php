@@ -1,14 +1,16 @@
 <?php
 namespace Tests\PtrTn\Battlerite;
 
+use GuzzleHttp\Client as GuzzleClient;
+use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
 use PtrTn\Battlerite\Client;
-use GuzzleHttp\Client as GuzzleClient;
 use PtrTn\Battlerite\Dto\Matches;
+use PtrTn\Battlerite\Exception\FailedRequestException;
 use PtrTn\Battlerite\Exception\InvalidRequestException;
 
 class ClientTest extends \PHPUnit_Framework_TestCase
@@ -114,6 +116,41 @@ class ClientTest extends \PHPUnit_Framework_TestCase
 
         $mockHandler = new MockHandler([
             new Response(401)
+        ]);
+        $handler = HandlerStack::create($mockHandler);
+        $mockClient = new GuzzleClient(['handler' => $handler]);
+        $apiClient = new Client($mockClient, 'fake-api-key');
+        $apiClient->getMatches();
+    }
+
+    /**
+     * @test
+     */
+    public function shouldHandleUnknownResponse()
+    {
+        $this->expectException(FailedRequestException::class);
+        $this->expectExceptionMessage('Server error');
+
+        $mockHandler = new MockHandler([
+            new ClientException(
+                'Server error',
+                new Request('GET', '/matches'),
+                new Response(500)
+            )
+        ]);
+        $handler = HandlerStack::create($mockHandler);
+        $mockClient = new GuzzleClient(['handler' => $handler]);
+        $apiClient = new Client($mockClient, 'fake-api-key');
+        $apiClient->getMatches();
+    }
+
+    public function shouldHandleNoResponse()
+    {
+        $this->expectException(FailedRequestException::class);
+        $this->expectExceptionMessage('No response');
+
+        $mockHandler = new MockHandler([
+            new Response(200)
         ]);
         $handler = HandlerStack::create($mockHandler);
         $mockClient = new GuzzleClient(['handler' => $handler]);
