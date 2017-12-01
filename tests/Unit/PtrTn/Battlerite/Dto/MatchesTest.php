@@ -1,5 +1,5 @@
 <?php
-namespace Tests\PtrTn\Battlerite\Dto;
+namespace Tests\Unit\PtrTn\Battlerite\Dto;
 
 use PtrTn\Battlerite\Dto\Match;
 use PtrTn\Battlerite\Dto\Matches;

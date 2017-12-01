@@ -1,5 +1,5 @@
 <?php
-namespace Tests\PtrTn\Battlerite;
+namespace Tests\Unit\PtrTn\Battlerite;
 
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\Exception\ClientException;
