@@ -9,6 +9,7 @@ use GuzzleHttp\Middleware;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
 use PtrTn\Battlerite\Client;
+use PtrTn\Battlerite\Dto\Match;
 use PtrTn\Battlerite\Dto\Matches;
 use PtrTn\Battlerite\Exception\FailedRequestException;
 use PtrTn\Battlerite\Exception\InvalidRequestException;
@@ -52,6 +53,40 @@ class ClientTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
+    public function shouldRetrieveMatch()
+    {
+        $expectedMethod = 'GET';
+        $expectedScheme = 'https';
+        $expectedHost = 'api.dc01.gamelockerapp.com';
+        $expectedPath = '/shards/global/matches/some-match-id';
+
+        $historyContainer = [];
+        $history = Middleware::history($historyContainer);
+        $mockHandler = new MockHandler([
+            new Response(
+                200,
+                [],
+                file_get_contents(__DIR__ . '/fixtures/match-response.json')
+            )
+        ]);
+        $handler = HandlerStack::create($mockHandler);
+        $handler->push($history);
+        $mockClient = new GuzzleClient(['handler' => $handler]);
+        $apiClient = new Client($mockClient, 'fake-api-key');
+        $apiClient->getMatch('some-match-id');
+
+        $this->assertCount(1, $historyContainer);
+        /** @var Request $request */
+        $request = $historyContainer[0]['request'];
+        $this->assertEquals($expectedMethod, $request->getMethod());
+        $this->assertEquals($expectedScheme, $request->getUri()->getScheme());
+        $this->assertEquals($expectedHost, $request->getUri()->getHost());
+        $this->assertEquals($expectedPath, $request->getUri()->getPath());
+    }
+
+    /**
+     * @test
+     */
     public function shouldConvertResponseToMatches()
     {
         $mockHandler = new MockHandler([
@@ -67,6 +102,29 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $matches = $apiClient->getMatches();
 
         $this->assertInstanceOf(Matches::class, $matches);
+    }
+
+    /**
+     * @test
+     */
+    public function shouldConvertResponseToMatch()
+    {
+        $mockHandler = new MockHandler([
+            new Response(
+                200,
+                [],
+                file_get_contents(__DIR__ . '/fixtures/match-response.json')
+            )
+        ]);
+        $handler = HandlerStack::create($mockHandler);
+        $mockClient = new GuzzleClient(['handler' => $handler]);
+        $apiClient = new Client($mockClient, 'fake-api-key');
+        $match = $apiClient->getMatch('some-match-id');
+
+        $this->assertInstanceOf(Match::class, $match);
+        $this->assertEquals(331, $match->duration);
+        $this->assertEquals('1733162751', $match->gameMode);
+        $this->assertEquals('1.0', $match->patchVersion);
     }
 
     /**
