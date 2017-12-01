@@ -59,7 +59,7 @@ class Client
             return $this->httpClient->send($request);
         } catch (ClientException $e) {
             if ($e->getResponse()->getStatusCode() === 401) {
-                throw InvalidRequestException::invalidApiKey();
+                throw InvalidRequestException::invalidApiKey($this->apiKey);
             }
             if ($e->getResponse()->getStatusCode() === 429) {
                 throw InvalidRequestException::rateLimitReached();

@@ -6,9 +6,9 @@ use Exception;
 
 class InvalidRequestException extends Exception
 {
-    public static function invalidApiKey(): self
+    public static function invalidApiKey(string $apiKey): self
     {
-        return new self('Invalid Api key');
+        return new self(sprintf('Invalid Api key "%s"', $apiKey));
     }
 
     public static function rateLimitReached(): self
