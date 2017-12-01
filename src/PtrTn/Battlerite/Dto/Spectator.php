@@ -9,7 +9,7 @@ class Spectator
     {
     }
 
-    public static function createFromArray(array $spectator): self
+    public static function createFromArray(): self
     {
         return new self();
     }
