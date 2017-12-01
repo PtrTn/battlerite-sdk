@@ -15,7 +15,7 @@ build:
     tests:
         override:
             -
-                command: 'vendor/bin/phpunit -c phpunit.xml --coverage-clover=coverage.xml'
+                command: 'vendor/bin/phpunit -c phpunit.xml --coverage-clover=coverage.xml --exclude-group integration'
                 coverage:
                     file: 'coverage.xml'
                     format: 'clover'

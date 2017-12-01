@@ -4,6 +4,7 @@ namespace Tests\Integration;
 class ClientTestTest extends \PHPUnit_Framework_TestCase
 {
     /**
+     * @group integration
      * @test
      */
     public function shouldRetrieveMatchesData()
