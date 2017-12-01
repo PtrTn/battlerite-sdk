@@ -1,0 +1,8 @@
+{
+  "data": [],
+  "links": {
+    "next": "https://api.dc01.gamelockerapp.com/shards/global/matches?page[offset]=5",
+    "self": "https://api.dc01.gamelockerapp.com/shards/global/matches"
+  },
+  "meta": {}
+}

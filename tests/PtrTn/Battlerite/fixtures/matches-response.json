@@ -1,0 +1,131 @@
+{
+  "data": [
+    {
+      "type": "match",
+      "id": "AB9C81FABFD748C8A7EC545AA6AF97CC",
+      "attributes": {
+        "createdAt": "2017-11-22T20:34:58Z",
+        "duration": 331,
+        "gameMode": "1733162751",
+        "patchVersion": "1.0",
+        "shardId": "global",
+        "stats": {
+          "mapID": "417DE573937D74E39BF40EB6CF82670B",
+          "type": "QUICK2V2"
+        },
+        "titleId": "stunlock-studios-battlerite"
+      },
+      "relationships": {
+        "assets": {
+          "data": [
+            {
+              "type": "asset",
+              "id": "18861b32-cfc7-11e7-9ad7-0a586460f010"
+            }
+          ]
+        },
+        "rosters": {
+          "data": [
+            {
+              "type": "roster",
+              "id": "eb7710c3-1647-41af-bef7-716171f43ae1"
+            },
+            {
+              "type": "roster",
+              "id": "08cd7762-73d2-44d5-af14-549fe14448f1"
+            }
+          ]
+        },
+        "rounds": {
+          "data": [
+            {
+              "type": "round",
+              "id": "5ab18d1f-251e-40d3-91cb-0e3de3915564"
+            },
+            {
+              "type": "round",
+              "id": "c4935868-1208-4b37-9fd0-6c4080d67e8e"
+            },
+            {
+              "type": "round",
+              "id": "be463911-b0bd-48d8-89f3-36c7a06c66b1"
+            }
+          ]
+        },
+        "spectators": {
+          "data": []
+        }
+      },
+      "links": {
+        "schema": "https://raw.githubusercontent.com/madglory/gamelocker-stunlock-studios-battlerite/master/schemas/1.0/match_index.json",
+        "self": "https://api.dc01.gamelockerapp.com/shards/global/matches/AB9C81FABFD748C8A7EC545AA6AF97CC"
+      }
+    },
+    {
+      "type": "match",
+      "id": "0D3BB6700B2049B4ABEE0121B3C2E891",
+      "attributes": {
+        "createdAt": "2017-11-22T20:34:58Z",
+        "duration": 343,
+        "gameMode": "1733162751",
+        "patchVersion": "1.0",
+        "shardId": "global",
+        "stats": {
+          "mapID": "319DDC57E70174B6C85EF137BAF34E9E",
+          "type": "QUICK2V2"
+        },
+        "titleId": "stunlock-studios-battlerite"
+      },
+      "relationships": {
+        "assets": {
+          "data": [
+            {
+              "type": "asset",
+              "id": "199606c7-cfc7-11e7-a909-0a586460aab1"
+            }
+          ]
+        },
+        "rosters": {
+          "data": [
+            {
+              "type": "roster",
+              "id": "234fa156-fa7c-4e15-ba3a-38664e66f7ce"
+            },
+            {
+              "type": "roster",
+              "id": "f37de0d6-9c88-4c1b-81b2-800683fe42c7"
+            }
+          ]
+        },
+        "rounds": {
+          "data": [
+            {
+              "type": "round",
+              "id": "53387530-4b44-403f-add4-4f0ac689ce11"
+            },
+            {
+              "type": "round",
+              "id": "129fae44-a110-4880-9aec-d245212f88c0"
+            },
+            {
+              "type": "round",
+              "id": "adfe63c2-13a4-443e-b5ba-da91f63ffa5e"
+            }
+          ]
+        },
+        "spectators": {
+          "data": []
+        }
+      },
+      "links": {
+        "schema": "https://raw.githubusercontent.com/madglory/gamelocker-stunlock-studios-battlerite/master/schemas/1.0/match_index.json",
+        "self": "https://api.dc01.gamelockerapp.com/shards/global/matches/0D3BB6700B2049B4ABEE0121B3C2E891"
+      }
+    }
+  ],
+  "links": {
+    "next": "https://api.dc01.gamelockerapp.com/shards/global/matches?page[offset]=5",
+    "self": "https://api.dc01.gamelockerapp.com/shards/global/matches"
+  },
+  "meta": {}
+}
