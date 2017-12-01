@@ -4,6 +4,10 @@ php:
   - 7.2
 install:
   - composer install
-
-script:
-  - composer test
+jobs:
+  include:
+    - script: composer phpmd
+    - script: composer phpcs
+    - script: composer phpunit
+#script:
+#  - composer test
