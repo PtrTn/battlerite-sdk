@@ -5,7 +5,7 @@ namespace PtrTn\Battlerite\Query;
 use DateTime;
 use Webmozart\Assert\Assert;
 
-class MatchesQuery
+class MatchesQuery implements QueryInterface
 {
     /**
      * @var int|null

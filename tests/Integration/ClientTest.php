@@ -16,10 +16,7 @@ class ClientTestTest extends \PHPUnit_Framework_TestCase
      */
     public function shouldRetrieveMatchesData()
     {
-        $client = new \PtrTn\Battlerite\Client(
-            new \GuzzleHttp\Client(),
-            getenv('APIKEY')
-        );
+        $client = \PtrTn\Battlerite\Client::create(getenv('APIKEY'));
         $matches = $client->getMatches();
 
         $this->assertEquals('QUICK2V2', $matches->matches[0]->map->type);
@@ -31,10 +28,7 @@ class ClientTestTest extends \PHPUnit_Framework_TestCase
     public function shouldRetrieveMatchData()
     {
         $matchId = 'AB9C81FABFD748C8A7EC545AA6AF97CC';
-        $client = new \PtrTn\Battlerite\Client(
-            new \GuzzleHttp\Client(),
-            getenv('APIKEY')
-        );
+        $client = \PtrTn\Battlerite\Client::create(getenv('APIKEY'));
         $match = $client->getMatch($matchId);
 
         $this->assertInstanceOf(Match::class, $match);
@@ -49,10 +43,7 @@ class ClientTestTest extends \PHPUnit_Framework_TestCase
         $this->markTestSkipped('Endpoint is not yet implemented');
 
         $playerId = '931405258914193408';
-        $client = new \PtrTn\Battlerite\Client(
-            new \GuzzleHttp\Client(),
-            getenv('APIKEY')
-        );
+        $client = \PtrTn\Battlerite\Client::create(getenv('APIKEY'));
         $match = $client->getPlayer($playerId);
 
         $this->assertInstanceOf(Player::class, $match);
@@ -64,10 +55,7 @@ class ClientTestTest extends \PHPUnit_Framework_TestCase
      */
     public function shouldFilterMatchesForQuery()
     {
-        $client = new \PtrTn\Battlerite\Client(
-            new \GuzzleHttp\Client(),
-            getenv('APIKEY')
-        );
+        $client = \PtrTn\Battlerite\Client::create(getenv('APIKEY'));
         $matches = $client->getMatches(
             MatchesQuery::create()
             ->withEndDate(new DateTime('-20 days'))

@@ -4,7 +4,7 @@ namespace PtrTn\Battlerite\Query;
 
 use Webmozart\Assert\Assert;
 
-class PlayersQuery
+class PlayersQuery implements QueryInterface
 {
     /**
      * @var string[]
