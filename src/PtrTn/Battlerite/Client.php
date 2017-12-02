@@ -13,6 +13,7 @@ use PtrTn\Battlerite\Dto\Player;
 use PtrTn\Battlerite\Dto\Players;
 use PtrTn\Battlerite\Exception\FailedRequestException;
 use PtrTn\Battlerite\Exception\InvalidRequestException;
+use PtrTn\Battlerite\Exception\InvalidResourceException;
 use PtrTn\Battlerite\Query\MatchesQuery;
 use PtrTn\Battlerite\Query\PlayersQuery;
 
@@ -49,7 +50,6 @@ class Client
 
     public function getMatch(string $matchId): Match
     {
-        // Todo, handle match not found.
         $request = $this->createRequestForEndpoint('/matches/' . $matchId);
         $response = $this->sendRequest($request);
 
@@ -71,7 +71,6 @@ class Client
 
     public function getPlayer(string $playerId): Player
     {
-        // Todo, handle player not found.
         $request = $this->createRequestForEndpoint('/players/' . $playerId);
         $response = $this->sendRequest($request);
 
@@ -106,6 +105,9 @@ class Client
             }
             if ($e->getResponse()->getStatusCode() === 429) {
                 throw InvalidRequestException::rateLimitReached();
+            }
+            if ($e->getResponse()->getStatusCode() === 404) {
+                throw InvalidResourceException::resourceNotFound();
             }
 
             throw FailedRequestException::createForException($e);

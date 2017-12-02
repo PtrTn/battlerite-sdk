@@ -15,6 +15,7 @@ use PtrTn\Battlerite\Dto\Player;
 use PtrTn\Battlerite\Dto\Players;
 use PtrTn\Battlerite\Exception\FailedRequestException;
 use PtrTn\Battlerite\Exception\InvalidRequestException;
+use PtrTn\Battlerite\Exception\InvalidResourceException;
 use PtrTn\Battlerite\Query\MatchesQuery;
 use PtrTn\Battlerite\Query\PlayersQuery;
 
@@ -299,6 +300,23 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $mockClient = new GuzzleClient(['handler' => $handler]);
         $apiClient = new Client($mockClient, 'fake-api-key');
         $apiClient->getMatches();
+    }
+
+    /**
+     * @test
+     */
+    public function shouldHandleResourceNotFound()
+    {
+        $this->expectException(InvalidResourceException::class);
+        $this->expectExceptionMessage('Requested resource not found');
+
+        $mockHandler = new MockHandler([
+            new Response(404)
+        ]);
+        $handler = HandlerStack::create($mockHandler);
+        $mockClient = new GuzzleClient(['handler' => $handler]);
+        $apiClient = new Client($mockClient, 'fake-api-key');
+        $apiClient->getMatch('invalid-match-id');
     }
 
     /**
