@@ -2,7 +2,6 @@
 namespace Tests\Unit\PtrTn\Battlerite;
 
 use GuzzleHttp\Client as GuzzleClient;
-use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
@@ -14,9 +13,6 @@ use PtrTn\Battlerite\Dto\Match;
 use PtrTn\Battlerite\Dto\Matches;
 use PtrTn\Battlerite\Dto\Player;
 use PtrTn\Battlerite\Dto\Players;
-use PtrTn\Battlerite\Exception\FailedRequestException;
-use PtrTn\Battlerite\Exception\InvalidRequestException;
-use PtrTn\Battlerite\Exception\InvalidResourceException;
 use PtrTn\Battlerite\Query\MatchesQuery;
 use PtrTn\Battlerite\Query\PlayersQuery;
 
@@ -248,7 +244,6 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf(Player::class, $player);
         $this->assertEquals($expectedPlayerName, $player->name);
     }
-
     /**
      * @test
      */
@@ -267,111 +262,5 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $matches = $apiClient->getMatches();
 
         $this->assertInstanceOf(Matches::class, $matches);
-    }
-
-    /**
-     * @test
-     */
-    public function shouldHandleRateLimit()
-    {
-        $this->expectException(InvalidRequestException::class);
-        $this->expectExceptionMessage('Rate limit reached');
-
-        $mockHandler = new MockHandler([
-            new Response(429)
-        ]);
-        $handler = HandlerStack::create($mockHandler);
-        $mockClient = new GuzzleClient(['handler' => $handler]);
-        $apiClient = new Client(new ApiClient('fake-api-key', $mockClient));
-        $apiClient->getMatches();
-    }
-
-    /**
-     * @test
-     */
-    public function shouldHandleInvalidApiKey()
-    {
-        $this->expectException(InvalidRequestException::class);
-        $this->expectExceptionMessage('Invalid Api key');
-
-        $mockHandler = new MockHandler([
-            new Response(401)
-        ]);
-        $handler = HandlerStack::create($mockHandler);
-        $mockClient = new GuzzleClient(['handler' => $handler]);
-        $apiClient = new Client(new ApiClient('fake-api-key', $mockClient));
-        $apiClient->getMatches();
-    }
-
-    /**
-     * @test
-     */
-    public function shouldHandleResourceNotFound()
-    {
-        $this->expectException(InvalidResourceException::class);
-        $this->expectExceptionMessage('Requested resource not found');
-
-        $mockHandler = new MockHandler([
-            new Response(404)
-        ]);
-        $handler = HandlerStack::create($mockHandler);
-        $mockClient = new GuzzleClient(['handler' => $handler]);
-        $apiClient = new Client(new ApiClient('fake-api-key', $mockClient));
-        $apiClient->getMatch('invalid-match-id');
-    }
-
-    /**
-     * @test
-     */
-    public function shouldHandleUnknownResponse()
-    {
-        $this->expectException(FailedRequestException::class);
-        $this->expectExceptionMessage('Server error');
-
-        $mockHandler = new MockHandler([
-            new ClientException(
-                'Server error',
-                new Request('GET', '/matches'),
-                new Response(500)
-            )
-        ]);
-        $handler = HandlerStack::create($mockHandler);
-        $mockClient = new GuzzleClient(['handler' => $handler]);
-        $apiClient = new Client(new ApiClient('fake-api-key', $mockClient));
-        $apiClient->getMatches();
-    }
-
-    /**
-     * @test
-     */
-    public function shouldHandleNoResponse()
-    {
-        $this->expectException(FailedRequestException::class);
-        $this->expectExceptionMessage('No response');
-
-        $mockHandler = new MockHandler([
-            new Response(200)
-        ]);
-        $handler = HandlerStack::create($mockHandler);
-        $mockClient = new GuzzleClient(['handler' => $handler]);
-        $apiClient = new Client(new ApiClient('fake-api-key', $mockClient));
-        $apiClient->getMatches();
-    }
-
-    /**
-     * @test
-     */
-    public function shouldHandleInvalidJsonResponse()
-    {
-        $this->expectException(FailedRequestException::class);
-        $this->expectExceptionMessage('Response JSON could not be decoded');
-
-        $mockHandler = new MockHandler([
-            new Response(200, [], 'some-invalid-json')
-        ]);
-        $handler = HandlerStack::create($mockHandler);
-        $mockClient = new GuzzleClient(['handler' => $handler]);
-        $apiClient = new Client(new ApiClient('fake-api-key', $mockClient));
-        $apiClient->getMatches();
     }
 }
