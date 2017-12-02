@@ -6,11 +6,10 @@ PHP-based SDK for Battlerite API
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/PtrTn/battlerite-sdk/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/PtrTn/battlerite-sdk/?branch=master)
 
 ## Features
-- Retrieve data for random matches
-- Retrieve data for specific matches
-
-## Todo
-- Retrieve data for players
+- Retrieve data for matches (by query)
+- Retrieve data for a specific match
+- Retrieve data for players (by query) _(not yet supported by API)_
+- Retrieve data for a specific player _(not yet supported by API)_
 
 ## Requirements
 - Php 7.1 or higher

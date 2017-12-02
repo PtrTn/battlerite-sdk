@@ -11,9 +11,12 @@ use GuzzleHttp\Psr7\Response;
 use PtrTn\Battlerite\Client;
 use PtrTn\Battlerite\Dto\Match;
 use PtrTn\Battlerite\Dto\Matches;
+use PtrTn\Battlerite\Dto\Player;
+use PtrTn\Battlerite\Dto\Players;
 use PtrTn\Battlerite\Exception\FailedRequestException;
 use PtrTn\Battlerite\Exception\InvalidRequestException;
 use PtrTn\Battlerite\Query\MatchesQuery;
+use PtrTn\Battlerite\Query\PlayersQuery;
 
 class ClientTest extends \PHPUnit_Framework_TestCase
 {
@@ -101,6 +104,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $expectedScheme = 'https';
         $expectedHost = 'api.dc01.gamelockerapp.com';
         $expectedPath = '/shards/global/matches/some-match-id';
+        $expectedMatchId = 'AB9C81FABFD748C8A7EC545AA6AF97CC';
 
         $historyContainer = [];
         $history = Middleware::history($historyContainer);
@@ -115,7 +119,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $handler->push($history);
         $mockClient = new GuzzleClient(['handler' => $handler]);
         $apiClient = new Client($mockClient, 'fake-api-key');
-        $apiClient->getMatch('some-match-id');
+        $match = $apiClient->getMatch('some-match-id');
 
         $this->assertCount(1, $historyContainer);
         /** @var Request $request */
@@ -124,49 +128,123 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expectedScheme, $request->getUri()->getScheme());
         $this->assertEquals($expectedHost, $request->getUri()->getHost());
         $this->assertEquals($expectedPath, $request->getUri()->getPath());
-    }
-
-    /**
-     * @test
-     */
-    public function shouldConvertResponseToMatches()
-    {
-        $mockHandler = new MockHandler([
-            new Response(
-                200,
-                [],
-                file_get_contents(__DIR__ . '/fixtures/matches-response.json')
-            )
-        ]);
-        $handler = HandlerStack::create($mockHandler);
-        $mockClient = new GuzzleClient(['handler' => $handler]);
-        $apiClient = new Client($mockClient, 'fake-api-key');
-        $matches = $apiClient->getMatches();
-
-        $this->assertInstanceOf(Matches::class, $matches);
-    }
-
-    /**
-     * @test
-     */
-    public function shouldConvertResponseToMatch()
-    {
-        $mockHandler = new MockHandler([
-            new Response(
-                200,
-                [],
-                file_get_contents(__DIR__ . '/fixtures/match-response.json')
-            )
-        ]);
-        $handler = HandlerStack::create($mockHandler);
-        $mockClient = new GuzzleClient(['handler' => $handler]);
-        $apiClient = new Client($mockClient, 'fake-api-key');
-        $match = $apiClient->getMatch('some-match-id');
-
         $this->assertInstanceOf(Match::class, $match);
-        $this->assertEquals(331, $match->duration);
-        $this->assertEquals('1733162751', $match->gameMode);
-        $this->assertEquals('1.0', $match->patchVersion);
+        $this->assertEquals($expectedMatchId, $match->id);
+    }
+
+    /**
+     * @test
+     */
+    public function shouldRetrievePlayers()
+    {
+        $expectedMethod = 'GET';
+        $expectedScheme = 'https';
+        $expectedHost = 'api.dc01.gamelockerapp.com';
+        $expectedPath = '/shards/global/players';
+
+        $historyContainer = [];
+        $history = Middleware::history($historyContainer);
+        $mockHandler = new MockHandler([
+            new Response(
+                200,
+                [],
+                file_get_contents(__DIR__ . '/fixtures/players-response.json')
+            )
+        ]);
+        $handler = HandlerStack::create($mockHandler);
+        $handler->push($history);
+        $mockClient = new GuzzleClient(['handler' => $handler]);
+        $apiClient = new Client($mockClient, 'fake-api-key');
+        $players = $apiClient->getPlayers();
+
+        $this->assertCount(1, $historyContainer);
+        /** @var Request $request */
+        $request = $historyContainer[0]['request'];
+        $this->assertEquals($expectedMethod, $request->getMethod());
+        $this->assertEquals($expectedScheme, $request->getUri()->getScheme());
+        $this->assertEquals($expectedHost, $request->getUri()->getHost());
+        $this->assertEquals($expectedPath, $request->getUri()->getPath());
+        $this->assertInstanceOf(Players::class, $players);
+    }
+
+    /**
+     * @test
+     */
+    public function shouldRetrievePlayersForQuery()
+    {
+        $expectedMethod = 'GET';
+        $expectedScheme = 'https';
+        $expectedHost = 'api.dc01.gamelockerapp.com';
+        $expectedPath = '/shards/global/players';
+        $expectedQuery = 'filter[playerIds]=1234,5678';
+
+        $historyContainer = [];
+        $history = Middleware::history($historyContainer);
+        $mockHandler = new MockHandler([
+            new Response(
+                200,
+                [],
+                file_get_contents(__DIR__ . '/fixtures/players-response.json')
+            )
+        ]);
+        $handler = HandlerStack::create($mockHandler);
+        $handler->push($history);
+        $mockClient = new GuzzleClient(['handler' => $handler]);
+        $apiClient = new Client($mockClient, 'fake-api-key');
+
+        $query = PlayersQuery::create()
+            ->forPlayerIds([
+                '1234',
+                '5678'
+            ])
+        ;
+        $apiClient->getPlayers($query);
+
+        $this->assertCount(1, $historyContainer);
+        /** @var Request $request */
+        $request = $historyContainer[0]['request'];
+        $this->assertEquals($expectedMethod, $request->getMethod());
+        $this->assertEquals($expectedScheme, $request->getUri()->getScheme());
+        $this->assertEquals($expectedHost, $request->getUri()->getHost());
+        $this->assertEquals($expectedPath, $request->getUri()->getPath());
+        $this->assertEquals($expectedQuery, urldecode($request->getUri()->getQuery()));
+    }
+
+    /**
+     * @test
+     */
+    public function shouldRetrievePlayer()
+    {
+        $expectedMethod = 'GET';
+        $expectedScheme = 'https';
+        $expectedHost = 'api.dc01.gamelockerapp.com';
+        $expectedPath = '/shards/global/players/some-player-id';
+        $expectedPlayerName = 'Peter';
+
+        $historyContainer = [];
+        $history = Middleware::history($historyContainer);
+        $mockHandler = new MockHandler([
+            new Response(
+                200,
+                [],
+                file_get_contents(__DIR__ . '/fixtures/player-response.json')
+            )
+        ]);
+        $handler = HandlerStack::create($mockHandler);
+        $handler->push($history);
+        $mockClient = new GuzzleClient(['handler' => $handler]);
+        $apiClient = new Client($mockClient, 'fake-api-key');
+        $player = $apiClient->getPlayer('some-player-id');
+
+        $this->assertCount(1, $historyContainer);
+        /** @var Request $request */
+        $request = $historyContainer[0]['request'];
+        $this->assertEquals($expectedMethod, $request->getMethod());
+        $this->assertEquals($expectedScheme, $request->getUri()->getScheme());
+        $this->assertEquals($expectedHost, $request->getUri()->getHost());
+        $this->assertEquals($expectedPath, $request->getUri()->getPath());
+        $this->assertInstanceOf(Player::class, $player);
+        $this->assertEquals($expectedPlayerName, $player->name);
     }
 
     /**
@@ -244,6 +322,9 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $apiClient->getMatches();
     }
 
+    /**
+     * @test
+     */
     public function shouldHandleNoResponse()
     {
         $this->expectException(FailedRequestException::class);

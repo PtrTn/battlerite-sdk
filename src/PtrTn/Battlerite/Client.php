@@ -9,9 +9,12 @@ use InvalidArgumentException;
 use Psr\Http\Message\ResponseInterface;
 use PtrTn\Battlerite\Dto\Match;
 use PtrTn\Battlerite\Dto\Matches;
+use PtrTn\Battlerite\Dto\Player;
+use PtrTn\Battlerite\Dto\Players;
 use PtrTn\Battlerite\Exception\FailedRequestException;
 use PtrTn\Battlerite\Exception\InvalidRequestException;
 use PtrTn\Battlerite\Query\MatchesQuery;
+use PtrTn\Battlerite\Query\PlayersQuery;
 
 class Client
 {
@@ -46,11 +49,34 @@ class Client
 
     public function getMatch(string $matchId): Match
     {
+        // Todo, handle match not found.
         $request = $this->createRequestForEndpoint('/matches/' . $matchId);
         $response = $this->sendRequest($request);
 
         $responseData = $this->getDataFromResponse($response);
         return Match::createFromArray($responseData['data']);
+    }
+
+    public function getPlayers(PlayersQuery $query = null): Players
+    {
+        $request = $this->createRequestForEndpoint(
+            '/players',
+            $query ? $query->toQueryString() : null
+        );
+        $response = $this->sendRequest($request);
+
+        $responseData = $this->getDataFromResponse($response);
+        return Players::createFromArray($responseData);
+    }
+
+    public function getPlayer(string $playerId): Player
+    {
+        // Todo, handle player not found.
+        $request = $this->createRequestForEndpoint('/players/' . $playerId);
+        $response = $this->sendRequest($request);
+
+        $responseData = $this->getDataFromResponse($response);
+        return Player::createFromArray($responseData['data']);
     }
 
     private function createRequestForEndpoint(string $endpoint, string $query = null): Request
@@ -89,7 +115,7 @@ class Client
     private function getDataFromResponse(ResponseInterface $response): array
     {
         $responseBody = $response->getBody()->getContents();
-        if (!isset($responseBody)) {
+        if (!isset($responseBody) || $responseBody === '') {
             throw new FailedRequestException('No response');
         }
 

@@ -3,6 +3,7 @@ namespace Tests\Integration;
 
 use DateTime;
 use PtrTn\Battlerite\Dto\Match;
+use PtrTn\Battlerite\Dto\Player;
 use PtrTn\Battlerite\Query\MatchesQuery;
 
 /**
@@ -23,6 +24,7 @@ class ClientTestTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals('QUICK2V2', $matches->matches[0]->map->type);
     }
+
     /**
      * @test
      */
@@ -37,6 +39,24 @@ class ClientTestTest extends \PHPUnit_Framework_TestCase
 
         $this->assertInstanceOf(Match::class, $match);
         $this->assertEquals($matchId, $match->id);
+    }
+
+    /**
+     * @test
+     */
+    public function shouldRetrievePlayerData()
+    {
+        $this->markTestSkipped('Endpoint is not yet implemented');
+
+        $playerId = '931405258914193408';
+        $client = new \PtrTn\Battlerite\Client(
+            new \GuzzleHttp\Client(),
+            getenv('APIKEY')
+        );
+        $match = $client->getPlayer($playerId);
+
+        $this->assertInstanceOf(Player::class, $match);
+        $this->assertEquals($playerId, $match->id);
     }
 
     /**

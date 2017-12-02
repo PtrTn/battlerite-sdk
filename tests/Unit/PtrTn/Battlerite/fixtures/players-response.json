@@ -1,0 +1,44 @@
+{
+  "data": [
+    {
+      "type": "player",
+      "id": "931405258914193408",
+      "attributes": {
+        "name": "Player1",
+        "patchVersion": "",
+        "shardId": "",
+        "stats": null,
+        "titleId": ""
+      },
+      "relationships": {
+        "assets": {
+          "data": []
+        }
+      },
+      "links": {
+        "schema": "https://raw.githubusercontent.com/madglory/gamelocker-/master/schemas/player_index.json",
+        "self": "https://api.dc01.gamelockerapp.com/shards/global/players/931405258914193408"
+      }
+    },
+    {
+      "type": "player",
+      "id": "931405258914193409",
+      "attributes": {
+        "name": "Player2",
+        "patchVersion": "",
+        "shardId": "",
+        "stats": null,
+        "titleId": ""
+      },
+      "relationships": {
+        "assets": {
+          "data": []
+        }
+      },
+      "links": {
+        "schema": "https://raw.githubusercontent.com/madglory/gamelocker-/master/schemas/player_index.json",
+        "self": "https://api.dc01.gamelockerapp.com/shards/global/players/931405258914193408"
+      }
+    }
+  ]
+}
