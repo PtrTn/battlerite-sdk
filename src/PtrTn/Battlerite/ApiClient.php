@@ -14,7 +14,7 @@ use PtrTn\Battlerite\Query\QueryInterface;
 
 class ApiClient
 {
-    private const BASE_URL = 'https://api.dc01.gamelockerapp.com/shards/global';
+    private const BASE_URL = 'https://api.dc01.gamelockerapp.com';
 
     /**
      * @var string

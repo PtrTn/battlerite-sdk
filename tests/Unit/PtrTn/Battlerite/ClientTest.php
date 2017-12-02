@@ -21,6 +21,39 @@ class ClientTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
+    public function shouldRetrieveApiStatus()
+    {
+        $expectedMethod = 'GET';
+        $expectedScheme = 'https';
+        $expectedHost = 'api.dc01.gamelockerapp.com';
+        $expectedPath = '/status';
+
+        $historyContainer = [];
+        $history = Middleware::history($historyContainer);
+        $mockHandler = new MockHandler([
+            new Response(
+                200,
+                [],
+                file_get_contents(__DIR__ . '/fixtures/status-response.json')
+            )
+        ]);
+        $handler = HandlerStack::create($mockHandler);
+        $handler->push($history);
+        $mockClient = new GuzzleClient(['handler' => $handler]);
+        $apiClient = new Client(new ApiClient('fake-api-key', $mockClient));
+        $apiClient->getStatus();
+
+        $this->assertCount(1, $historyContainer);
+        /** @var Request $request */
+        $request = $historyContainer[0]['request'];
+        $this->assertEquals($expectedMethod, $request->getMethod());
+        $this->assertEquals($expectedScheme, $request->getUri()->getScheme());
+        $this->assertEquals($expectedHost, $request->getUri()->getHost());
+        $this->assertEquals($expectedPath, $request->getUri()->getPath());
+    }
+    /**
+     * @test
+     */
     public function shouldRetrieveMatches()
     {
         $expectedMethod = 'GET';

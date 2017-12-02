@@ -7,6 +7,7 @@ use PtrTn\Battlerite\Dto\Match;
 use PtrTn\Battlerite\Dto\Matches;
 use PtrTn\Battlerite\Dto\Player;
 use PtrTn\Battlerite\Dto\Players;
+use PtrTn\Battlerite\Dto\Status;
 use PtrTn\Battlerite\Query\MatchesQuery;
 use PtrTn\Battlerite\Query\PlayersQuery;
 
@@ -33,10 +34,18 @@ class Client
         );
     }
 
+    public function getStatus(): Status
+    {
+        $responseData = $this->apiClient->sendRequestToEndPoint(
+            '/status'
+        );
+        return Status::createFromArray($responseData['data']);
+    }
+
     public function getMatches(MatchesQuery $query = null): Matches
     {
         $responseData = $this->apiClient->sendRequestToEndPoint(
-            '/matches',
+            '/shards/global/matches',
             $query
         );
         return Matches::createFromArray($responseData['data']);
@@ -45,7 +54,7 @@ class Client
     public function getMatch(string $matchId): Match
     {
         $responseData = $this->apiClient->sendRequestToEndPoint(
-            '/matches/' . $matchId
+            '/shards/global/matches/' . $matchId
         );
         return Match::createFromArray($responseData['data']);
     }
@@ -53,7 +62,7 @@ class Client
     public function getPlayers(PlayersQuery $query = null): Players
     {
         $responseData = $this->apiClient->sendRequestToEndPoint(
-            '/players',
+            '/shards/global/players',
             $query
         );
         return Players::createFromArray($responseData['data']);
@@ -62,7 +71,7 @@ class Client
     public function getPlayer(string $playerId): Player
     {
         $responseData = $this->apiClient->sendRequestToEndPoint(
-            '/players/' . $playerId
+            '/shards/global/players/' . $playerId
         );
         return Player::createFromArray($responseData['data']);
     }

@@ -13,6 +13,17 @@ class ClientTestTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @test
+     * @group runme
+     */
+    public function shouldRetriveApiStatus()
+    {
+        $client = \PtrTn\Battlerite\Client::create(getenv('APIKEY'));
+        $status = $client->getStatus();
+
+        $this->assertEquals('gamelocker', $status->id);
+    }
+    /**
+     * @test
      */
     public function shouldRetrieveMatchesData()
     {

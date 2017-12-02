@@ -112,7 +112,7 @@ class Match
         return new self(
             $match['type'],
             $match['id'],
-            new DateTime($match['attributes']['createdAt']),
+            DateTime::createFromFormat(DateTime::ISO8601, $match['attributes']['createdAt']),
             $match['attributes']['duration'],
             $match['attributes']['gameMode'],
             $match['attributes']['patchVersion'],
