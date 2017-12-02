@@ -3,7 +3,6 @@
 namespace PtrTn\Battlerite;
 
 use GuzzleHttp\Client as GuzzleClient;
-use GuzzleHttp\ClientInterface;
 use PtrTn\Battlerite\Dto\Match;
 use PtrTn\Battlerite\Dto\Matches;
 use PtrTn\Battlerite\Dto\Player;
@@ -40,7 +39,7 @@ class Client
             '/matches',
             $query
         );
-        return Matches::createFromArray($responseData);
+        return Matches::createFromArray($responseData['data']);
     }
 
     public function getMatch(string $matchId): Match
@@ -57,7 +56,7 @@ class Client
             '/players',
             $query
         );
-        return Players::createFromArray($responseData);
+        return Players::createFromArray($responseData['data']);
     }
 
     public function getPlayer(string $playerId): Player

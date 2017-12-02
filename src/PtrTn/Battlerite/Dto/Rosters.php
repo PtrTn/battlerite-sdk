@@ -2,9 +2,13 @@
 
 namespace PtrTn\Battlerite\Dto;
 
+use ArrayIterator;
+use Countable;
+use IteratorAggregate;
+use Traversable;
 use Webmozart\Assert\Assert;
 
-class Rosters
+class Rosters implements IteratorAggregate, Countable
 {
     /**
      * @var Roster[]
@@ -25,5 +29,15 @@ class Rosters
             $createdRosters[] = Roster::createFromArray($roster);
         }
         return new self($createdRosters);
+    }
+
+    public function getIterator(): Traversable
+    {
+        return new ArrayIterator($this->rosters);
+    }
+
+    public function count(): int
+    {
+        return count($this->rosters);
     }
 }

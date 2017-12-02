@@ -2,9 +2,13 @@
 
 namespace PtrTn\Battlerite\Dto;
 
+use ArrayIterator;
+use Countable;
+use IteratorAggregate;
+use Traversable;
 use Webmozart\Assert\Assert;
 
-class Rounds
+class Rounds implements IteratorAggregate, Countable
 {
     /**
      * @var Round[]
@@ -25,5 +29,15 @@ class Rounds
             $createdRounds[] = Round::createFromArray($round);
         }
         return new self($createdRounds);
+    }
+
+    public function getIterator(): Traversable
+    {
+        return new ArrayIterator($this->rounds);
+    }
+
+    public function count(): int
+    {
+        return count($this->rounds);
     }
 }

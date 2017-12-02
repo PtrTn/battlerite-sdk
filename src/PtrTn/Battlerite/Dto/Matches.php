@@ -2,9 +2,13 @@
 
 namespace PtrTn\Battlerite\Dto;
 
+use ArrayIterator;
+use Countable;
+use IteratorAggregate;
+use Traversable;
 use Webmozart\Assert\Assert;
 
-class Matches
+class Matches implements IteratorAggregate, Countable
 {
     /**
      * @var Match[]
@@ -20,12 +24,22 @@ class Matches
 
     public static function createFromArray(array $matches): self
     {
-        Assert::notNull($matches['data']);
+        Assert::notNull($matches);
 
         $createdMatches = [];
-        foreach ($matches['data'] as $match) {
+        foreach ($matches as $match) {
             $createdMatches[] = Match::createFromArray($match);
         }
         return new self($createdMatches);
+    }
+
+    public function getIterator(): Traversable
+    {
+        return new ArrayIterator($this->matches);
+    }
+
+    public function count(): int
+    {
+        return count($this->matches);
     }
 }

@@ -14,12 +14,12 @@ class MatchesTest extends \PHPUnit_Framework_TestCase
         $fixture = file_get_contents(__DIR__ . '/../fixtures/matches-response.json');
         $matchesArray = \GuzzleHttp\json_decode($fixture, true);
 
-        $matches = Matches::createFromArray($matchesArray);
+        $matches = Matches::createFromArray($matchesArray['data']);
 
         $this->assertInstanceOf(Matches::class, $matches);
-        $this->assertCount(2, $matches->matches);
+        $this->assertCount(2, $matches);
 
-        foreach ($matches->matches as $match) {
+        foreach ($matches as $match) {
             $this->assertInstanceOf(Match::class, $match);
         }
     }
@@ -31,9 +31,9 @@ class MatchesTest extends \PHPUnit_Framework_TestCase
         $fixture = file_get_contents(__DIR__ . '/../fixtures/matches-response-empty.json');
         $matchesArray = \GuzzleHttp\json_decode($fixture, true);
 
-        $matches = Matches::createFromArray($matchesArray);
+        $matches = Matches::createFromArray($matchesArray['data']);
 
         $this->assertInstanceOf(Matches::class, $matches);
-        $this->assertCount(0, $matches->matches);
+        $this->assertCount(0, $matches);
     }
 }
