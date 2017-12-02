@@ -3,7 +3,7 @@
 namespace PtrTn\Battlerite\Dto;
 
 use DateTime;
-use Webmozart\Assert\Assert;
+use PtrTn\Battlerite\Assert\Assert;
 
 class Status
 {
@@ -44,7 +44,7 @@ class Status
     {
         Assert::string($status['type']);
         Assert::string($status['id']);
-        Assert::string($status['attributes']['releasedAt']);
+        Assert::date($status['attributes']['releasedAt'], DateTime::ISO8601);
         Assert::string($status['attributes']['version']);
 
         return new self(

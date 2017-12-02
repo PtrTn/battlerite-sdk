@@ -3,7 +3,7 @@
 namespace PtrTn\Battlerite\Dto;
 
 use DateTime;
-use Webmozart\Assert\Assert;
+use PtrTn\Battlerite\Assert\Assert;
 
 class Match
 {
@@ -97,7 +97,7 @@ class Match
     {
         Assert::string($match['type']);
         Assert::string($match['id']);
-        Assert::string($match['attributes']['createdAt']);
+        Assert::date($match['attributes']['createdAt'], DateTime::ISO8601);
         Assert::integer($match['attributes']['duration']);
         Assert::string($match['attributes']['gameMode']);
         Assert::string($match['attributes']['patchVersion']);
