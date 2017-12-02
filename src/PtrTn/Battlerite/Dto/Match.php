@@ -11,50 +11,62 @@ class Match
      * @var string
      */
     public $type;
+
     /**
      * @var string
      */
     public $id;
+
     /**
      * @var DateTime
      */
     public $createdAt;
+
     /**
      * @var int
      */
     public $duration;
+
     /**
      * @var string
      */
     public $gameMode;
+
     /**
      * @var string
      */
     public $patchVersion;
+
     /**
      * @var string
      */
     public $shardId;
+
     /**
      * @var Map
      */
     public $map;
+
     /**
      * @var Assets
      */
     public $assets;
+
     /**
      * @var Rosters
      */
     public $rosters;
+
     /**
      * @var Rounds
      */
     public $rounds;
+
     /**
      * @var Spectators
      */
     public $spectators;
+
     /**
      * @var string
      */
