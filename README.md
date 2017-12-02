@@ -28,6 +28,11 @@ echo $matches->matches[0]->map->type;
 // QUICK2V2
 ```
 
+## How do I get an API key?
+1. In order to get an API key you should [create a developer account and an app](https://developer.battlerite.com/users/sign_in)
+2. Once created, log in and browse to [https://developer.battlerite.com/apps/your-app](https://developer.battlerite.com/apps/your-app)
+3. Scroll down to **DEVELOPMENT API KEY THIS APP USES**, it should look like:
+```eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9G9lIiwiYWRtaW4iOnRydWV9G9lIi.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ```
 
 ## Api documentation
 Dcoumentation for the Battlerite API can be found at [http://battlerite-docs.readthedocs.io/en/latest/](http://battlerite-docs.readthedocs.io/en/latest/)
