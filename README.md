@@ -18,11 +18,43 @@ PHP-based SDK for Battlerite API
 `composer require ptrtn/battlerite-sdk`
 
 ## Usage
+Retrieving data can be as simple as one method call.
+If no search query is specified, API defaults are used instead.
+### Api status
+The following example returns API status, patch version and other data
+```php
+$client = \PtrTn\Battlerite\Client::create('your-api-key');
+$status = $client->getStatus();
+```
+### Retrieving match data
+Retrieving match data using API defaults
 ```php
 $client = \PtrTn\Battlerite\Client::create('your-api-key');
 $matches = $client->getMatches();
 echo $matches->matches[0]->map->type;
 // QUICK2V2
+```
+### Retrieving detailed match data
+```php
+$client = \PtrTn\Battlerite\Client::create(getenv('APIKEY'));
+$match = $client->getMatch('AB9C81FABFD748C8A7EC545AA6AF97CC');
+```
+### Retrieving player data
+Note: This call is not supported by the API yet
+```php
+$client = \PtrTn\Battlerite\Client::create('your-api-key');
+$match = $client->getPlayer('934791968557563904');
+```
+### Custom querying
+A custom search query can be used to retrieve the exact data needed.
+```php
+$client = \PtrTn\Battlerite\Client::create('your-api-key');
+// Retrieve matches for a single player in the last 24 hours
+$matches = $client->getMatches(
+    MatchesQuery::create()
+    ->forPlayerIds(['934791968557563904'])
+    ->withStartDate(new DateTime('-1 day'))
+);
 ```
 
 ## How do I get an API key?
