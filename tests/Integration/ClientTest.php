@@ -13,7 +13,6 @@ class ClientTestTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @test
-     * @group runme
      */
     public function shouldRetriveApiStatus()
     {
