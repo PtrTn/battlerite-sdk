@@ -22,7 +22,7 @@ class MatchesQueryTest extends \PHPUnit_Framework_TestCase
     public function shouldQueryLimit()
     {
         $expectedQuery = 'page[limit]=6';
-        
+
         $query = MatchesQuery::create();
         $query->withLimit(6);
         $this->assertEquals($expectedQuery, urldecode($query->toQueryString()));
@@ -33,11 +33,25 @@ class MatchesQueryTest extends \PHPUnit_Framework_TestCase
      */
     public function shouldAllowChaining()
     {
-        $expectedQuery = 'page[offset]=5&page[limit]=6';
+        $expectedQuery =
+            'page[offset]=5' .
+            '&page[limit]=6' .
+            '&sort=duration' .
+            '&filter[createdAt-start]=2017-11-18T10:33:43+0100' .
+            '&filter[createdAt-end]=2017-11-25T10:33:43+0100' .
+            '&filter[playerIds]=1234,5789' .
+            '&filter[teamNames]=Destruction,Derby' .
+            '&filter[gameMode]=casual,ranked';
 
-        $query = MatchesQuery::create();
-        $query->withLimit(6);
-        $query->withOffset(5);
+        $query = MatchesQuery::create()
+            ->withOffset(5)
+            ->withLimit(6)
+            ->sortBy('duration')
+            ->withStartDate(new DateTime('2017-11-18T10:33:43+0100'))
+            ->withEndDate(new DateTime('2017-11-25T10:33:43+0100'))
+            ->forPlayerIds(['1234', '5789'])
+            ->forTeamNames(['Destruction', 'Derby'])
+            ->forGameModes(['casual,ranked']);
         $this->assertEquals($expectedQuery, urldecode($query->toQueryString()));
     }
 

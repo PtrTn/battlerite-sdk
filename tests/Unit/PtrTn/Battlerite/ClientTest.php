@@ -338,4 +338,21 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $apiClient = new Client($mockClient, 'fake-api-key');
         $apiClient->getMatches();
     }
+
+    /**
+     * @test
+     */
+    public function shouldHandleInvalidJsonResponse()
+    {
+        $this->expectException(FailedRequestException::class);
+        $this->expectExceptionMessage('Response JSON could not be decoded');
+
+        $mockHandler = new MockHandler([
+            new Response(200, [], 'some-invalid-json')
+        ]);
+        $handler = HandlerStack::create($mockHandler);
+        $mockClient = new GuzzleClient(['handler' => $handler]);
+        $apiClient = new Client($mockClient, 'fake-api-key');
+        $apiClient->getMatches();
+    }
 }
