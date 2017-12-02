@@ -138,13 +138,13 @@ class MatchesQuery
             $query['filter[createdAt-end]'] = $this->endDate->format(DateTime::ISO8601);
         }
         if (!empty($this->playerIds)) {
-            $query['filter[playerIds]'] = implode($this->playerIds);
+            $query['filter[playerIds]'] = implode(',', $this->playerIds);
         }
         if (!empty($this->teamNames)) {
-            $query['filter[teamNames]'] = implode($this->teamNames);
+            $query['filter[teamNames]'] = implode(',', $this->teamNames);
         }
         if (!empty($this->gameModes)) {
-            $query['filter[gameMode]'] = implode($this->gameModes);
+            $query['filter[gameMode]'] = implode(',', $this->gameModes);
         }
 
         if (!empty($query)) {
