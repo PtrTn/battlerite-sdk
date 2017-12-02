@@ -19,17 +19,17 @@ class Client
      */
     private $apiClient;
 
-    private function __construct(ApiClient $apiClient)
+    public function __construct(ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
     }
 
-    public static function create(string $apiKey, ?ClientInterface $httpClient = null): Client
+    public static function create(string $apiKey): Client
     {
         return new Client(
             new ApiClient(
-                $httpClient ?? new GuzzleClient(),
-                $apiKey
+                $apiKey,
+                new GuzzleClient()
             )
         );
     }

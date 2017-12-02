@@ -8,6 +8,7 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
+use PtrTn\Battlerite\ApiClient;
 use PtrTn\Battlerite\Client;
 use PtrTn\Battlerite\Dto\Match;
 use PtrTn\Battlerite\Dto\Matches;
@@ -43,7 +44,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $handler = HandlerStack::create($mockHandler);
         $handler->push($history);
         $mockClient = new GuzzleClient(['handler' => $handler]);
-        $apiClient = Client::create('fake-api-key', $mockClient);
+        $apiClient = new Client(new ApiClient('fake-api-key', $mockClient));
         $apiClient->getMatches();
 
         $this->assertCount(1, $historyContainer);
@@ -78,7 +79,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $handler = HandlerStack::create($mockHandler);
         $handler->push($history);
         $mockClient = new GuzzleClient(['handler' => $handler]);
-        $apiClient = Client::create('fake-api-key', $mockClient);
+        $apiClient = new Client(new ApiClient('fake-api-key', $mockClient));
 
         $query = MatchesQuery::create()
             ->withOffset(1)
@@ -119,7 +120,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $handler = HandlerStack::create($mockHandler);
         $handler->push($history);
         $mockClient = new GuzzleClient(['handler' => $handler]);
-        $apiClient = Client::create('fake-api-key', $mockClient);
+        $apiClient = new Client(new ApiClient('fake-api-key', $mockClient));
         $match = $apiClient->getMatch('some-match-id');
 
         $this->assertCount(1, $historyContainer);
@@ -155,7 +156,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $handler = HandlerStack::create($mockHandler);
         $handler->push($history);
         $mockClient = new GuzzleClient(['handler' => $handler]);
-        $apiClient = Client::create('fake-api-key', $mockClient);
+        $apiClient = new Client(new ApiClient('fake-api-key', $mockClient));
         $players = $apiClient->getPlayers();
 
         $this->assertCount(1, $historyContainer);
@@ -191,7 +192,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $handler = HandlerStack::create($mockHandler);
         $handler->push($history);
         $mockClient = new GuzzleClient(['handler' => $handler]);
-        $apiClient = Client::create('fake-api-key', $mockClient);
+        $apiClient = new Client(new ApiClient('fake-api-key', $mockClient));
 
         $query = PlayersQuery::create()
             ->forPlayerIds([
@@ -234,7 +235,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $handler = HandlerStack::create($mockHandler);
         $handler->push($history);
         $mockClient = new GuzzleClient(['handler' => $handler]);
-        $apiClient = Client::create('fake-api-key', $mockClient);
+        $apiClient = new Client(new ApiClient('fake-api-key', $mockClient));
         $player = $apiClient->getPlayer('some-player-id');
 
         $this->assertCount(1, $historyContainer);
@@ -262,7 +263,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         ]);
         $handler = HandlerStack::create($mockHandler);
         $mockClient = new GuzzleClient(['handler' => $handler]);
-        $apiClient = Client::create('fake-api-key', $mockClient);
+        $apiClient = new Client(new ApiClient('fake-api-key', $mockClient));
         $matches = $apiClient->getMatches();
 
         $this->assertInstanceOf(Matches::class, $matches);
@@ -281,7 +282,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         ]);
         $handler = HandlerStack::create($mockHandler);
         $mockClient = new GuzzleClient(['handler' => $handler]);
-        $apiClient = Client::create('fake-api-key', $mockClient);
+        $apiClient = new Client(new ApiClient('fake-api-key', $mockClient));
         $apiClient->getMatches();
     }
 
@@ -298,7 +299,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         ]);
         $handler = HandlerStack::create($mockHandler);
         $mockClient = new GuzzleClient(['handler' => $handler]);
-        $apiClient = Client::create('fake-api-key', $mockClient);
+        $apiClient = new Client(new ApiClient('fake-api-key', $mockClient));
         $apiClient->getMatches();
     }
 
@@ -315,7 +316,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         ]);
         $handler = HandlerStack::create($mockHandler);
         $mockClient = new GuzzleClient(['handler' => $handler]);
-        $apiClient = Client::create('fake-api-key', $mockClient);
+        $apiClient = new Client(new ApiClient('fake-api-key', $mockClient));
         $apiClient->getMatch('invalid-match-id');
     }
 
@@ -336,7 +337,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         ]);
         $handler = HandlerStack::create($mockHandler);
         $mockClient = new GuzzleClient(['handler' => $handler]);
-        $apiClient = Client::create('fake-api-key', $mockClient);
+        $apiClient = new Client(new ApiClient('fake-api-key', $mockClient));
         $apiClient->getMatches();
     }
 
@@ -353,7 +354,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         ]);
         $handler = HandlerStack::create($mockHandler);
         $mockClient = new GuzzleClient(['handler' => $handler]);
-        $apiClient = Client::create('fake-api-key', $mockClient);
+        $apiClient = new Client(new ApiClient('fake-api-key', $mockClient));
         $apiClient->getMatches();
     }
 
@@ -370,7 +371,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         ]);
         $handler = HandlerStack::create($mockHandler);
         $mockClient = new GuzzleClient(['handler' => $handler]);
-        $apiClient = Client::create('fake-api-key', $mockClient);
+        $apiClient = new Client(new ApiClient('fake-api-key', $mockClient));
         $apiClient->getMatches();
     }
 }

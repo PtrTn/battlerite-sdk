@@ -17,19 +17,19 @@ class ApiClient
     private const BASE_URL = 'https://api.dc01.gamelockerapp.com/shards/global';
 
     /**
-     * @var ClientInterface
-     */
-    private $httpClient;
-
-    /**
      * @var string
      */
     private $apiKey;
 
-    public function __construct(ClientInterface $httpClient, string $apiKey)
+    /**
+     * @var ClientInterface
+     */
+    private $httpClient;
+
+    public function __construct(string $apiKey, ClientInterface $httpClient)
     {
-        $this->httpClient = $httpClient;
         $this->apiKey = $apiKey;
+        $this->httpClient = $httpClient;
     }
 
     public function sendRequestToEndPoint(string $endpoint, ?QueryInterface $query = null)
