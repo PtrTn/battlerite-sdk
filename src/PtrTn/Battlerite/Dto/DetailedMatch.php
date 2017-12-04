@@ -5,6 +5,9 @@ namespace PtrTn\Battlerite\Dto;
 use DateTime;
 use PtrTn\Battlerite\Assert\Assert;
 
+/**
+ * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
+ */
 class DetailedMatch
 {
     /**

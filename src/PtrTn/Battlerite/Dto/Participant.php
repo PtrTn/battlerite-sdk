@@ -4,6 +4,9 @@ namespace PtrTn\Battlerite\Dto;
 
 use Webmozart\Assert\Assert;
 
+/**
+ * @SuppressWarnings(PHPMD.TooManyFields)
+ */
 class Participant
 {
     /**
@@ -121,6 +124,9 @@ class Participant
      */
     public $userID;
 
+    /**
+     * @SuppressWarnings(PHPMD.ExcessiveParameterList)
+     */
     private function __construct(
         string $type,
         string $id,
