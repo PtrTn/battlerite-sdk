@@ -9,7 +9,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
 use PtrTn\Battlerite\ApiClient;
 use PtrTn\Battlerite\Client;
-use PtrTn\Battlerite\Dto\Match;
+use PtrTn\Battlerite\Dto\DetailedMatch;
 use PtrTn\Battlerite\Dto\Matches;
 use PtrTn\Battlerite\Dto\Player;
 use PtrTn\Battlerite\Dto\Players;
@@ -159,7 +159,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expectedScheme, $request->getUri()->getScheme());
         $this->assertEquals($expectedHost, $request->getUri()->getHost());
         $this->assertEquals($expectedPath, $request->getUri()->getPath());
-        $this->assertInstanceOf(Match::class, $match);
+        $this->assertInstanceOf(DetailedMatch::class, $match);
         $this->assertEquals($expectedMatchId, $match->id);
     }
 

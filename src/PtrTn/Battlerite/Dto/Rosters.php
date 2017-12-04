@@ -15,7 +15,7 @@ class Rosters implements IteratorAggregate, Countable
      */
     public $rosters;
 
-    private function __construct(array $rosters)
+    public function __construct(array $rosters)
     {
         Assert::allIsInstanceOf($rosters, Roster::class);
 

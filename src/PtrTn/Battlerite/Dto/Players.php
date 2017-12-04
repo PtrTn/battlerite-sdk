@@ -15,7 +15,7 @@ class Players implements IteratorAggregate, Countable
      */
     public $players;
 
-    private function __construct(array $players)
+    public function __construct(array $players)
     {
         Assert::allIsInstanceOf($players, Player::class);
 

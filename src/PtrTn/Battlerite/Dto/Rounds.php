@@ -15,7 +15,7 @@ class Rounds implements IteratorAggregate, Countable
      */
     public $rounds;
 
-    private function __construct(array $rounds)
+    public function __construct(array $rounds)
     {
         Assert::allIsInstanceOf($rounds, Round::class);
 

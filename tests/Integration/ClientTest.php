@@ -2,7 +2,7 @@
 namespace Tests\Integration;
 
 use DateTime;
-use PtrTn\Battlerite\Dto\Match;
+use PtrTn\Battlerite\Dto\DetailedMatch;
 use PtrTn\Battlerite\Dto\Player;
 use PtrTn\Battlerite\Query\MatchesQuery;
 
@@ -41,7 +41,10 @@ class ClientTestTest extends \PHPUnit_Framework_TestCase
         $client = \PtrTn\Battlerite\Client::create(getenv('APIKEY'));
         $match = $client->getMatch($matchId);
 
-        $this->assertInstanceOf(Match::class, $match);
+        $this->assertInstanceOf(DetailedMatch::class, $match);
+        $this->assertCount(3, $match->rounds);
+        $this->assertCount(4, $match->participants);
+        $this->assertEquals('QUICK2V2', $match->map->type);
         $this->assertEquals($matchId, $match->id);
     }
 

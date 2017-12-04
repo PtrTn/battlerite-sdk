@@ -3,7 +3,7 @@
 namespace PtrTn\Battlerite;
 
 use GuzzleHttp\Client as GuzzleClient;
-use PtrTn\Battlerite\Dto\Match;
+use PtrTn\Battlerite\Dto\DetailedMatch;
 use PtrTn\Battlerite\Dto\Matches;
 use PtrTn\Battlerite\Dto\Player;
 use PtrTn\Battlerite\Dto\Players;
@@ -51,12 +51,12 @@ class Client
         return Matches::createFromArray($responseData['data']);
     }
 
-    public function getMatch(string $matchId): Match
+    public function getMatch(string $matchId): DetailedMatch
     {
         $responseData = $this->apiClient->sendRequestToEndPoint(
             '/shards/global/matches/' . $matchId
         );
-        return Match::createFromArray($responseData['data']);
+        return DetailedMatch::createFromArray($responseData);
     }
 
     public function getPlayers(PlayersQuery $query = null): Players
