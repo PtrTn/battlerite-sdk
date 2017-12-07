@@ -3,11 +3,11 @@
 namespace PtrTn\Battlerite;
 
 use GuzzleHttp\Client as GuzzleClient;
-use PtrTn\Battlerite\Dto\DetailedMatch;
-use PtrTn\Battlerite\Dto\Matches;
-use PtrTn\Battlerite\Dto\Player;
-use PtrTn\Battlerite\Dto\Players;
-use PtrTn\Battlerite\Dto\Status;
+use PtrTn\Battlerite\Dto\Match\DetailedMatch;
+use PtrTn\Battlerite\Dto\Matches\Matches;
+use PtrTn\Battlerite\Dto\Player\DetailedPlayer;
+use PtrTn\Battlerite\Dto\Players\Players;
+use PtrTn\Battlerite\Dto\Status\Status;
 use PtrTn\Battlerite\Query\MatchesQuery;
 use PtrTn\Battlerite\Query\PlayersQuery;
 
@@ -68,11 +68,11 @@ class Client
         return Players::createFromArray($responseData['data']);
     }
 
-    public function getPlayer(string $playerId): Player
+    public function getPlayer(string $playerId): DetailedPlayer
     {
         $responseData = $this->apiClient->sendRequestToEndPoint(
             '/shards/global/players/' . $playerId
         );
-        return Player::createFromArray($responseData['data']);
+        return DetailedPlayer::createFromArray($responseData['data']);
     }
 }
