@@ -2,13 +2,16 @@
   "data": [
     {
       "type": "player",
-      "id": "931405258914193408",
+      "id": "934791968557563904",
       "attributes": {
-        "name": "Player1",
+        "name": "PlakkeStrasser",
         "patchVersion": "",
-        "shardId": "",
-        "stats": null,
-        "titleId": ""
+        "shardId": "global",
+        "stats": {
+          "picture": 39029,
+          "title": 504
+        },
+        "titleId": "stunlock-studios-battlerite"
       },
       "relationships": {
         "assets": {
@@ -16,19 +19,22 @@
         }
       },
       "links": {
-        "schema": "https://raw.githubusercontent.com/madglory/gamelocker-/master/schemas/player_index.json",
-        "self": "https://api.dc01.gamelockerapp.com/shards/global/players/931405258914193408"
+        "schema": "https://raw.githubusercontent.com/madglory/gamelocker-stunlock-studios-battlerite/master/schemas//player_index.json",
+        "self": "https://api.dc01.gamelockerapp.com/shards/global/players/934791968557563904"
       }
     },
     {
       "type": "player",
-      "id": "931405258914193409",
+      "id": "934809523846303744",
       "attributes": {
-        "name": "Player2",
+        "name": "Genaan",
         "patchVersion": "",
-        "shardId": "",
-        "stats": null,
-        "titleId": ""
+        "shardId": "global",
+        "stats": {
+          "picture": 39040,
+          "title": 504
+        },
+        "titleId": "stunlock-studios-battlerite"
       },
       "relationships": {
         "assets": {
@@ -36,9 +42,13 @@
         }
       },
       "links": {
-        "schema": "https://raw.githubusercontent.com/madglory/gamelocker-/master/schemas/player_index.json",
-        "self": "https://api.dc01.gamelockerapp.com/shards/global/players/931405258914193408"
+        "schema": "https://raw.githubusercontent.com/madglory/gamelocker-stunlock-studios-battlerite/master/schemas//player_index.json",
+        "self": "https://api.dc01.gamelockerapp.com/shards/global/players/934809523846303744"
       }
     }
-  ]
+  ],
+  "links": {
+    "self": "https://api.dc01.gamelockerapp.com/shards/global/players?filter[playerIds]=934809523846303744,934791968557563904"
+  },
+  "meta": {}
 }
