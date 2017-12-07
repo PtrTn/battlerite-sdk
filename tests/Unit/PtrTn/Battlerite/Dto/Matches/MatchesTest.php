@@ -11,7 +11,7 @@ class MatchesTest extends \PHPUnit_Framework_TestCase
      */
     public function shouldCreateMatchesFromArray()
     {
-        $fixture = file_get_contents(__DIR__ . '/../fixtures/matches-response.json');
+        $fixture = file_get_contents(__DIR__ . '/../../fixtures/matches-response.json');
         $matchesArray = \GuzzleHttp\json_decode($fixture, true);
 
         $matches = Matches::createFromArray($matchesArray['data']);
@@ -28,7 +28,7 @@ class MatchesTest extends \PHPUnit_Framework_TestCase
      */
     public function shouldNotErrorForNoMatches()
     {
-        $fixture = file_get_contents(__DIR__ . '/../fixtures/matches-response-empty.json');
+        $fixture = file_get_contents(__DIR__ . '/../../fixtures/matches-response-empty.json');
         $matchesArray = \GuzzleHttp\json_decode($fixture, true);
 
         $matches = Matches::createFromArray($matchesArray['data']);
