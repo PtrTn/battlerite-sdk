@@ -2,42 +2,30 @@
 
 namespace PtrTn\Battlerite\Dto\Match;
 
-use ArrayIterator;
-use Countable;
-use IteratorAggregate;
-use Traversable;
+use PtrTn\Battlerite\Dto\CollectionDto;
 use Webmozart\Assert\Assert;
 
-class Spectators implements IteratorAggregate, Countable
+class Spectators extends CollectionDto
 {
     /**
      * @var Spectator[]
      */
-    public $spectators;
+    public $items;
 
-    private function __construct(array $spectators)
+    protected function __construct(array $spectators)
     {
-        Assert::allIsInstanceOf($spectators, Spectator::class);
-
-        $this->spectators = $spectators;
+        parent::__construct(Spectator::class, $spectators);
     }
 
     public static function createFromArray(array $spectators): self
     {
+        Assert::notNull($spectators);
+
         $createdSpectators = [];
         foreach ($spectators as $spectator) {
             $createdSpectators[] = Spectator::createFromArray($spectator);
         }
         return new self($createdSpectators);
     }
-
-    public function getIterator(): Traversable
-    {
-        return new ArrayIterator($this->spectators);
-    }
-
-    public function count(): int
-    {
-        return count($this->spectators);
-    }
 }
+
