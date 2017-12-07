@@ -28,4 +28,3 @@ class Spectators extends CollectionDto
         return new self($createdSpectators);
     }
 }
-
