@@ -1,10 +1,10 @@
 <?php
 
-namespace PtrTn\Battlerite\Dto;
+namespace PtrTn\Battlerite\Dto\Match;
 
 use Webmozart\Assert\Assert;
 
-class Roster
+class Asset
 {
     /**
      * @var string
@@ -23,14 +23,14 @@ class Roster
         $this->id = $id;
     }
 
-    public static function createFromArray(array $roster): self
+    public static function createFromArray(array $asset): self
     {
-        Assert::string($roster['type']);
-        Assert::string($roster['id']);
+        Assert::string($asset['type']);
+        Assert::string($asset['id']);
 
         return new self(
-            $roster['type'],
-            $roster['id']
+            $asset['type'],
+            $asset['id']
         );
     }
 }

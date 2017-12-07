@@ -1,6 +1,6 @@
 <?php
 
-namespace PtrTn\Battlerite\Dto;
+namespace PtrTn\Battlerite\Dto\Matches;
 
 use DateTime;
 use PtrTn\Battlerite\Assert\Assert;
