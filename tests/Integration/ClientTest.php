@@ -2,14 +2,16 @@
 namespace Tests\Integration;
 
 use DateTime;
-use PtrTn\Battlerite\Dto\DetailedMatch;
-use PtrTn\Battlerite\Dto\Player;
+use PtrTn\Battlerite\Dto\Match\DetailedMatch;
+use PtrTn\Battlerite\Dto\Player\DetailedPlayer;
+use PtrTn\Battlerite\Dto\Players\Players;
 use PtrTn\Battlerite\Query\MatchesQuery;
+use PtrTn\Battlerite\Query\PlayersQuery;
 
 /**
  * @group integration
  */
-class ClientTestTest extends \PHPUnit_Framework_TestCase
+class ClientTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @test
@@ -21,6 +23,7 @@ class ClientTestTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals('gamelocker', $status->id);
     }
+
     /**
      * @test
      */
@@ -53,14 +56,29 @@ class ClientTestTest extends \PHPUnit_Framework_TestCase
      */
     public function shouldRetrievePlayerData()
     {
-        $this->markTestSkipped('Endpoint is not yet implemented');
-
-        $playerId = '931405258914193408';
+        $playerId = '934791968557563904';
         $client = \PtrTn\Battlerite\Client::create(getenv('APIKEY'));
-        $match = $client->getPlayer($playerId);
+        $player = $client->getPlayer($playerId);
 
-        $this->assertInstanceOf(Player::class, $match);
-        $this->assertEquals($playerId, $match->id);
+        $this->assertInstanceOf(DetailedPlayer::class, $player);
+        $this->assertEquals($playerId, $player->id);
+    }
+
+    /**
+     * @test
+     */
+    public function shouldRetrievePlayersData()
+    {
+        $playerIds = ['934809523846303744', '934791968557563904'];
+        $client = \PtrTn\Battlerite\Client::create(getenv('APIKEY'));
+        $players = $client->getPlayers(
+            PlayersQuery::create()
+            ->forPlayerIds($playerIds)
+        );
+
+        $this->assertInstanceOf(Players::class, $players);
+        $this->assertEquals('PlakkeStrasser', $players->items[0]->name);
+        $this->assertEquals('Genaan', $players->items[1]->name);
     }
 
     /**
@@ -71,7 +89,7 @@ class ClientTestTest extends \PHPUnit_Framework_TestCase
         $client = \PtrTn\Battlerite\Client::create(getenv('APIKEY'));
         $matches = $client->getMatches(
             MatchesQuery::create()
-            ->withEndDate(new DateTime('-20 days'))
+                ->withEndDate(new DateTime('-20 days'))
         );
 
         $this->assertNotEquals(0, count($matches->matches));

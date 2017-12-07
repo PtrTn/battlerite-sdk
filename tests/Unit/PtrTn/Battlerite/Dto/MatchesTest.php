@@ -1,8 +1,8 @@
 <?php
 namespace Tests\Unit\PtrTn\Battlerite\Dto;
 
-use PtrTn\Battlerite\Dto\Match;
-use PtrTn\Battlerite\Dto\Matches;
+use PtrTn\Battlerite\Dto\Matches\Match;
+use PtrTn\Battlerite\Dto\Matches\Matches;
 
 class MatchesTest extends \PHPUnit_Framework_TestCase
 {
@@ -17,7 +17,7 @@ class MatchesTest extends \PHPUnit_Framework_TestCase
         $matches = Matches::createFromArray($matchesArray['data']);
 
         $this->assertInstanceOf(Matches::class, $matches);
-        $this->assertCount(2, $matches);
+        $this->assertCount(5, $matches);
 
         foreach ($matches as $match) {
             $this->assertInstanceOf(Match::class, $match);

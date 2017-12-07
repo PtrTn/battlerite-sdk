@@ -9,10 +9,10 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
 use PtrTn\Battlerite\ApiClient;
 use PtrTn\Battlerite\Client;
-use PtrTn\Battlerite\Dto\DetailedMatch;
-use PtrTn\Battlerite\Dto\Matches;
-use PtrTn\Battlerite\Dto\Player;
-use PtrTn\Battlerite\Dto\Players;
+use PtrTn\Battlerite\Dto\Match\DetailedMatch;
+use PtrTn\Battlerite\Dto\Matches\Matches;
+use PtrTn\Battlerite\Dto\Player\DetailedPlayer;
+use PtrTn\Battlerite\Dto\Players\Players;
 use PtrTn\Battlerite\Query\MatchesQuery;
 use PtrTn\Battlerite\Query\PlayersQuery;
 
@@ -250,7 +250,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $expectedScheme = 'https';
         $expectedHost = 'api.dc01.gamelockerapp.com';
         $expectedPath = '/shards/global/players/some-player-id';
-        $expectedPlayerName = 'Peter';
+        $expectedPlayerName = 'PlakkeStrasser';
 
         $historyContainer = [];
         $history = Middleware::history($historyContainer);
@@ -274,7 +274,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expectedScheme, $request->getUri()->getScheme());
         $this->assertEquals($expectedHost, $request->getUri()->getHost());
         $this->assertEquals($expectedPath, $request->getUri()->getPath());
-        $this->assertInstanceOf(Player::class, $player);
+        $this->assertInstanceOf(DetailedPlayer::class, $player);
         $this->assertEquals($expectedPlayerName, $player->name);
     }
     /**
