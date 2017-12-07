@@ -2,42 +2,29 @@
 
 namespace PtrTn\Battlerite\Dto\Matches;
 
-use ArrayIterator;
-use Countable;
-use IteratorAggregate;
-use Traversable;
+use PtrTn\Battlerite\Dto\CollectionDto;
 use Webmozart\Assert\Assert;
 
-class Rosters implements IteratorAggregate, Countable
+class Rosters extends CollectionDto
 {
     /**
      * @var Roster[]
      */
-    public $rosters;
+    public $items;
 
-    public function __construct(array $rosters)
+    protected function __construct(array $rosters)
     {
-        Assert::allIsInstanceOf($rosters, Roster::class);
-
-        $this->rosters = $rosters;
+        parent::__construct(Roster::class, $rosters);
     }
 
     public static function createFromArray(array $rosters): self
     {
+        Assert::notNull($rosters);
+
         $createdRosters = [];
         foreach ($rosters as $roster) {
             $createdRosters[] = Roster::createFromArray($roster);
         }
         return new self($createdRosters);
-    }
-
-    public function getIterator(): Traversable
-    {
-        return new ArrayIterator($this->rosters);
-    }
-
-    public function count(): int
-    {
-        return count($this->rosters);
     }
 }

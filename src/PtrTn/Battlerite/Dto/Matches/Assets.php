@@ -2,24 +2,25 @@
 
 namespace PtrTn\Battlerite\Dto\Matches;
 
+use PtrTn\Battlerite\Dto\CollectionDto;
 use Webmozart\Assert\Assert;
 
-class Assets
+class Assets extends CollectionDto
 {
     /**
      * @var Asset[]
      */
-    public $assets;
+    public $items;
 
-    private function __construct(array $assets)
+    protected function __construct(array $assets)
     {
-        Assert::allIsInstanceOf($assets, Asset::class);
-
-        $this->assets = $assets;
+        parent::__construct(Asset::class, $assets);
     }
 
     public static function createFromArray(array $assets): self
     {
+        Assert::notNull($assets);
+
         $createdAssets = [];
         foreach ($assets as $asset) {
             $createdAssets[] = Asset::createFromArray($asset);

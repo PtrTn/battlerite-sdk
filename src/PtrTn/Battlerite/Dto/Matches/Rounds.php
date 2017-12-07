@@ -2,42 +2,29 @@
 
 namespace PtrTn\Battlerite\Dto\Matches;
 
-use ArrayIterator;
-use Countable;
-use IteratorAggregate;
-use Traversable;
+use PtrTn\Battlerite\Dto\CollectionDto;
 use Webmozart\Assert\Assert;
 
-class Rounds implements IteratorAggregate, Countable
+class Rounds extends CollectionDto
 {
     /**
      * @var Round[]
      */
-    public $rounds;
+    public $items;
 
-    public function __construct(array $rounds)
+    protected function __construct(array $rounds)
     {
-        Assert::allIsInstanceOf($rounds, Round::class);
-
-        $this->rounds = $rounds;
+        parent::__construct(Round::class, $rounds);
     }
 
     public static function createFromArray(array $rounds): self
     {
+        Assert::notNull($rounds);
+
         $createdRounds = [];
         foreach ($rounds as $round) {
             $createdRounds[] = Round::createFromArray($round);
         }
         return new self($createdRounds);
-    }
-
-    public function getIterator(): Traversable
-    {
-        return new ArrayIterator($this->rounds);
-    }
-
-    public function count(): int
-    {
-        return count($this->rounds);
     }
 }
