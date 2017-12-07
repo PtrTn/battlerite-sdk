@@ -32,7 +32,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $client = \PtrTn\Battlerite\Client::create(getenv('APIKEY'));
         $matches = $client->getMatches();
 
-        $this->assertEquals('QUICK2V2', $matches->matches[0]->map->type);
+        $this->assertEquals('QUICK2V2', $matches->items[0]->map->type);
     }
 
     /**
@@ -92,8 +92,8 @@ class ClientTest extends \PHPUnit_Framework_TestCase
                 ->withEndDate(new DateTime('-20 days'))
         );
 
-        $this->assertNotEquals(0, count($matches->matches));
-        foreach ($matches->matches as $match) {
+        $this->assertNotEquals(0, count($matches));
+        foreach ($matches as $match) {
             $this->assertTrue(new DateTime('-20 days') < $match->createdAt);
         }
     }
