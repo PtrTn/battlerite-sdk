@@ -61,9 +61,6 @@ class Roster
             Assert::nullOrInteger($roster['attributes']['stats']['score']);
             Assert::nullOrString($roster['attributes']['won']);
         }
-        if (isset($roster['relationships']['participants'])) {
-            // Todo, make a reference / detailed dto for paticipants?
-        }
 
         // Todo, this should probably be a boolean in json.
         $won = $roster['attributes']['won'] ? filter_var($roster['attributes']['won'], FILTER_VALIDATE_BOOLEAN) : null;
