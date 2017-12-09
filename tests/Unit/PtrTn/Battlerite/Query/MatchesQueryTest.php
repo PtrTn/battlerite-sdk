@@ -2,7 +2,7 @@
 namespace Tests\Unit\PtrTn\Battlerite\Query;
 
 use DateTime;
-use InvalidArgumentException;
+use PtrTn\Battlerite\Exception\InvalidQueryException;
 use PtrTn\Battlerite\Query\MatchesQuery;
 
 class MatchesQueryTest extends \PHPUnit_Framework_TestCase
@@ -23,8 +23,8 @@ class MatchesQueryTest extends \PHPUnit_Framework_TestCase
     {
         $expectedQuery = 'page[limit]=6';
 
-        $query = MatchesQuery::create();
-        $query->withLimit(6);
+        $query = MatchesQuery::create()
+            ->withLimit(6);
         $this->assertEquals($expectedQuery, urldecode($query->toQueryString()));
     }
 
@@ -60,7 +60,7 @@ class MatchesQueryTest extends \PHPUnit_Framework_TestCase
      */
     public function shouldNotAllowStartDateAfterEndDate()
     {
-        $this->expectExceptionMessage(InvalidArgumentException::class);
+        $this->expectException(InvalidQueryException::class);
         $this->expectExceptionMessage('End date must be later than start date');
 
         MatchesQuery::create()
@@ -73,11 +73,26 @@ class MatchesQueryTest extends \PHPUnit_Framework_TestCase
      */
     public function shouldNotAllowEndDateBeforeStartDate()
     {
-        $this->expectExceptionMessage(InvalidArgumentException::class);
+        $this->expectException(InvalidQueryException::class);
         $this->expectExceptionMessage('End date must be later than start date');
 
         MatchesQuery::create()
             ->withStartDate(new DateTime('-3 days'))
             ->withEndDate(new DateTime('-5 days'));
+    }
+
+    /**
+     * @test
+     */
+    public function shouldErrorOnMultipleSameCriteria()
+    {
+        $this->expectException(InvalidQueryException::class);
+        $this->expectExceptionMessage(
+            'Unable to create query for more than 1 PtrTn\Battlerite\Query\Criterion\PlayerIdsCriterion'
+        );
+
+        MatchesQuery::create()
+            ->forPlayerIds(['1234'])
+            ->forPlayerIds(['5789']);
     }
 }

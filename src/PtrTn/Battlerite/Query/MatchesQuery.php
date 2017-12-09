@@ -3,49 +3,28 @@
 namespace PtrTn\Battlerite\Query;
 
 use DateTime;
-use Webmozart\Assert\Assert;
+use PtrTn\Battlerite\Exception\InvalidQueryException;
+use PtrTn\Battlerite\Query\Criterion\CriterionInterface;
+use PtrTn\Battlerite\Query\Criterion\EndDateCriterion;
+use PtrTn\Battlerite\Query\Criterion\GameModesCriterion;
+use PtrTn\Battlerite\Query\Criterion\LimitCriterion;
+use PtrTn\Battlerite\Query\Criterion\OffsetCriterion;
+use PtrTn\Battlerite\Query\Criterion\PlayerIdsCriterion;
+use PtrTn\Battlerite\Query\Criterion\SortAscendingCriterion;
+use PtrTn\Battlerite\Query\Criterion\SortDescendingCriterion;
+use PtrTn\Battlerite\Query\Criterion\StartDateCriterion;
+use PtrTn\Battlerite\Query\Criterion\TeamNamesCriterion;
 
+/**
+ * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
+ * @SuppressWarnings(PHPMD.TooManyPublicMethods)
+ */
 class MatchesQuery implements QueryInterface
 {
     /**
-     * @var int|null
+     * @var CriterionInterface[]
      */
-    private $offset;
-
-    /**
-     * @var int|null
-     */
-    private $limit;
-
-    /**
-     * @var string|null
-     */
-    private $sortBy;
-
-    /**
-     * @var DateTime|null
-     */
-    private $startDate;
-
-    /**
-     * @var DateTime|null
-     */
-    private $endDate;
-
-    /**
-     * @var string[]
-     */
-    private $playerIds;
-
-    /**
-     * @var string[]
-     */
-    private $teamNames;
-
-    /**
-     * @var string[]
-     */
-    private $gameModes;
+    private $criteria = [];
 
     private function __construct()
     {
@@ -58,93 +37,63 @@ class MatchesQuery implements QueryInterface
 
     public function withOffset(int $offset): self
     {
-        $this->offset = $offset;
+        $this->addCriterion(new OffsetCriterion($offset));
         return $this;
     }
 
     public function withLimit(int $limit): self
     {
-        $this->limit = $limit;
+        $this->addCriterion(new LimitCriterion($limit));
         return $this;
     }
 
     public function sortBy(string $sortBy): self
     {
-        $this->sortBy = $sortBy;
+        $this->addCriterion(new SortAscendingCriterion($sortBy));
+        return $this;
+    }
+
+    public function sortDescBy(string $sortBy): self
+    {
+        $this->addCriterion(new SortDescendingCriterion($sortBy));
         return $this;
     }
 
     public function withStartDate(DateTime $startDate)
     {
-        if (isset($this->endDate)) {
-            Assert::greaterThan($this->endDate, $startDate, 'End date must be later than start date');
-        }
-
-        $this->startDate = $startDate;
+        $this->addCriterion(new StartDateCriterion($startDate));
         return $this;
     }
 
     public function withEndDate(DateTime $endDate)
     {
-        if (isset($this->startDate)) {
-            Assert::greaterThan($endDate, $this->startDate, 'End date must be later than start date');
-        }
-
-        $this->endDate = $endDate;
+        $this->addCriterion(new EndDateCriterion($endDate));
         return $this;
     }
 
     public function forPlayerIds(array $playerIds)
     {
-        Assert::allString($playerIds, 'Specified player ids should be an array of strings');
-        $this->playerIds = $playerIds;
+        $this->addCriterion(new PlayerIdsCriterion($playerIds));
         return $this;
     }
 
     public function forTeamNames(array $teamNames)
     {
-        Assert::allString($teamNames, 'Specified team names should be an array of strings');
-        $this->teamNames = $teamNames;
+        $this->addCriterion(new TeamNamesCriterion($teamNames));
         return $this;
     }
 
     public function forGameModes(array $gameModes)
     {
-        Assert::allString($gameModes, 'Specified game modes should be an array of strings');
-        $this->gameModes = $gameModes;
+        $this->addCriterion(new GameModesCriterion($gameModes));
         return $this;
     }
 
-    /**
-     * @SuppressWarnings(PHPMD.CyclomaticComplexity)
-     * @SuppressWarnings(PHPMD.NPathComplexity)
-     */
     public function toQueryString(): ?string
     {
         $query = [];
-        if (isset($this->offset)) {
-            $query['page[offset]'] = $this->offset;
-        }
-        if (isset($this->limit)) {
-            $query['page[limit]'] = $this->limit;
-        }
-        if (isset($this->sortBy)) {
-            $query['sort'] = $this->sortBy;
-        }
-        if (isset($this->startDate)) {
-            $query['filter[createdAt-start]'] = $this->startDate->format(DateTime::ISO8601);
-        }
-        if (isset($this->endDate)) {
-            $query['filter[createdAt-end]'] = $this->endDate->format(DateTime::ISO8601);
-        }
-        if (!empty($this->playerIds)) {
-            $query['filter[playerIds]'] = implode(',', $this->playerIds);
-        }
-        if (!empty($this->teamNames)) {
-            $query['filter[teamNames]'] = implode(',', $this->teamNames);
-        }
-        if (!empty($this->gameModes)) {
-            $query['filter[gameMode]'] = implode(',', $this->gameModes);
+        foreach ($this->criteria as $criterion) {
+            $query = array_merge($query, $criterion->toArray());
         }
 
         if (!empty($query)) {
@@ -152,5 +101,17 @@ class MatchesQuery implements QueryInterface
         }
 
         return null;
+    }
+
+    private function addCriterion(CriterionInterface $criterionToAdd): void
+    {
+        $criterionToAdd->checkCollisionWithCriteria($this->criteria);
+        foreach ($this->criteria as $criterion) {
+            if (get_class($criterion) === get_class($criterionToAdd)) {
+                throw InvalidQueryException::sameCriteria($criterionToAdd);
+            }
+        }
+        $this->criteria[] = $criterionToAdd;
+        return;
     }
 }

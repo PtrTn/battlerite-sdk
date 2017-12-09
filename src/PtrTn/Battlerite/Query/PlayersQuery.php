@@ -2,14 +2,16 @@
 
 namespace PtrTn\Battlerite\Query;
 
-use Webmozart\Assert\Assert;
+use PtrTn\Battlerite\Exception\InvalidQueryException;
+use PtrTn\Battlerite\Query\Criterion\CriterionInterface;
+use PtrTn\Battlerite\Query\Criterion\PlayerIdsCriterion;
 
 class PlayersQuery implements QueryInterface
 {
     /**
-     * @var string[]
+     * @var CriterionInterface[]
      */
-    private $playerIds;
+    private $criteria = [];
 
     private function __construct()
     {
@@ -22,16 +24,15 @@ class PlayersQuery implements QueryInterface
 
     public function forPlayerIds(array $playerIds)
     {
-        Assert::allString($playerIds, 'Specified player ids should be an array of strings');
-        $this->playerIds = $playerIds;
+        $this->addCriterion(new PlayerIdsCriterion($playerIds));
         return $this;
     }
 
     public function toQueryString(): ?string
     {
         $query = [];
-        if (!empty($this->playerIds)) {
-            $query['filter[playerIds]'] = implode(',', $this->playerIds);
+        foreach ($this->criteria as $criterion) {
+            $query = array_merge($query, $criterion->toArray());
         }
 
         if (!empty($query)) {
@@ -39,5 +40,17 @@ class PlayersQuery implements QueryInterface
         }
 
         return null;
+    }
+
+    private function addCriterion(CriterionInterface $criterionToAdd): void
+    {
+        $criterionToAdd->checkCollisionWithCriteria($this->criteria);
+        foreach ($this->criteria as $criterion) {
+            if (get_class($criterion) === get_class($criterionToAdd)) {
+                throw InvalidQueryException::sameCriteria($criterionToAdd);
+            }
+        }
+        $this->criteria[] = $criterionToAdd;
+        return;
     }
 }
