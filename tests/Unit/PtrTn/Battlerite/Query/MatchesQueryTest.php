@@ -31,6 +31,18 @@ class MatchesQueryTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
+    public function shouldSortDescending()
+    {
+        $expectedQuery = 'sort=-duration';
+
+        $query = MatchesQuery::create()
+            ->sortDescBy('duration');
+        $this->assertEquals($expectedQuery, urldecode($query->toQueryString()));
+    }
+
+    /**
+     * @test
+     */
     public function shouldAllowChaining()
     {
         $expectedQuery =
