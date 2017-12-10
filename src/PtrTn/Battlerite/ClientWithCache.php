@@ -5,6 +5,7 @@ namespace PtrTn\Battlerite;
 use Doctrine\Common\Cache\Cache;
 use Doctrine\Common\Cache\FilesystemCache;
 use GuzzleHttp\Client as GuzzleClient;
+use PtrTn\Battlerite\Dto\Match\DetailedMatch;
 use PtrTn\Battlerite\Dto\Player\DetailedPlayer;
 
 class ClientWithCache
@@ -31,7 +32,7 @@ class ClientWithCache
     }
 
     /**
-     * Create default API client setup with a caching layer
+     * Create default API client setup with a filesystem caching layer
      */
     public static function create(string $apiKey): self
     {
@@ -46,6 +47,22 @@ class ClientWithCache
         );
     }
 
+    /**
+     * Create default API client setup with a custom caching layer
+     */
+    public static function createWithCache(string $apiKey, Cache $cache): self
+    {
+        return new self(
+            new Client(
+                new ApiClient(
+                    $apiKey,
+                    new GuzzleClient()
+                )
+            ),
+            $cache
+        );
+    }
+
     public function getPlayer(string $playerId): DetailedPlayer
     {
         $cacheKey = self::CACHE_PREFIX . '-player-' . $playerId;
@@ -53,6 +70,17 @@ class ClientWithCache
             return $this->cache->fetch($cacheKey);
         }
         $data = $this->client->getPlayer($playerId);
+        $this->cache->save($cacheKey, $data, self::CACHE_LIFETIME);
+        return $data;
+    }
+
+    public function getMatch(string $matchId): DetailedMatch
+    {
+        $cacheKey = self::CACHE_PREFIX . '-match-' . $matchId;
+        if ($this->cache->contains($cacheKey)) {
+            return $this->cache->fetch($cacheKey);
+        }
+        $data = $this->client->getMatch($matchId);
         $this->cache->save($cacheKey, $data, self::CACHE_LIFETIME);
         return $data;
     }
