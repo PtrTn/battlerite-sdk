@@ -2,6 +2,7 @@
 namespace Tests\Unit\PtrTn\Battlerite;
 
 use Doctrine\Common\Cache\ArrayCache;
+use Doctrine\Common\Cache\FilesystemCache;
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Handler\MockHandler;
@@ -16,6 +17,31 @@ use PtrTn\Battlerite\Dto\Player\DetailedPlayer;
 
 class ClientWithCacheTest extends \PHPUnit_Framework_TestCase
 {
+    /**
+     * @test
+     */
+    public function shouldCreateClientWithDefaultCache()
+    {
+        $client = ClientWithCache::create('fake-api-key');
+
+        $this->assertInstanceOf(ClientWithCache::class, $client);
+        $this->assertAttributeInstanceOf(Client::class, 'client', $client);
+        $this->assertAttributeInstanceOf(FilesystemCache::class, 'cache', $client);
+    }
+    /**
+     * @test
+     */
+    public function shouldCreateClientWithCustomCache()
+    {
+        $client = ClientWithCache::createWithCache(
+            'fake-api-key',
+            new ArrayCache()
+        );
+
+        $this->assertInstanceOf(ClientWithCache::class, $client);
+        $this->assertAttributeInstanceOf(Client::class, 'client', $client);
+        $this->assertAttributeInstanceOf(ArrayCache::class, 'cache', $client);
+    }
 
     /**
      * @test
