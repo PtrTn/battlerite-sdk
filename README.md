@@ -8,8 +8,8 @@ PHP-based SDK for Battlerite API
 ## Features
 - Retrieve data for matches (by query)
 - Retrieve detailed data for a specific match
-- Retrieve data for players (by query) _(not yet supported by API)_
-- Retrieve data for a specific player _(not yet supported by API)_
+- Retrieve data for players (by query)
+- Retrieve detailed data for a specific player
 
 ## Requirements
 - Php 7.1 or higher
@@ -31,7 +31,7 @@ Retrieving match data using API defaults
 ```php
 $client = \PtrTn\Battlerite\Client::create('your-api-key');
 $matches = $client->getMatches();
-echo $matches->matches[0]->map->type;
+echo $matches->items[0]->map->type;
 // QUICK2V2
 ```
 ### Retrieving detailed match data
