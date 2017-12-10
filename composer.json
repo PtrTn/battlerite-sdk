@@ -2,6 +2,7 @@
   "name": "ptrtn/battlerite",
   "description": "A php-based client wrapping the battlerite API",
   "type": "library",
+  "license": "MIT",
   "authors": [
     {
       "name": "Peter Ton",
