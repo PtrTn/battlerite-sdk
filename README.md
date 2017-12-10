@@ -47,9 +47,19 @@ $match = $client->getPlayer('934791968557563904');
 ```
 ### Custom querying
 A custom search query can be used to retrieve the exact data needed.
+For matches the following query options are available:
+- Offset
+- Limit
+- Start date
+- End date
+- Player ids
+- Team names
+- Game modes
+- Ascending sorting
+- Descending sorting
 ```php
 $client = \PtrTn\Battlerite\Client::create('your-api-key');
-// Retrieve matches for a single player in the last 24 hours
+// Retrieve matches for a single player for the last 24 hours
 $matches = $client->getMatches(
     MatchesQuery::create()
     ->forPlayerIds(['934791968557563904'])
@@ -57,14 +67,14 @@ $matches = $client->getMatches(
 );
 ```
 
-### Caching
+## Caching
 When sending a lot of requests, the default rate limit of 10 requests per minute will pose an issue.
 In order to prevent this, caching can be enabled for the player details and match details endpoints.
 ```php
 // Create client using default filesystem cache
 $client = ClientWithCache::create('your-api-key');
 ```
-Optionally an alternative caching lifetime or caching system implementing the `Doctrine\Common\Cache\Cache` interface can be configured.
+Optionally an alternative cache lifetime or caching system implementing the `Doctrine\Common\Cache\Cache` interface can be configured.
 ```php
 // Create a client using custom configured cache
 $client = ClientWithCache::createWithCache(
