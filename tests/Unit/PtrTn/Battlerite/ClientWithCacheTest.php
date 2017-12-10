@@ -36,7 +36,8 @@ class ClientWithCacheTest extends \PHPUnit_Framework_TestCase
     {
         $client = ClientWithCache::createWithCache(
             'fake-api-key',
-            new ArrayCache()
+            new ArrayCache(),
+            300
         );
 
         $this->assertInstanceOf(ClientWithCache::class, $client);
@@ -108,7 +109,8 @@ class ClientWithCacheTest extends \PHPUnit_Framework_TestCase
             new Client(
                 new ApiClient('fake-api-key', $mockClient)
             ),
-            new ArrayCache()
+            new ArrayCache(),
+            300
         );
         return $apiClient;
     }

@@ -14,21 +14,26 @@ class ClientWithCache
 
     private const CACHE_PREFIX = 'battlerite-';
 
-    private const CACHE_LIFETIME = 300;
-
     /**
      * @var Client
      */
     private $client;
+
     /**
      * @var Cache
      */
     private $cache;
 
-    public function __construct(Client $client, Cache $cache)
+    /**
+     * @var int
+     */
+    private $cacheLifetime = 300;
+
+    public function __construct(Client $client, Cache $cache, int $cacheLifetime)
     {
         $this->client = $client;
         $this->cache = $cache;
+        $this->cacheLifetime = $cacheLifetime;
     }
 
     /**
@@ -43,14 +48,15 @@ class ClientWithCache
                     new GuzzleClient()
                 )
             ),
-            new FilesystemCache(self::CACHE_DIR, '.cache')
+            new FilesystemCache(self::CACHE_DIR, '.cache'),
+            300
         );
     }
 
     /**
      * Create default API client setup with a custom caching layer
      */
-    public static function createWithCache(string $apiKey, Cache $cache): self
+    public static function createWithCache(string $apiKey, Cache $cache, int $cacheLifetime): self
     {
         return new self(
             new Client(
@@ -59,7 +65,8 @@ class ClientWithCache
                     new GuzzleClient()
                 )
             ),
-            $cache
+            $cache,
+            $cacheLifetime
         );
     }
 
@@ -70,7 +77,7 @@ class ClientWithCache
             return $this->cache->fetch($cacheKey);
         }
         $data = $this->client->getPlayer($playerId);
-        $this->cache->save($cacheKey, $data, self::CACHE_LIFETIME);
+        $this->cache->save($cacheKey, $data, $this->cacheLifetime);
         return $data;
     }
 
@@ -81,7 +88,7 @@ class ClientWithCache
             return $this->cache->fetch($cacheKey);
         }
         $data = $this->client->getMatch($matchId);
-        $this->cache->save($cacheKey, $data, self::CACHE_LIFETIME);
+        $this->cache->save($cacheKey, $data, $this->cacheLifetime);
         return $data;
     }
 }
