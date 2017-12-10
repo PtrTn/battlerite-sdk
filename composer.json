@@ -26,7 +26,8 @@
       "@phpmd",
       "@phpunit"
     ],
-    "phpunit": "vendor/bin/phpunit -c phpunit.xml",
+    "phpunit-integration": "vendor/bin/phpunit -c phpunit.xml",
+    "phpunit": "vendor/bin/phpunit -c phpunit.xml --exclude-group integration",
     "phpmd": "vendor/bin/phpmd src text phpmd.xml --suffixes php",
     "phpcs": "vendor/bin/phpcs --report=full --standard=ruleset.xml src"
   },
