@@ -21,6 +21,17 @@ class ClientTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
+    public function shouldCreateWithApiClient()
+    {
+        $client = Client::create('fake-api-key');
+
+        $this->assertInstanceOf(Client::class, $client);
+        $this->assertAttributeInstanceOf(ApiClient::class, 'apiClient', $client);
+    }
+
+    /**
+     * @test
+     */
     public function shouldRetrieveApiStatus()
     {
         $expectedMethod = 'GET';

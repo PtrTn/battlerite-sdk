@@ -28,6 +28,7 @@ class ClientWithCacheTest extends \PHPUnit_Framework_TestCase
         $this->assertAttributeInstanceOf(Client::class, 'client', $client);
         $this->assertAttributeInstanceOf(FilesystemCache::class, 'cache', $client);
     }
+
     /**
      * @test
      */
