@@ -57,6 +57,23 @@ $matches = $client->getMatches(
 );
 ```
 
+### Caching
+When sending a lot of requests, the default rate limit of 10 requests per minute will pose an issue.
+In order to prevent this, caching can be enabled for the player details and match details endpoints.
+```php
+// Create client using default filesystem cache
+$client = ClientWithCache::create('your-api-key');
+```
+Optionally an alternative caching lifetime or caching system implementing the `Doctrine\Common\Cache\Cache` interface can be configured.
+```php
+// Create a client using custom configured cache
+$client = ClientWithCache::createWithCache(
+    'your-api-key',
+    new RedisCache(),
+    300
+);
+```
+
 ## How do I get an API key?
 1. In order to get an API key you should [create a developer account and an app](https://developer.battlerite.com/users/sign_in)
 2. Once created, log in and browse to [https://developer.battlerite.com/apps/your-app](https://developer.battlerite.com/apps/your-app)
