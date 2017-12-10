@@ -24,9 +24,12 @@ class Client
         $this->apiClient = $apiClient;
     }
 
-    public static function create(string $apiKey): Client
+    /**
+     * Create default API client setup
+     */
+    public static function create(string $apiKey): self
     {
-        return new Client(
+        return new self(
             new ApiClient(
                 $apiKey,
                 new GuzzleClient()
