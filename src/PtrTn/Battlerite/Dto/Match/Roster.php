@@ -19,22 +19,22 @@ class Roster
     /**
      * @var null|string
      */
-    private $shardId;
+    public $shardId;
 
     /**
      * @var int|null
      */
-    private $score;
+    public $score;
 
     /**
      * @var bool|null
      */
-    private $won;
+    public $won;
 
     /**
      * @var null|Participants
      */
-    private $participants;
+    public $participants;
 
     private function __construct(
         string $type,

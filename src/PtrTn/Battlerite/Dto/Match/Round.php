@@ -19,17 +19,17 @@ class Round
     /**
      * @var int
      */
-    private $duration;
+    public $duration;
 
     /**
      * @var int
      */
-    private $ordinal;
+    public $ordinal;
 
     /**
      * @var int
      */
-    private $winningTeam;
+    public $winningTeam;
 
     private function __construct(
         string $type,

@@ -13,7 +13,6 @@ use PtrTn\Battlerite\Query\PlayersQuery;
 
 class Client
 {
-
     /**
      * @var ApiClient
      */
