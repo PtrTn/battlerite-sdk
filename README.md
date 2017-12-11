@@ -40,7 +40,6 @@ $client = \PtrTn\Battlerite\Client::create('your-api-key');
 $match = $client->getMatch('AB9C81FABFD748C8A7EC545AA6AF97CC');
 ```
 ### Retrieving player data
-Note: This call is not supported by the API yet
 ```php
 $client = \PtrTn\Battlerite\Client::create('your-api-key');
 $match = $client->getPlayer('934791968557563904');
