@@ -18,7 +18,7 @@ class RostersTest extends \PHPUnit_Framework_TestCase
 
         $this->assertInstanceOf(References::class, $winningParticipants);
 
-        $this->assertEquals('fcb9ecaf-8976-4c0d-8a23-b80d2155c240', $winningParticipants->items[0]->id);
-        $this->assertEquals('d7483fb9-8a52-4767-9cf8-14d9b3732438', $winningParticipants->items[1]->id);
+        $this->assertEquals('fcb9ecaf-8976-4c0d-8a23-b80d2155c240', $winningParticipants[0]->id);
+        $this->assertEquals('d7483fb9-8a52-4767-9cf8-14d9b3732438', $winningParticipants[1]->id);
     }
 }
