@@ -6,7 +6,12 @@ use Doctrine\Common\Cache\Cache;
 use Doctrine\Common\Cache\FilesystemCache;
 use GuzzleHttp\Client as GuzzleClient;
 use PtrTn\Battlerite\Dto\Match\DetailedMatch;
+use PtrTn\Battlerite\Dto\Matches\Matches;
 use PtrTn\Battlerite\Dto\Player\DetailedPlayer;
+use PtrTn\Battlerite\Dto\Players\Players;
+use PtrTn\Battlerite\Dto\Status\Status;
+use PtrTn\Battlerite\Query\MatchesQuery;
+use PtrTn\Battlerite\Query\PlayersQuery;
 
 class ClientWithCache
 {
@@ -90,5 +95,20 @@ class ClientWithCache
         $data = $this->client->getMatch($matchId);
         $this->cache->save($cacheKey, $data, $this->cacheLifetime);
         return $data;
+    }
+
+    public function getStatus(): Status
+    {
+        return $this->client->getStatus();
+    }
+
+    public function getMatches(MatchesQuery $query = null): Matches
+    {
+        return $this->client->getMatches($query);
+    }
+
+    public function getPlayers(PlayersQuery $query = null): Players
+    {
+        return $this->client->getPlayers($query);
     }
 }
