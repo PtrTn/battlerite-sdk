@@ -32,7 +32,7 @@ Retrieving match data using API defaults
 ```php
 $client = \PtrTn\Battlerite\Client::create('your-api-key');
 $matches = $client->getMatches();
-echo $matches->items[0]->map->type;
+echo $matches[0]->map->type;
 // QUICK2V2
 ```
 ### Retrieving detailed match data
