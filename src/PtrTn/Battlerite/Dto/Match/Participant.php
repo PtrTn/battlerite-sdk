@@ -204,8 +204,7 @@ class Participant
 
         if (isset($participant['attributes']['stats']['userID'])) {
             $userId = $participant['attributes']['stats']['userID'];
-        }
-        else {
+        } else {
             $userId = $participant['relationships']['player']['data']['id'];
         }
         Assert::string($userId);
