@@ -66,19 +66,20 @@ class ClientTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @test
+     * @group runme
      */
     public function shouldRetrievePlayersData()
     {
-        $playerIds = ['934809523846303744', '934791968557563904'];
+        $playerNames = ['PlakkeStrasser', 'Genaan'];
         $client = \PtrTn\Battlerite\Client::create(getenv('APIKEY'));
         $players = $client->getPlayers(
             PlayersQuery::create()
-            ->forPlayerIds($playerIds)
+            ->forPlayerNames($playerNames)
         );
 
         $this->assertInstanceOf(Players::class, $players);
-        $this->assertEquals('PlakkeStrasser', $players->items[0]->name);
-        $this->assertEquals('Genaan', $players->items[1]->name);
+        $this->assertEquals('934791968557563904', $players->items[0]->id);
+        $this->assertEquals('934809523846303744', $players->items[1]->id);
     }
 
     /**
