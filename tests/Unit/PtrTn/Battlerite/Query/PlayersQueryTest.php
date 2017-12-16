@@ -41,4 +41,28 @@ class PlayersQueryTest extends \PHPUnit_Framework_TestCase
             ->forPlayerIds(['1234', '5789']);
         $this->assertEquals($expectedQuery, urldecode($query->toQueryString()));
     }
+
+    /**
+     * @test
+     */
+    public function shouldQuerySteamIds()
+    {
+        $expectedQuery = 'filter[steamIds]=1234,5789';
+
+        $query = PlayersQuery::create()
+            ->forSteamIds(['1234', '5789']);
+        $this->assertEquals($expectedQuery, urldecode($query->toQueryString()));
+    }
+
+    /**
+     * @test
+     */
+    public function shouldQueryPlayerNames()
+    {
+        $expectedQuery = 'filter[playerNames]=Tetter,Pon';
+
+        $query = PlayersQuery::create()
+            ->forPlayerNames(['Tetter', 'Pon']);
+        $this->assertEquals($expectedQuery, urldecode($query->toQueryString()));
+    }
 }
