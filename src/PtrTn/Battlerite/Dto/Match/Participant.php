@@ -120,7 +120,7 @@ class Participant
     public $timeAlive;
 
     /**
-     * @var string|null
+     * @var string
      */
     public $userID;
 
@@ -150,7 +150,7 @@ class Participant
         int $score,
         int $side,
         int $timeAlive,
-        ?string $userID
+        string $userID
     ) {
         $this->type = $type;
         $this->id = $id;
@@ -202,8 +202,13 @@ class Participant
         Assert::integer($participant['attributes']['stats']['side']);
         Assert::integer($participant['attributes']['stats']['timeAlive']);
 
-        $userId = $participant['attributes']['stats']['userID'] ?? null;
-        Assert::nullOrString($userId);
+        if (isset($participant['attributes']['stats']['userID'])) {
+            $userId = $participant['attributes']['stats']['userID'];
+        }
+        else {
+            $userId = $participant['relationships']['player']['data']['id'];
+        }
+        Assert::string($userId);
 
         return new self(
             $participant['type'],
