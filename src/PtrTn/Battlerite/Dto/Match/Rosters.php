@@ -4,6 +4,7 @@ namespace PtrTn\Battlerite\Dto\Match;
 
 use ArrayIterator;
 use PtrTn\Battlerite\Dto\CollectionDto;
+use RuntimeException;
 use Traversable;
 use Webmozart\Assert\Assert;
 
@@ -36,5 +37,15 @@ class Rosters extends CollectionDto
     public function getIterator(): Traversable
     {
         return new ArrayIterator($this->items);
+    }
+
+    public function getWinningParticipants(): References
+    {
+        foreach ($this->items as $roster) {
+            if ($roster->won === true) {
+                return $roster->participants;
+            }
+        }
+        throw new RuntimeException('Invalid data, match should always have a victor');
     }
 }
