@@ -87,14 +87,15 @@ class ClientTest extends \PHPUnit_Framework_TestCase
     public function shouldFilterMatchesForQuery()
     {
         $client = \PtrTn\Battlerite\Client::create(getenv('APIKEY'));
+        $endDate = new DateTime('-20 days');
         $matches = $client->getMatches(
             MatchesQuery::create()
-                ->withEndDate(new DateTime('-20 days'))
+                ->withEndDate($endDate)
         );
 
         $this->assertNotEquals(0, count($matches));
         foreach ($matches as $match) {
-            $this->assertTrue(new DateTime('-20 days') < $match->createdAt);
+            $this->assertLessThanOrEqual($endDate, $match->createdAt);
         }
     }
 }
