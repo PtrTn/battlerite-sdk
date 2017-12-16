@@ -2,7 +2,9 @@
 
 namespace PtrTn\Battlerite\Dto\Matches;
 
+use ArrayIterator;
 use PtrTn\Battlerite\Dto\CollectionDto;
+use Traversable;
 use Webmozart\Assert\Assert;
 
 class Matches extends CollectionDto
@@ -26,5 +28,13 @@ class Matches extends CollectionDto
             $createdMatches[] = Match::createFromArray($match);
         }
         return new self($createdMatches);
+    }
+
+    /**
+     * @return Traversable|Match[]
+     */
+    public function getIterator(): Traversable
+    {
+        return new ArrayIterator($this->items);
     }
 }

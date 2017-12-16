@@ -2,7 +2,9 @@
 
 namespace PtrTn\Battlerite\Dto\Match;
 
+use ArrayIterator;
 use PtrTn\Battlerite\Dto\CollectionDto;
+use Traversable;
 use Webmozart\Assert\Assert;
 
 class Assets extends CollectionDto
@@ -26,5 +28,13 @@ class Assets extends CollectionDto
             $createdAssets[] = Asset::createFromArray($asset);
         }
         return new self($createdAssets);
+    }
+
+    /**
+     * @return Traversable|Asset[]
+     */
+    public function getIterator(): Traversable
+    {
+        return new ArrayIterator($this->items);
     }
 }

@@ -2,7 +2,9 @@
 
 namespace PtrTn\Battlerite\Dto\Match;
 
+use ArrayIterator;
 use PtrTn\Battlerite\Dto\CollectionDto;
+use Traversable;
 use Webmozart\Assert\Assert;
 
 class Players extends CollectionDto
@@ -26,5 +28,13 @@ class Players extends CollectionDto
             $createdPlayers[] = Player::createFromArray($player);
         }
         return new self($createdPlayers);
+    }
+
+    /**
+     * @return Traversable|Player[]
+     */
+    public function getIterator(): Traversable
+    {
+        return new ArrayIterator($this->items);
     }
 }

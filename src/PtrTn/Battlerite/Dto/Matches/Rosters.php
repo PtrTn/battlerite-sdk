@@ -2,7 +2,9 @@
 
 namespace PtrTn\Battlerite\Dto\Matches;
 
+use ArrayIterator;
 use PtrTn\Battlerite\Dto\CollectionDto;
+use Traversable;
 use Webmozart\Assert\Assert;
 
 class Rosters extends CollectionDto
@@ -26,5 +28,13 @@ class Rosters extends CollectionDto
             $createdRosters[] = Roster::createFromArray($roster);
         }
         return new self($createdRosters);
+    }
+
+    /**
+     * @return Traversable|Roster[]
+     */
+    public function getIterator(): Traversable
+    {
+        return new ArrayIterator($this->items);
     }
 }

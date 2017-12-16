@@ -2,7 +2,9 @@
 
 namespace PtrTn\Battlerite\Dto\Matches;
 
+use ArrayIterator;
 use PtrTn\Battlerite\Dto\CollectionDto;
+use Traversable;
 use Webmozart\Assert\Assert;
 
 class Rounds extends CollectionDto
@@ -26,5 +28,13 @@ class Rounds extends CollectionDto
             $createdRounds[] = Round::createFromArray($round);
         }
         return new self($createdRounds);
+    }
+
+    /**
+     * @return Traversable|Round[]
+     */
+    public function getIterator(): Traversable
+    {
+        return new ArrayIterator($this->items);
     }
 }

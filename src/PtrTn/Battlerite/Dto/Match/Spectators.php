@@ -2,7 +2,9 @@
 
 namespace PtrTn\Battlerite\Dto\Match;
 
+use ArrayIterator;
 use PtrTn\Battlerite\Dto\CollectionDto;
+use Traversable;
 use Webmozart\Assert\Assert;
 
 class Spectators extends CollectionDto
@@ -26,5 +28,13 @@ class Spectators extends CollectionDto
             $createdSpectators[] = Spectator::createFromArray($spectator);
         }
         return new self($createdSpectators);
+    }
+
+    /**
+     * @return Traversable|Spectator[]
+     */
+    public function getIterator(): Traversable
+    {
+        return new ArrayIterator($this->items);
     }
 }

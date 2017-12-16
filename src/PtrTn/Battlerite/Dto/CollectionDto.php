@@ -2,10 +2,8 @@
 
 namespace PtrTn\Battlerite\Dto;
 
-use ArrayIterator;
 use Countable;
 use IteratorAggregate;
-use Traversable;
 use Webmozart\Assert\Assert;
 
 abstract class CollectionDto implements IteratorAggregate, Countable
@@ -20,11 +18,6 @@ abstract class CollectionDto implements IteratorAggregate, Countable
         Assert::allIsInstanceOf($items, $class);
 
         $this->items = $items;
-    }
-
-    public function getIterator(): Traversable
-    {
-        return new ArrayIterator($this->items);
     }
 
     public function count(): int

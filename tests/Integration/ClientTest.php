@@ -32,7 +32,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $client = \PtrTn\Battlerite\Client::create(getenv('APIKEY'));
         $matches = $client->getMatches();
 
-        $this->assertEquals('QUICK2V2', $matches->items[0]->map->type);
+        $this->assertEquals('QUICK2V2', $matches[0]->map->type);
     }
 
     /**
@@ -66,7 +66,6 @@ class ClientTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @test
-     * @group runme
      */
     public function shouldRetrievePlayersData()
     {
@@ -78,8 +77,8 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         );
 
         $this->assertInstanceOf(Players::class, $players);
-        $this->assertEquals('934791968557563904', $players->items[0]->id);
-        $this->assertEquals('934809523846303744', $players->items[1]->id);
+        $this->assertEquals('934791968557563904', $players[0]->id);
+        $this->assertEquals('934809523846303744', $players[1]->id);
     }
 
     /**
