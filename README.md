@@ -10,6 +10,7 @@ PHP-based SDK for Battlerite API
 - Retrieve detailed data for a specific match
 - Retrieve data for players (by query)
 - Retrieve detailed data for a specific player
+- Retrieve api status
 
 ## Requirements
 - Php 7.1 or higher
@@ -39,13 +40,14 @@ echo $matches->items[0]->map->type;
 $client = \PtrTn\Battlerite\Client::create('your-api-key');
 $match = $client->getMatch('AB9C81FABFD748C8A7EC545AA6AF97CC');
 ```
-### Retrieving player data
+### Retrieving detailed player data
 ```php
 $client = \PtrTn\Battlerite\Client::create('your-api-key');
 $match = $client->getPlayer('934791968557563904');
 ```
 ### Custom querying
 A custom search query can be used to retrieve the exact data needed.
+#### Matches
 For matches the following query options are available:
 - Offset
 - Limit
@@ -58,13 +60,27 @@ For matches the following query options are available:
 - Descending sorting
 ```php
 $client = \PtrTn\Battlerite\Client::create('your-api-key');
-// Retrieve matches for a single player for the last 24 hours
+// Retrieve matches for a specific player for the last 24 hours
 $matches = $client->getMatches(
     MatchesQuery::create()
     ->forPlayerIds(['934791968557563904'])
     ->withStartDate(new DateTime('-1 day'))
 );
 ```
+#### Players
+For players the following query options are available:
+- Player name
+- Steam id
+- Player id
+```php
+$client = \PtrTn\Battlerite\Client::create('your-api-key');
+// Retrieve a list of players for a specific player name
+$players = $client->getPlayers(
+    PlayersQuery::create()
+    ->forPlayerNames(['PlakkeStrasser'])
+);
+```
+_Note: up to 6 players (1 per region) can be found for a specific player name._
 
 ## Caching
 When sending a lot of requests, the default rate limit of 10 requests per minute will pose an issue.

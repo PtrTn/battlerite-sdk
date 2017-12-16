@@ -5,6 +5,8 @@ namespace PtrTn\Battlerite\Query;
 use PtrTn\Battlerite\Exception\InvalidQueryException;
 use PtrTn\Battlerite\Query\Criterion\CriterionInterface;
 use PtrTn\Battlerite\Query\Criterion\PlayerIdsCriterion;
+use PtrTn\Battlerite\Query\Criterion\PlayerNamesCriterion;
+use PtrTn\Battlerite\Query\Criterion\SteamIdsCriterion;
 
 class PlayersQuery implements QueryInterface
 {
@@ -25,6 +27,18 @@ class PlayersQuery implements QueryInterface
     public function forPlayerIds(array $playerIds)
     {
         $this->addCriterion(new PlayerIdsCriterion($playerIds));
+        return $this;
+    }
+
+    public function forSteamIds(array $steamIds)
+    {
+        $this->addCriterion(new SteamIdsCriterion($steamIds));
+        return $this;
+    }
+
+    public function forPlayerNames(array $playerNames)
+    {
+        $this->addCriterion(new PlayerNamesCriterion($playerNames));
         return $this;
     }
 
