@@ -201,7 +201,13 @@ class Participant
         Assert::integer($participant['attributes']['stats']['score']);
         Assert::integer($participant['attributes']['stats']['side']);
         Assert::integer($participant['attributes']['stats']['timeAlive']);
-        Assert::string($participant['attributes']['stats']['userID']);
+
+        if (isset($participant['attributes']['stats']['userID'])) {
+            $userId = $participant['attributes']['stats']['userID'];
+        } else {
+            $userId = $participant['relationships']['player']['data']['id'];
+        }
+        Assert::string($userId);
 
         return new self(
             $participant['type'],
@@ -226,7 +232,7 @@ class Participant
             $participant['attributes']['stats']['score'],
             $participant['attributes']['stats']['side'],
             $participant['attributes']['stats']['timeAlive'],
-            $participant['attributes']['stats']['userID']
+            $userId
         );
     }
 }

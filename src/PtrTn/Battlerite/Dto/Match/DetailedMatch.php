@@ -181,4 +181,20 @@ class DetailedMatch
             new Players($players)
         );
     }
+
+    public function getParticipantByPlayerId(string $playerId): ?Participant
+    {
+        foreach ($this->participants as $participant) {
+            if ($participant->userID === $playerId) {
+                return $participant;
+            }
+        }
+        return null;
+    }
+
+    public function hasPlayerWon(string $playerId): bool
+    {
+        $participant = $this->getParticipantByPlayerId($playerId);
+        return $this->rosters->hasParticipantWon($participant);
+    }
 }
