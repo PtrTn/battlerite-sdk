@@ -38,11 +38,13 @@ class Players extends CollectionDto
         return new ArrayIterator($this->items);
     }
 
-    public function getPlayerByShard(string $shard) : ?Player
+    public function getPlayerByNameAndShard(string $playerName, string $shard) : ?Player
     {
         foreach ($this->items as $player) {
             if ($player->shardId === $shard) {
-                return $player;
+                if ($player->name === $playerName) {
+                    return $player;
+                }
             }
         }
         return null;
