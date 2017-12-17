@@ -63,4 +63,13 @@ class CollectionDtoTest extends \PHPUnit_Framework_TestCase
         unset($this->collectionDto[1]);
         $this->assertCount(1, $this->collectionDto);
     }
+
+    /**
+     * @test
+     */
+    public function shouldCheckIfValueIsset()
+    {
+        $this->assertTrue(isset($this->collectionDto[1]));
+        $this->assertFalse(isset($this->collectionDto[5]));
+    }
 }
