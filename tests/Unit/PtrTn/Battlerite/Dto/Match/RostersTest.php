@@ -2,10 +2,20 @@
 namespace Tests\Unit\PtrTn\Battlerite\Dto\Match;
 
 use PtrTn\Battlerite\Dto\Match\DetailedMatch;
-use PtrTn\Battlerite\Dto\Match\References;
 
 class RostersTest extends \PHPUnit_Framework_TestCase
 {
+    /**
+     * @test
+     */
+    public function shouldGetWinningRoster()
+    {
+        $fixture = json_decode(file_get_contents(__DIR__ . '/../../fixtures/match-response.json'), true);
+        $match = DetailedMatch::createFromArray($fixture);
+        $winningRoster = $match->rosters->getWinningRoster();
+        $this->assertEquals('08cd7762-73d2-44d5-af14-549fe14448f1', $winningRoster->id);
+    }
+
     /**
      * @test
      */
@@ -14,11 +24,10 @@ class RostersTest extends \PHPUnit_Framework_TestCase
         $fixture = json_decode(file_get_contents(__DIR__ . '/../../fixtures/match-response.json'), true);
         $match = DetailedMatch::createFromArray($fixture);
 
-        $winningParticipants = $match->rosters->getWinningParticipants();
+        $winningParticipant = $match->getParticipantByPlayerId('786059759278252032');
+        $losingParticipant = $match->getParticipantByPlayerId('783082365810540544');
 
-        $this->assertInstanceOf(References::class, $winningParticipants);
-
-        $this->assertEquals('fcb9ecaf-8976-4c0d-8a23-b80d2155c240', $winningParticipants[0]->id);
-        $this->assertEquals('d7483fb9-8a52-4767-9cf8-14d9b3732438', $winningParticipants[1]->id);
+        $this->assertFalse($match->rosters->hasParticipantWon($losingParticipant));
+        $this->assertTrue($match->rosters->hasParticipantWon($winningParticipant));
     }
 }

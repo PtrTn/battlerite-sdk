@@ -182,18 +182,19 @@ class DetailedMatch
         );
     }
 
-    public function hasPlayerWon(string $playerId): bool
+    public function getParticipantByPlayerId(string $playerId): ?Participant
     {
-        $winningParticipants = $this->rosters->getWinningParticipants();
         foreach ($this->participants as $participant) {
-            foreach ($winningParticipants as $winningParticipant) {
-                if ($participant->id === $winningParticipant->id) {
-                    if ($participant->userID === $playerId) {
-                        return true;
-                    }
-                }
+            if ($participant->userID === $playerId) {
+                return $participant;
             }
         }
-        return false;
+        return null;
+    }
+
+    public function hasPlayerWon(string $playerId): bool
+    {
+        $participant = $this->getParticipantByPlayerId($playerId);
+        return $this->rosters->hasParticipantWon($participant);
     }
 }
