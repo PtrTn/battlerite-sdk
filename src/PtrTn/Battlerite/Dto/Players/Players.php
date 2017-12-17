@@ -42,7 +42,7 @@ class Players extends CollectionDto
     {
         foreach ($this->items as $player) {
             if ($player->shardId === $shard) {
-                if ($player->name === $playerName) {
+                if (strtolower($player->name) === strtolower($playerName)) {
                     return $player;
                 }
             }
