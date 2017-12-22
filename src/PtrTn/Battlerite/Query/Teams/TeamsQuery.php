@@ -28,7 +28,7 @@ class TeamsQuery implements QueryInterface
         return $this;
     }
 
-    public function forSeason(string $season)
+    public function forSeason(int $season)
     {
         $this->addCriterion(new SeasonCriterion($season));
         return $this;

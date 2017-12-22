@@ -13,8 +13,10 @@ use PtrTn\Battlerite\Dto\Match\DetailedMatch;
 use PtrTn\Battlerite\Dto\Matches\Matches;
 use PtrTn\Battlerite\Dto\Player\DetailedPlayer;
 use PtrTn\Battlerite\Dto\Players\Players;
+use PtrTn\Battlerite\Dto\Teams\Teams;
 use PtrTn\Battlerite\Query\Matches\MatchesQuery;
 use PtrTn\Battlerite\Query\Players\PlayersQuery;
+use PtrTn\Battlerite\Query\Teams\TeamsQuery;
 
 class ClientTest extends \PHPUnit_Framework_TestCase
 {
@@ -288,6 +290,49 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf(DetailedPlayer::class, $player);
         $this->assertEquals($expectedPlayerName, $player->name);
     }
+
+    /**
+     * @test
+     */
+    public function shouldRetrieveTeamsForQuery()
+    {
+        $expectedMethod = 'GET';
+        $expectedScheme = 'https';
+        $expectedHost = 'api.dc01.gamelockerapp.com';
+        $expectedPath = '/shards/global/teams';
+        $expectedQuery = 'tag[playerIds]=322&tag[season]=5';
+
+        $historyContainer = [];
+        $history = Middleware::history($historyContainer);
+        $mockHandler = new MockHandler([
+            new Response(
+                200,
+                [],
+                file_get_contents(__DIR__ . '/fixtures/teams-response.json')
+            )
+        ]);
+        $handler = HandlerStack::create($mockHandler);
+        $handler->push($history);
+        $mockClient = new GuzzleClient(['handler' => $handler]);
+        $apiClient = new Client(new ApiClient('fake-api-key', $mockClient));
+
+        $query = TeamsQuery::create()
+            ->forPlayerIds(['322'])
+            ->forSeason(5);
+        $teams = $apiClient->getTeams($query);
+
+        $this->assertCount(1, $historyContainer);
+        /** @var Request $request */
+        $request = $historyContainer[0]['request'];
+        $this->assertEquals($expectedMethod, $request->getMethod());
+        $this->assertEquals($expectedScheme, $request->getUri()->getScheme());
+        $this->assertEquals($expectedHost, $request->getUri()->getHost());
+        $this->assertEquals($expectedPath, $request->getUri()->getPath());
+        $this->assertEquals($expectedQuery, urldecode($request->getUri()->getQuery()));
+        $this->assertInstanceOf(Teams::class, $teams);
+        $this->assertCount(4, $teams);
+    }
+    
     /**
      * @test
      */
