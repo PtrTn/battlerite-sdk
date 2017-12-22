@@ -5,8 +5,8 @@ use DateTime;
 use PtrTn\Battlerite\Dto\Match\DetailedMatch;
 use PtrTn\Battlerite\Dto\Player\DetailedPlayer;
 use PtrTn\Battlerite\Dto\Players\Players;
-use PtrTn\Battlerite\Query\MatchesQuery;
-use PtrTn\Battlerite\Query\PlayersQuery;
+use PtrTn\Battlerite\Query\Matches\MatchesQuery;
+use PtrTn\Battlerite\Query\Players\PlayersQuery;
 
 /**
  * @group integration

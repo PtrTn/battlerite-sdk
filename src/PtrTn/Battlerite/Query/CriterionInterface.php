@@ -1,5 +1,5 @@
 <?php
-namespace PtrTn\Battlerite\Query\Criterion;
+namespace PtrTn\Battlerite\Query;
 
 interface CriterionInterface
 {

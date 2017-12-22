@@ -8,8 +8,8 @@ use PtrTn\Battlerite\Dto\Matches\Matches;
 use PtrTn\Battlerite\Dto\Player\DetailedPlayer;
 use PtrTn\Battlerite\Dto\Players\Players;
 use PtrTn\Battlerite\Dto\Status\Status;
-use PtrTn\Battlerite\Query\MatchesQuery;
-use PtrTn\Battlerite\Query\PlayersQuery;
+use PtrTn\Battlerite\Query\Matches\MatchesQuery;
+use PtrTn\Battlerite\Query\Players\PlayersQuery;
 
 class Client
 {

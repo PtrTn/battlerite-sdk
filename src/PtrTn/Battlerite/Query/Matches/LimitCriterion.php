@@ -1,6 +1,8 @@
 <?php
 
-namespace PtrTn\Battlerite\Query\Criterion;
+namespace PtrTn\Battlerite\Query\Matches;
+
+use PtrTn\Battlerite\Query\CriterionInterface;
 
 class LimitCriterion implements CriterionInterface
 {

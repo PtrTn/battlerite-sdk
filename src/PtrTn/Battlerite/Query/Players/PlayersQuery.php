@@ -1,12 +1,10 @@
 <?php
 
-namespace PtrTn\Battlerite\Query;
+namespace PtrTn\Battlerite\Query\Players;
 
 use PtrTn\Battlerite\Exception\InvalidQueryException;
-use PtrTn\Battlerite\Query\Criterion\CriterionInterface;
-use PtrTn\Battlerite\Query\Criterion\PlayerIdsCriterion;
-use PtrTn\Battlerite\Query\Criterion\PlayerNamesCriterion;
-use PtrTn\Battlerite\Query\Criterion\SteamIdsCriterion;
+use PtrTn\Battlerite\Query\CriterionInterface;
+use PtrTn\Battlerite\Query\QueryInterface;
 
 class PlayersQuery implements QueryInterface
 {
