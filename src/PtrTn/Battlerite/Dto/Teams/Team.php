@@ -5,6 +5,9 @@ namespace PtrTn\Battlerite\Dto\Teams;
 use DateTime;
 use PtrTn\Battlerite\Assert\Assert;
 
+/**
+ * @SuppressWarnings(PHPMD.TooManyFields)
+ */
 class Team
 {
     /**
