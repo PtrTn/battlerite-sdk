@@ -193,6 +193,36 @@ class ClientWithCacheTest extends \PHPUnit_Framework_TestCase
         $this->assertCount(2, $historyContainer);
     }
 
+    /**
+     * @test
+     */
+    public function shouldNotCacheTeams()
+    {
+        $historyContainer = [];
+        $history = Middleware::history($historyContainer);
+        $mockHandler = new MockHandler([
+            new Response(
+                200,
+                [],
+                file_get_contents(__DIR__ . '/fixtures/teams-response.json')
+            ),
+            new Response(
+                200,
+                [],
+                file_get_contents(__DIR__ . '/fixtures/teams-response.json')
+            )
+        ]);
+        $handler = HandlerStack::create($mockHandler);
+        $handler->push($history);
+        $mockClient = new GuzzleClient(['handler' => $handler]);
+        $apiClient = $this->createClientForHttpClient($mockClient);
+
+        $apiClient->getTeams();
+        $apiClient->getTeams();
+
+        $this->assertCount(2, $historyContainer);
+    }
+
     private function createClientForHttpClient(ClientInterface $mockClient):ClientWithCache
     {
         $apiClient = new ClientWithCache(
