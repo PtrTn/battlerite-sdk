@@ -10,6 +10,7 @@ PHP-based SDK for Battlerite API
 - Retrieve detailed data for a specific match
 - Retrieve data for players (by query)
 - Retrieve detailed data for a specific player
+- Retrieve team data for specific players and seasons
 - Retrieve api status
 
 ## Requirements
@@ -34,6 +35,15 @@ $client = \PtrTn\Battlerite\Client::create('your-api-key');
 $matches = $client->getMatches();
 echo $matches[0]->map->type;
 // QUICK2V2
+```
+### Retrieving team data
+```php
+$client = \PtrTn\Battlerite\Client::create('your-api-key');
+$teams = $client->getTeams(
+    TeamsQuery::create()
+    ->forPlayerIds(['322'])
+    ->forSeason(5)
+);
 ```
 ### Retrieving detailed match data
 ```php
@@ -81,6 +91,18 @@ $players = $client->getPlayers(
 );
 ```
 _Note: up to 6 players (1 per region) can be found for a specific player name._
+#### Teams
+For teams the following query options are available:
+ - Season
+ - Player id
+ ```php
+ $client = \PtrTn\Battlerite\Client::create('your-api-key');
+ $teams = $client->getTeams(
+     TeamsQuery::create()
+     ->forPlayerIds(['322'])
+     ->forSeason(5)
+ );
+ ```
 
 ## Caching
 When sending a lot of requests, the default rate limit of 10 requests per minute will pose an issue.
