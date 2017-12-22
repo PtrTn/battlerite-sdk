@@ -3,7 +3,7 @@
 namespace PtrTn\Battlerite\Exception;
 
 use Exception;
-use PtrTn\Battlerite\Query\Criterion\CriterionInterface;
+use PtrTn\Battlerite\Query\CriterionInterface;
 
 class InvalidQueryException extends Exception
 {

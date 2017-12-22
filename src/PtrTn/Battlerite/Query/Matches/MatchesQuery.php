@@ -1,19 +1,11 @@
 <?php
 
-namespace PtrTn\Battlerite\Query;
+namespace PtrTn\Battlerite\Query\Matches;
 
 use DateTime;
 use PtrTn\Battlerite\Exception\InvalidQueryException;
-use PtrTn\Battlerite\Query\Criterion\CriterionInterface;
-use PtrTn\Battlerite\Query\Criterion\EndDateCriterion;
-use PtrTn\Battlerite\Query\Criterion\GameModesCriterion;
-use PtrTn\Battlerite\Query\Criterion\LimitCriterion;
-use PtrTn\Battlerite\Query\Criterion\OffsetCriterion;
-use PtrTn\Battlerite\Query\Criterion\PlayerIdsCriterion;
-use PtrTn\Battlerite\Query\Criterion\SortAscendingCriterion;
-use PtrTn\Battlerite\Query\Criterion\SortDescendingCriterion;
-use PtrTn\Battlerite\Query\Criterion\StartDateCriterion;
-use PtrTn\Battlerite\Query\Criterion\TeamNamesCriterion;
+use PtrTn\Battlerite\Query\CriterionInterface;
+use PtrTn\Battlerite\Query\QueryInterface;
 
 /**
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)

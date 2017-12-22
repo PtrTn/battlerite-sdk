@@ -1,7 +1,8 @@
 <?php
 
-namespace PtrTn\Battlerite\Query\Criterion;
+namespace PtrTn\Battlerite\Query\Players;
 
+use PtrTn\Battlerite\Query\CriterionInterface;
 use Webmozart\Assert\Assert;
 
 class SteamIdsCriterion implements CriterionInterface

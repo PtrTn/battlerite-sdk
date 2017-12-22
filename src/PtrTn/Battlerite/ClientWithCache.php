@@ -10,8 +10,10 @@ use PtrTn\Battlerite\Dto\Matches\Matches;
 use PtrTn\Battlerite\Dto\Player\DetailedPlayer;
 use PtrTn\Battlerite\Dto\Players\Players;
 use PtrTn\Battlerite\Dto\Status\Status;
-use PtrTn\Battlerite\Query\MatchesQuery;
-use PtrTn\Battlerite\Query\PlayersQuery;
+use PtrTn\Battlerite\Dto\Teams\Teams;
+use PtrTn\Battlerite\Query\Matches\MatchesQuery;
+use PtrTn\Battlerite\Query\Players\PlayersQuery;
+use PtrTn\Battlerite\Query\Teams\TeamsQuery;
 
 class ClientWithCache
 {
@@ -110,5 +112,10 @@ class ClientWithCache
     public function getPlayers(PlayersQuery $query = null): Players
     {
         return $this->client->getPlayers($query);
+    }
+
+    public function getTeams(TeamsQuery $query = null): Teams
+    {
+        return $this->client->getTeams($query);
     }
 }

@@ -1,7 +1,8 @@
 <?php
 
-namespace PtrTn\Battlerite\Query\Criterion;
+namespace PtrTn\Battlerite\Query\Teams;
 
+use PtrTn\Battlerite\Query\CriterionInterface;
 use Webmozart\Assert\Assert;
 
 class PlayerIdsCriterion implements CriterionInterface
@@ -19,7 +20,7 @@ class PlayerIdsCriterion implements CriterionInterface
 
     public function toArray(): array
     {
-        return ['filter[playerIds]' => implode(',', $this->playerIds)];
+        return ['tag[playerIds]' => implode(',', $this->playerIds)];
     }
 
     public function checkCollisionWithCriteria(array $critera): void

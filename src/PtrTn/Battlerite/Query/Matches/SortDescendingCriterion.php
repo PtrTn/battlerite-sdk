@@ -1,8 +1,10 @@
 <?php
 
-namespace PtrTn\Battlerite\Query\Criterion;
+namespace PtrTn\Battlerite\Query\Matches;
 
-class SortAscendingCriterion implements CriterionInterface
+use PtrTn\Battlerite\Query\CriterionInterface;
+
+class SortDescendingCriterion implements CriterionInterface
 {
     /**
      * @var string
@@ -16,7 +18,7 @@ class SortAscendingCriterion implements CriterionInterface
 
     public function toArray(): array
     {
-        return ['sort' => $this->sortField];
+        return ['sort' => '-' . $this->sortField];
     }
 
     public function checkCollisionWithCriteria(array $critera): void

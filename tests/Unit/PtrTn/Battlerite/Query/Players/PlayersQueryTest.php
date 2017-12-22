@@ -1,8 +1,8 @@
 <?php
-namespace Tests\Unit\PtrTn\Battlerite\Query;
+namespace Tests\Unit\PtrTn\Battlerite\Query\Players;
 
 use PtrTn\Battlerite\Exception\InvalidQueryException;
-use PtrTn\Battlerite\Query\PlayersQuery;
+use PtrTn\Battlerite\Query\Players\PlayersQuery;
 
 class PlayersQueryTest extends \PHPUnit_Framework_TestCase
 {
@@ -22,7 +22,7 @@ class PlayersQueryTest extends \PHPUnit_Framework_TestCase
     {
         $this->expectException(InvalidQueryException::class);
         $this->expectExceptionMessage(
-            'Unable to create query for more than 1 PtrTn\Battlerite\Query\Criterion\PlayerIdsCriterion'
+            'Unable to create query for more than 1 PtrTn\Battlerite\Query\Players\PlayerIdsCriterion'
         );
 
         PlayersQuery::create()

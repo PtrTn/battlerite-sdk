@@ -87,7 +87,7 @@ class ApiClient
         }
 
         try {
-            $responseData = \GuzzleHttp\json_decode($responseBody, true);
+            $responseData = \GuzzleHttp\json_decode($responseBody, true, 512, JSON_BIGINT_AS_STRING);
         } catch (InvalidArgumentException $e) {
             throw FailedRequestException::invalidResponseJson($e);
         }

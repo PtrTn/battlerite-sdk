@@ -1,9 +1,10 @@
 <?php
 
-namespace PtrTn\Battlerite\Query\Criterion;
+namespace PtrTn\Battlerite\Query\Matches;
 
 use DateTime;
 use PtrTn\Battlerite\Exception\InvalidQueryException;
+use PtrTn\Battlerite\Query\CriterionInterface;
 
 class EndDateCriterion implements CriterionInterface
 {

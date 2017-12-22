@@ -5,8 +5,9 @@ use DateTime;
 use PtrTn\Battlerite\Dto\Match\DetailedMatch;
 use PtrTn\Battlerite\Dto\Player\DetailedPlayer;
 use PtrTn\Battlerite\Dto\Players\Players;
-use PtrTn\Battlerite\Query\MatchesQuery;
-use PtrTn\Battlerite\Query\PlayersQuery;
+use PtrTn\Battlerite\Query\Matches\MatchesQuery;
+use PtrTn\Battlerite\Query\Players\PlayersQuery;
+use PtrTn\Battlerite\Query\Teams\TeamsQuery;
 
 /**
  * @group integration
@@ -79,6 +80,24 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf(Players::class, $players);
         $this->assertEquals('934791968557563904', $players[0]->id);
         $this->assertEquals('934809523846303744', $players[1]->id);
+    }
+
+    /**
+     * @test
+     */
+    public function shouldRetrieveTeamsData()
+    {
+        $playerIds = ['322'];
+        $season = 5;
+        $client = \PtrTn\Battlerite\Client::create(getenv('APIKEY'));
+        $teams = $client->getTeams(
+            TeamsQuery::create()
+            ->forPlayerIds($playerIds)
+            ->forSeason($season)
+        );
+
+        $this->assertCount(4, $teams);
+        $this->assertEquals(20, $teams[0]->wins);
     }
 
     /**
