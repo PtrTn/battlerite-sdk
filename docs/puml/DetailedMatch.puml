@@ -1,0 +1,126 @@
+![flow](../png/DetailedMatch.png)
+<!---
+@startuml
+hide circle
+skinparam Class {
+	BackgroundColor #F2F2F2
+	ArrowColor #8CAAA9
+	ArrowFontColor #8CAAA9
+	ArrowFontSize 20
+	BorderColor #8CAAA9
+	HeaderBackgroundColor #8CAAA9
+}
+
+Assets -- DetailedMatch
+Participants -- DetailedMatch
+Players -- DetailedMatch
+Rosters -- DetailedMatch
+Map -- DetailedMatch
+Spectators -- DetailedMatch
+Rounds -- DetailedMatch
+
+Asset -- Assets
+Player -- Players
+Participant -- Participants
+Roster -- Rosters
+Spectator -- Spectators
+Round -- Rounds
+
+Class DetailedMatch {
+ +type : string
+ +id : string
+ +createdAt : DateTime
+ +duration : int
+ +gameMode : string
+ +patchVersion : string
+ +shardId : string
+ +titleId : string
+ +map : Map
+ +assets : Assets
+ +spectators : Spectators
+ +rosters : Rosters
+ +rounds : Rounds
+ +participants : Participants
+ +player : Players
+ +getParticipantByPlayerId()
+ +hasPlayerWon()
+}
+class Assets {
+ +items
+}
+class Asset {
+ +type : string
+ +id : string
+}
+class Participants {
+ +items
+}
+class Participant {
+ +type : string
+ +id : string
+ +actor : string
+ +shardId : string
+ +abilityUses : int
+ +attachment : int
+ +damageDone : int
+ +damageReceived : int
+ +deaths : int
+ +disablesDone : int
+ +disablesReceived : int
+ +emote : int
+ +energyGained : int
+ +energyUsed : int
+ +healingDone : int
+ +healingReceived : int
+ +kills : int
+ +mount : int
+ +outfit : int
+ +score : int
+ +side : int
+ +timeAlive : int
+ +userID : string
+}
+class Players {
+ +items
+}
+class Player {
+ type : string
+ id : string
+ name : string
+ patchVersion : string
+ shardId : string
+ titleId : string
+}
+class Rosters {
+ +items
+}
+class Roster {
+ type : string
+ id : string
+ shardId : string
+ score : int
+ won : bool
+ participants : References
+ +hasParticipantWon()
+}
+class Map {
+ mapId : string
+ id : string
+}
+class Spectators {
+ +items
+}
+class Spectator {
+}
+class Rounds {
+ +items
+}
+class Round {
+ type : string
+ id : string
+ duration : int
+ ordinal : int
+ winningTeam : int
+}
+@enduml
+--->
