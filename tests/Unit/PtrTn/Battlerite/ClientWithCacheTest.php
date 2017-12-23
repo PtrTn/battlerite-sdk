@@ -3,20 +3,37 @@ namespace Tests\Unit\PtrTn\Battlerite;
 
 use Doctrine\Common\Cache\ArrayCache;
 use Doctrine\Common\Cache\FilesystemCache;
-use GuzzleHttp\Client as GuzzleClient;
-use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Handler\MockHandler;
-use GuzzleHttp\HandlerStack;
-use GuzzleHttp\Middleware;
-use GuzzleHttp\Psr7\Response;
-use PtrTn\Battlerite\ApiClient;
+use Mockery;
+use Mockery\Mock;
 use PtrTn\Battlerite\Client;
 use PtrTn\Battlerite\ClientWithCache;
 use PtrTn\Battlerite\Dto\Match\DetailedMatch;
+use PtrTn\Battlerite\Dto\Matches\Matches;
 use PtrTn\Battlerite\Dto\Player\DetailedPlayer;
+use PtrTn\Battlerite\Dto\Players\Players;
+use PtrTn\Battlerite\Dto\Status\Status;
+use PtrTn\Battlerite\Dto\Teams\Teams;
 
 class ClientWithCacheTest extends \PHPUnit_Framework_TestCase
 {
+    /**
+     * @var Client|Mock
+     */
+    private $client;
+
+    /**
+     * @var ClientWithCache
+     */
+    private $clientWithCache;
+
+    public function setUp()
+    {
+        $this->client = Mockery::mock(Client::class);
+
+        $cache = new ArrayCache();
+        $this->clientWithCache = new ClientWithCache($this->client, $cache, 300);
+    }
+
     /**
      * @test
      */
@@ -48,59 +65,35 @@ class ClientWithCacheTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function shouldRetrieveMatch()
+    public function shouldRetrieveMatchFromCacheIfAvailable()
     {
-        $expectedMatchId = 'AB9C81FABFD748C8A7EC545AA6AF97CC';
+        $this->client
+            ->shouldReceive('getMatch')
+            ->andReturn(Mockery::mock(DetailedMatch::class));
 
-        $historyContainer = [];
-        $history = Middleware::history($historyContainer);
-        $mockHandler = new MockHandler([
-            new Response(
-                200,
-                [],
-                file_get_contents(__DIR__ . '/fixtures/match-response.json')
-            )
-        ]);
-        $handler = HandlerStack::create($mockHandler);
-        $handler->push($history);
-        $mockClient = new GuzzleClient(['handler' => $handler]);
-        $apiClient = $this->createClientForHttpClient($mockClient);
-        $match = $apiClient->getMatch('some-match-id');
-        $matchFromCache = $apiClient->getMatch('some-match-id');
+        $this->clientWithCache->getMatch('12345');
+        $this->clientWithCache->getMatch('12345');
 
-        $this->assertCount(1, $historyContainer);
-        $this->assertInstanceOf(DetailedMatch::class, $match);
-        $this->assertEquals($expectedMatchId, $match->id);
-        $this->assertEquals($expectedMatchId, $matchFromCache->id);
+        $this->client->shouldHaveReceived('getMatch')->once();
+
+        Mockery::close();
     }
 
     /**
      * @test
      */
-    public function shouldRetrievePlayer()
+    public function shouldRetrievePlayerFromCacheIfAvailable()
     {
-        $expectedPlayerName = 'PlakkeStrasser';
+        $this->client
+            ->shouldReceive('getPlayer')
+            ->andReturn(Mockery::mock(DetailedPlayer::class));
 
-        $historyContainer = [];
-        $history = Middleware::history($historyContainer);
-        $mockHandler = new MockHandler([
-            new Response(
-                200,
-                [],
-                file_get_contents(__DIR__ . '/fixtures/player-response.json')
-            )
-        ]);
-        $handler = HandlerStack::create($mockHandler);
-        $handler->push($history);
-        $mockClient = new GuzzleClient(['handler' => $handler]);
-        $apiClient = $this->createClientForHttpClient($mockClient);
-        $player = $apiClient->getPlayer('same-player-id');
-        $playerFromCache = $apiClient->getPlayer('same-player-id');
+        $this->clientWithCache->getPlayer('12345');
+        $this->clientWithCache->getPlayer('12345');
 
-        $this->assertCount(1, $historyContainer);
-        $this->assertInstanceOf(DetailedPlayer::class, $player);
-        $this->assertEquals($expectedPlayerName, $player->name);
-        $this->assertEquals($expectedPlayerName, $playerFromCache->name);
+        $this->client->shouldHaveReceived('getPlayer')->once();
+
+        Mockery::close();
     }
 
     /**
@@ -108,29 +101,16 @@ class ClientWithCacheTest extends \PHPUnit_Framework_TestCase
      */
     public function shouldNotCacheStatus()
     {
-        $historyContainer = [];
-        $history = Middleware::history($historyContainer);
-        $mockHandler = new MockHandler([
-            new Response(
-                200,
-                [],
-                file_get_contents(__DIR__ . '/fixtures/status-response.json')
-            ),
-            new Response(
-                200,
-                [],
-                file_get_contents(__DIR__ . '/fixtures/status-response.json')
-            )
-        ]);
-        $handler = HandlerStack::create($mockHandler);
-        $handler->push($history);
-        $mockClient = new GuzzleClient(['handler' => $handler]);
-        $apiClient = $this->createClientForHttpClient($mockClient);
+        $this->client
+            ->shouldReceive('getStatus')
+            ->andReturn(Mockery::mock(Status::class));
 
-        $apiClient->getStatus();
-        $apiClient->getStatus();
+        $this->clientWithCache->getStatus();
+        $this->clientWithCache->getStatus();
 
-        $this->assertCount(2, $historyContainer);
+        $this->client->shouldHaveReceived('getStatus')->twice();
+
+        Mockery::close();
     }
 
     /**
@@ -138,29 +118,16 @@ class ClientWithCacheTest extends \PHPUnit_Framework_TestCase
      */
     public function shouldNotCachePlayers()
     {
-        $historyContainer = [];
-        $history = Middleware::history($historyContainer);
-        $mockHandler = new MockHandler([
-            new Response(
-                200,
-                [],
-                file_get_contents(__DIR__ . '/fixtures/players-response.json')
-            ),
-            new Response(
-                200,
-                [],
-                file_get_contents(__DIR__ . '/fixtures/players-response.json')
-            )
-        ]);
-        $handler = HandlerStack::create($mockHandler);
-        $handler->push($history);
-        $mockClient = new GuzzleClient(['handler' => $handler]);
-        $apiClient = $this->createClientForHttpClient($mockClient);
+        $this->client
+            ->shouldReceive('getPlayers')
+            ->andReturn(Mockery::mock(Players::class));
 
-        $apiClient->getPlayers();
-        $apiClient->getPlayers();
+        $this->clientWithCache->getPlayers();
+        $this->clientWithCache->getPlayers();
 
-        $this->assertCount(2, $historyContainer);
+        $this->client->shouldHaveReceived('getPlayers')->twice();
+
+        Mockery::close();
     }
 
     /**
@@ -168,29 +135,16 @@ class ClientWithCacheTest extends \PHPUnit_Framework_TestCase
      */
     public function shouldNotCacheMatches()
     {
-        $historyContainer = [];
-        $history = Middleware::history($historyContainer);
-        $mockHandler = new MockHandler([
-            new Response(
-                200,
-                [],
-                file_get_contents(__DIR__ . '/fixtures/matches-response.json')
-            ),
-            new Response(
-                200,
-                [],
-                file_get_contents(__DIR__ . '/fixtures/matches-response.json')
-            )
-        ]);
-        $handler = HandlerStack::create($mockHandler);
-        $handler->push($history);
-        $mockClient = new GuzzleClient(['handler' => $handler]);
-        $apiClient = $this->createClientForHttpClient($mockClient);
+        $this->client
+            ->shouldReceive('getMatches')
+            ->andReturn(Mockery::mock(Matches::class));
 
-        $apiClient->getMatches();
-        $apiClient->getMatches();
+        $this->clientWithCache->getMatches();
+        $this->clientWithCache->getMatches();
 
-        $this->assertCount(2, $historyContainer);
+        $this->client->shouldHaveReceived('getMatches')->twice();
+
+        Mockery::close();
     }
 
     /**
@@ -198,40 +152,15 @@ class ClientWithCacheTest extends \PHPUnit_Framework_TestCase
      */
     public function shouldNotCacheTeams()
     {
-        $historyContainer = [];
-        $history = Middleware::history($historyContainer);
-        $mockHandler = new MockHandler([
-            new Response(
-                200,
-                [],
-                file_get_contents(__DIR__ . '/fixtures/teams-response.json')
-            ),
-            new Response(
-                200,
-                [],
-                file_get_contents(__DIR__ . '/fixtures/teams-response.json')
-            )
-        ]);
-        $handler = HandlerStack::create($mockHandler);
-        $handler->push($history);
-        $mockClient = new GuzzleClient(['handler' => $handler]);
-        $apiClient = $this->createClientForHttpClient($mockClient);
+        $this->client
+            ->shouldReceive('getTeams')
+            ->andReturn(Mockery::mock(Teams::class));
 
-        $apiClient->getTeams();
-        $apiClient->getTeams();
+        $this->clientWithCache->getTeams();
+        $this->clientWithCache->getTeams();
 
-        $this->assertCount(2, $historyContainer);
-    }
+        $this->client->shouldHaveReceived('getTeams')->twice();
 
-    private function createClientForHttpClient(ClientInterface $mockClient):ClientWithCache
-    {
-        $apiClient = new ClientWithCache(
-            new Client(
-                new ApiClient('fake-api-key', $mockClient)
-            ),
-            new ArrayCache(),
-            300
-        );
-        return $apiClient;
+        Mockery::close();
     }
 }
