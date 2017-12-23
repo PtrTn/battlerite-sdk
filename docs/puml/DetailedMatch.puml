@@ -13,10 +13,10 @@ skinparam Class {
 skinparam backgroundcolor transparent
 
 Assets -- DetailedMatch
+Map -- DetailedMatch
 Participants -- DetailedMatch
 Players -- DetailedMatch
 Rosters -- DetailedMatch
-Map -- DetailedMatch
 Spectators -- DetailedMatch
 Rounds -- DetailedMatch
 
