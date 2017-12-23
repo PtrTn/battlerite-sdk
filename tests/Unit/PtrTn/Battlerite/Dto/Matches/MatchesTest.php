@@ -4,6 +4,9 @@ namespace Tests\Unit\PtrTn\Battlerite\Dto\Matches;
 use PtrTn\Battlerite\Dto\Matches\Match;
 use PtrTn\Battlerite\Dto\Matches\Matches;
 
+/**
+ * @requires PHP 7.2
+ */
 class MatchesTest extends \PHPUnit_Framework_TestCase
 {
     /**
@@ -11,7 +14,10 @@ class MatchesTest extends \PHPUnit_Framework_TestCase
      */
     public function shouldCreateMatchesFromArray()
     {
-        $fixture = file_get_contents(__DIR__ . '/../../fixtures/matches-response.json');
+        $fixture = json_decode(
+            file_get_contents(__DIR__ . '/../../fixtures/match/match-response-AB9C81FABFD748C8A7EC545AA6AF97CC.json'),
+            true
+        );
         $matchesArray = \GuzzleHttp\json_decode($fixture, true);
 
         $matches = Matches::createFromArray($matchesArray['data']);
@@ -28,7 +34,10 @@ class MatchesTest extends \PHPUnit_Framework_TestCase
      */
     public function shouldNotErrorForNoMatches()
     {
-        $fixture = file_get_contents(__DIR__ . '/../../fixtures/matches-response-empty.json');
+        $fixture = json_decode(
+            file_get_contents(__DIR__ . '/../../fixtures/match/match-response-AB9C81FABFD748C8A7EC545AA6AF97CC.json'),
+            true
+        );
         $matchesArray = \GuzzleHttp\json_decode($fixture, true);
 
         $matches = Matches::createFromArray($matchesArray['data']);

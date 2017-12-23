@@ -48,7 +48,10 @@ class RostersTest extends \PHPUnit_Framework_TestCase
      */
     public function shouldGetWinningRoster()
     {
-        $fixture = json_decode(file_get_contents(__DIR__ . '/../../fixtures/match-response.json'), true);
+        $fixture = json_decode(
+            file_get_contents(__DIR__ . '/../../fixtures/match/match-response-AB9C81FABFD748C8A7EC545AA6AF97CC.json'),
+            true
+        );
         $match = DetailedMatch::createFromArray($fixture);
         $winningRoster = $match->rosters->getWinningRoster();
         $this->assertEquals('08cd7762-73d2-44d5-af14-549fe14448f1', $winningRoster->id);
@@ -59,7 +62,10 @@ class RostersTest extends \PHPUnit_Framework_TestCase
      */
     public function shouldGetWinningParticipants()
     {
-        $fixture = json_decode(file_get_contents(__DIR__ . '/../../fixtures/match-response.json'), true);
+        $fixture = json_decode(
+            file_get_contents(__DIR__ . '/../../fixtures/match/match-response-AB9C81FABFD748C8A7EC545AA6AF97CC.json'),
+            true
+        );
         $match = DetailedMatch::createFromArray($fixture);
 
         $winningParticipant = $match->getParticipantByPlayerId('786059759278252032');
