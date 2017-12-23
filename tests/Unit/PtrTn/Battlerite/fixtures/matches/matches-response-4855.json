@@ -1,0 +1,1780 @@
+{
+  "data": [
+    {
+      "type": "match",
+      "id": "35CB35CF4399427EA7B934C0990ED0CC",
+      "attributes": {
+        "createdAt": "2017-12-16T23:25:04Z",
+        "duration": 508,
+        "gameMode": "1733162751",
+        "patchVersion": "39931",
+        "shardId": "global",
+        "stats": {
+          "mapID": "1C67FA3426A324D39BED64501C46C1E6",
+          "type": "QUICK2V2"
+        },
+        "titleId": "stunlock-studios-battlerite"
+      },
+      "relationships": {
+        "assets": {
+          "data": [
+            {
+              "type": "asset",
+              "id": "5420a920-e2ba-11e7-b839-0a586460dca1"
+            }
+          ]
+        },
+        "rosters": {
+          "data": [
+            {
+              "type": "roster",
+              "id": "745ecbc8-16cc-4aaf-81bd-632f5b1fbe60"
+            },
+            {
+              "type": "roster",
+              "id": "7c2d2d39-c25e-4b65-9be0-556b2f125cb5"
+            }
+          ]
+        },
+        "rounds": {
+          "data": [
+            {
+              "type": "round",
+              "id": "65003a67-bfd0-459f-8b5e-0d4eabcce547"
+            },
+            {
+              "type": "round",
+              "id": "6566d256-5a3c-40da-a6b8-a74459e58844"
+            },
+            {
+              "type": "round",
+              "id": "21871cbd-0ff6-4549-83f5-3c92352e6892"
+            }
+          ]
+        },
+        "spectators": {
+          "data": []
+        }
+      },
+      "links": {
+        "schema": "",
+        "self": "https://api.dc01.gamelockerapp.com/shards/global/matches/35CB35CF4399427EA7B934C0990ED0CC"
+      }
+    },
+    {
+      "type": "match",
+      "id": "E6C57AEF7D7E4ED7ACFEF363911D1486",
+      "attributes": {
+        "createdAt": "2017-12-20T02:44:49Z",
+        "duration": 450,
+        "gameMode": "1733162751",
+        "patchVersion": "39931",
+        "shardId": "global",
+        "stats": {
+          "mapID": "AB201E3B9454141FE9C9352CC296AD61",
+          "type": "QUICK2V2"
+        },
+        "titleId": "stunlock-studios-battlerite"
+      },
+      "relationships": {
+        "assets": {
+          "data": [
+            {
+              "type": "asset",
+              "id": "9e04de71-e531-11e7-a8ef-0a586460f089"
+            }
+          ]
+        },
+        "rosters": {
+          "data": [
+            {
+              "type": "roster",
+              "id": "3ca05fdb-e5c3-4a49-9fbf-8d9be24dafae"
+            },
+            {
+              "type": "roster",
+              "id": "d5fdfb3d-c837-435f-b299-12173fb42c5e"
+            }
+          ]
+        },
+        "rounds": {
+          "data": [
+            {
+              "type": "round",
+              "id": "730df477-fbdd-414d-a4cf-76a9ed2e4179"
+            },
+            {
+              "type": "round",
+              "id": "59d84344-6457-426d-92b1-8dd3bba20441"
+            },
+            {
+              "type": "round",
+              "id": "c793c861-34cd-4c7b-86d8-b350943216d1"
+            }
+          ]
+        },
+        "spectators": {
+          "data": []
+        }
+      },
+      "links": {
+        "schema": "",
+        "self": "https://api.dc01.gamelockerapp.com/shards/global/matches/E6C57AEF7D7E4ED7ACFEF363911D1486"
+      }
+    },
+    {
+      "type": "match",
+      "id": "E993CC3C4A8D4B57A095981410629B0A",
+      "attributes": {
+        "createdAt": "2017-12-20T02:56:11Z",
+        "duration": 299,
+        "gameMode": "1733162751",
+        "patchVersion": "39931",
+        "shardId": "global",
+        "stats": {
+          "mapID": "417DE573937D74E39BF40EB6CF82670B",
+          "type": "QUICK2V2"
+        },
+        "titleId": "stunlock-studios-battlerite"
+      },
+      "relationships": {
+        "assets": {
+          "data": [
+            {
+              "type": "asset",
+              "id": "0be0545e-e533-11e7-b839-0a586460dca1"
+            }
+          ]
+        },
+        "rosters": {
+          "data": [
+            {
+              "type": "roster",
+              "id": "54b5489d-119c-4c19-956d-fcbd53a6f62e"
+            },
+            {
+              "type": "roster",
+              "id": "4c1adf56-6724-4294-87dc-20476a501b25"
+            }
+          ]
+        },
+        "rounds": {
+          "data": [
+            {
+              "type": "round",
+              "id": "6b22dc2f-fa96-4afc-b9ce-bfb0d4a35c5b"
+            },
+            {
+              "type": "round",
+              "id": "5ea8146e-1fc8-4b31-8f07-8797f5035c12"
+            },
+            {
+              "type": "round",
+              "id": "1b6bfe53-4619-4fdc-b468-9f4afb6b7a24"
+            }
+          ]
+        },
+        "spectators": {
+          "data": []
+        }
+      },
+      "links": {
+        "schema": "",
+        "self": "https://api.dc01.gamelockerapp.com/shards/global/matches/E993CC3C4A8D4B57A095981410629B0A"
+      }
+    },
+    {
+      "type": "match",
+      "id": "0647AB23AFBC4D178A4E5E08760EE9E8",
+      "attributes": {
+        "createdAt": "2017-12-20T03:04:42Z",
+        "duration": 331,
+        "gameMode": "1733162751",
+        "patchVersion": "39931",
+        "shardId": "global",
+        "stats": {
+          "mapID": "D57BBC373C35B426E93CB844B3C67C12",
+          "type": "QUICK2V2"
+        },
+        "titleId": "stunlock-studios-battlerite"
+      },
+      "relationships": {
+        "assets": {
+          "data": [
+            {
+              "type": "asset",
+              "id": "22a28d73-e534-11e7-b839-0a586460dca1"
+            }
+          ]
+        },
+        "rosters": {
+          "data": [
+            {
+              "type": "roster",
+              "id": "db0bb8c9-3c3f-400c-942c-486fb11528f7"
+            },
+            {
+              "type": "roster",
+              "id": "dfe6245d-1554-4d04-97bd-068e5a8cb40e"
+            }
+          ]
+        },
+        "rounds": {
+          "data": [
+            {
+              "type": "round",
+              "id": "42cbaeba-2e6a-409e-8b55-8299b2455f52"
+            },
+            {
+              "type": "round",
+              "id": "1cd513a3-125b-4097-9d32-ca0bad4ada5a"
+            },
+            {
+              "type": "round",
+              "id": "22a287b5-3223-4eaf-aa61-894e7e7b9748"
+            }
+          ]
+        },
+        "spectators": {
+          "data": []
+        }
+      },
+      "links": {
+        "schema": "",
+        "self": "https://api.dc01.gamelockerapp.com/shards/global/matches/0647AB23AFBC4D178A4E5E08760EE9E8"
+      }
+    },
+    {
+      "type": "match",
+      "id": "64CD6A77E528454A8B0358CE3EA4BF17",
+      "attributes": {
+        "createdAt": "2017-12-21T06:09:04Z",
+        "duration": 755,
+        "gameMode": "1733162751",
+        "patchVersion": "39931",
+        "shardId": "global",
+        "stats": {
+          "mapID": "80D7970B6650D41108D71083ECF0E49E",
+          "type": "QUICK2V2"
+        },
+        "titleId": "stunlock-studios-battlerite"
+      },
+      "relationships": {
+        "assets": {
+          "data": [
+            {
+              "type": "asset",
+              "id": "137a556d-e618-11e7-9182-0a586460f08c"
+            }
+          ]
+        },
+        "rosters": {
+          "data": [
+            {
+              "type": "roster",
+              "id": "d397875c-4853-4902-8dcb-d3c7ce3bc1b0"
+            },
+            {
+              "type": "roster",
+              "id": "77dd5257-ae68-496c-a101-ba04c4aca6fb"
+            }
+          ]
+        },
+        "rounds": {
+          "data": [
+            {
+              "type": "round",
+              "id": "66e3d8fe-ded0-42c4-94ec-6cf0695bed0c"
+            },
+            {
+              "type": "round",
+              "id": "8d98e28f-2ac9-4c2c-a481-963da94f2228"
+            },
+            {
+              "type": "round",
+              "id": "42128164-24f7-42d5-bf8c-f5e8f9a029dc"
+            },
+            {
+              "type": "round",
+              "id": "acc985d4-9c8f-4818-b60e-68f9f801c21d"
+            },
+            {
+              "type": "round",
+              "id": "bb74e50e-8c4e-47d5-bd6b-540b75348f24"
+            }
+          ]
+        },
+        "spectators": {
+          "data": []
+        }
+      },
+      "links": {
+        "schema": "",
+        "self": "https://api.dc01.gamelockerapp.com/shards/global/matches/64CD6A77E528454A8B0358CE3EA4BF17"
+      }
+    }
+  ],
+  "included": [
+    {
+      "type": "roster",
+      "id": "4c1adf56-6724-4294-87dc-20476a501b25",
+      "attributes": {
+        "shardId": "global",
+        "stats": {
+          "score": 3
+        },
+        "won": "true"
+      },
+      "relationships": {
+        "participants": {
+          "data": [
+            {
+              "type": "participant",
+              "id": "5312f447-c8a7-4a28-aef5-16825113bb3c"
+            },
+            {
+              "type": "participant",
+              "id": "ae6e5b09-325a-4d07-928d-75333380767f"
+            }
+          ]
+        },
+        "team": {
+          "data": null
+        }
+      }
+    },
+    {
+      "type": "roster",
+      "id": "7c2d2d39-c25e-4b65-9be0-556b2f125cb5",
+      "attributes": {
+        "shardId": "global",
+        "stats": {
+          "score": 3
+        },
+        "won": "true"
+      },
+      "relationships": {
+        "participants": {
+          "data": [
+            {
+              "type": "participant",
+              "id": "6761f8c6-b151-47d1-b2ec-f94d1366472e"
+            },
+            {
+              "type": "participant",
+              "id": "80d9efc8-1bcf-4e8c-b4c8-3608e04d7614"
+            }
+          ]
+        },
+        "team": {
+          "data": null
+        }
+      }
+    },
+    {
+      "type": "player",
+      "id": "779479758588243968",
+      "attributes": {
+        "name": "",
+        "patchVersion": "",
+        "shardId": "",
+        "stats": null,
+        "titleId": ""
+      },
+      "relationships": {
+        "assets": {
+          "data": []
+        }
+      },
+      "links": {
+        "schema": "",
+        "self": "https://api.dc01.gamelockerapp.com/shards//players/779479758588243968"
+      }
+    },
+    {
+      "type": "round",
+      "id": "c793c861-34cd-4c7b-86d8-b350943216d1",
+      "attributes": {
+        "duration": 85,
+        "ordinal": 2,
+        "stats": {
+          "winningTeam": 1
+        }
+      }
+    },
+    {
+      "type": "player",
+      "id": "778306229628964864",
+      "attributes": {
+        "name": "",
+        "patchVersion": "",
+        "shardId": "",
+        "stats": null,
+        "titleId": ""
+      },
+      "relationships": {
+        "assets": {
+          "data": []
+        }
+      },
+      "links": {
+        "schema": "",
+        "self": "https://api.dc01.gamelockerapp.com/shards//players/778306229628964864"
+      }
+    },
+    {
+      "type": "participant",
+      "id": "ae6e5b09-325a-4d07-928d-75333380767f",
+      "attributes": {
+        "actor": "870711570",
+        "shardId": "global",
+        "stats": {
+          "abilityUses": 148,
+          "attachment": 1760313033,
+          "damageDone": 1027,
+          "damageReceived": 247,
+          "deaths": 0,
+          "disablesDone": 141,
+          "disablesReceived": 8,
+          "emote": 507740994,
+          "energyGained": 548,
+          "energyUsed": 375,
+          "healingDone": 0,
+          "healingReceived": 81,
+          "kills": 3,
+          "mount": 1302058678,
+          "outfit": 1963815198,
+          "score": 1168,
+          "side": 2,
+          "timeAlive": 146
+        }
+      },
+      "relationships": {
+        "player": {
+          "data": {
+            "type": "player",
+            "id": "4855"
+          }
+        }
+      }
+    },
+    {
+      "type": "participant",
+      "id": "b375b559-1ac1-482f-b229-ae05538c6905",
+      "attributes": {
+        "actor": "1749055646",
+        "shardId": "global",
+        "stats": {
+          "abilityUses": 112,
+          "attachment": 1961152028,
+          "damageDone": 649,
+          "damageReceived": 1332,
+          "deaths": 3,
+          "disablesDone": 121,
+          "disablesReceived": 184,
+          "emote": 546284346,
+          "energyGained": 393,
+          "energyUsed": 125,
+          "healingDone": 181,
+          "healingReceived": 565,
+          "kills": 0,
+          "mount": 658437410,
+          "outfit": 1745496029,
+          "score": 951,
+          "side": 2,
+          "timeAlive": 176
+        }
+      },
+      "relationships": {
+        "player": {
+          "data": {
+            "type": "player",
+            "id": "779484442292019200"
+          }
+        }
+      }
+    },
+    {
+      "type": "player",
+      "id": "791040928038137856",
+      "attributes": {
+        "name": "",
+        "patchVersion": "",
+        "shardId": "",
+        "stats": null,
+        "titleId": ""
+      },
+      "relationships": {
+        "assets": {
+          "data": []
+        }
+      },
+      "links": {
+        "schema": "",
+        "self": "https://api.dc01.gamelockerapp.com/shards//players/791040928038137856"
+      }
+    },
+    {
+      "type": "participant",
+      "id": "80d9efc8-1bcf-4e8c-b4c8-3608e04d7614",
+      "attributes": {
+        "actor": "44962063",
+        "shardId": "global",
+        "stats": {
+          "abilityUses": 330,
+          "attachment": 1449703113,
+          "damageDone": 1656,
+          "damageReceived": 1080,
+          "deaths": 0,
+          "disablesDone": 266,
+          "disablesReceived": 170,
+          "emote": 768029899,
+          "energyGained": 1207,
+          "energyUsed": 1025,
+          "healingDone": 1197,
+          "healingReceived": 720,
+          "kills": 4,
+          "mount": 1302058678,
+          "outfit": 971034357,
+          "score": 3119,
+          "side": 2,
+          "timeAlive": 357
+        }
+      },
+      "relationships": {
+        "player": {
+          "data": {
+            "type": "player",
+            "id": "1761"
+          }
+        }
+      }
+    },
+    {
+      "type": "roster",
+      "id": "54b5489d-119c-4c19-956d-fcbd53a6f62e",
+      "attributes": {
+        "shardId": "global",
+        "stats": {
+          "score": 0
+        },
+        "won": "false"
+      },
+      "relationships": {
+        "participants": {
+          "data": [
+            {
+              "type": "participant",
+              "id": "ea978d99-a9ff-4f52-a06f-877601a02ef8"
+            },
+            {
+              "type": "participant",
+              "id": "2582591d-ef63-46d5-8062-56e3fcaf666a"
+            }
+          ]
+        },
+        "team": {
+          "data": null
+        }
+      }
+    },
+    {
+      "type": "participant",
+      "id": "2cf71bc4-0d4e-43ed-86c6-54ce82772a99",
+      "attributes": {
+        "actor": "1208445212",
+        "shardId": "global",
+        "stats": {
+          "abilityUses": 307,
+          "attachment": 486225385,
+          "damageDone": 1718,
+          "damageReceived": 533,
+          "deaths": 0,
+          "disablesDone": 98,
+          "disablesReceived": 93,
+          "emote": 790301296,
+          "energyGained": 889,
+          "energyUsed": 575,
+          "healingDone": 386,
+          "healingReceived": 446,
+          "kills": 2,
+          "mount": 1123808577,
+          "outfit": 125921637,
+          "score": 2202,
+          "side": 1,
+          "timeAlive": 203
+        }
+      },
+      "relationships": {
+        "player": {
+          "data": {
+            "type": "player",
+            "id": "779479758588243968"
+          }
+        }
+      }
+    },
+    {
+      "type": "participant",
+      "id": "9f50590c-455d-48d0-ae2f-2c8a7cf67725",
+      "attributes": {
+        "actor": "870711570",
+        "shardId": "global",
+        "stats": {
+          "abilityUses": 199,
+          "attachment": 1760313033,
+          "damageDone": 1646,
+          "damageReceived": 419,
+          "deaths": 0,
+          "disablesDone": 248,
+          "disablesReceived": 168,
+          "emote": 507740994,
+          "energyGained": 782,
+          "energyUsed": 575,
+          "healingDone": 46,
+          "healingReceived": 64,
+          "kills": 4,
+          "mount": 1302058678,
+          "outfit": 1963815198,
+          "score": 1940,
+          "side": 1,
+          "timeAlive": 203
+        }
+      },
+      "relationships": {
+        "player": {
+          "data": {
+            "type": "player",
+            "id": "4855"
+          }
+        }
+      }
+    },
+    {
+      "type": "player",
+      "id": "4855",
+      "attributes": {
+        "name": "",
+        "patchVersion": "",
+        "shardId": "",
+        "stats": null,
+        "titleId": ""
+      },
+      "relationships": {
+        "assets": {
+          "data": []
+        }
+      },
+      "links": {
+        "schema": "",
+        "self": "https://api.dc01.gamelockerapp.com/shards//players/4855"
+      }
+    },
+    {
+      "type": "participant",
+      "id": "fc5adac9-7e70-46b0-b500-eb3976365cf4",
+      "attributes": {
+        "actor": "1749055646",
+        "shardId": "global",
+        "stats": {
+          "abilityUses": 198,
+          "attachment": 1961152028,
+          "damageDone": 1420,
+          "damageReceived": 2245,
+          "deaths": 3,
+          "disablesDone": 340,
+          "disablesReceived": 376,
+          "emote": 546284346,
+          "energyGained": 612,
+          "energyUsed": 500,
+          "healingDone": 370,
+          "healingReceived": 1242,
+          "kills": 1,
+          "mount": 658437410,
+          "outfit": 1745496029,
+          "score": 2130,
+          "side": 2,
+          "timeAlive": 292
+        }
+      },
+      "relationships": {
+        "player": {
+          "data": {
+            "type": "player",
+            "id": "779484442292019200"
+          }
+        }
+      }
+    },
+    {
+      "type": "roster",
+      "id": "3ca05fdb-e5c3-4a49-9fbf-8d9be24dafae",
+      "attributes": {
+        "shardId": "global",
+        "stats": {
+          "score": 3
+        },
+        "won": "true"
+      },
+      "relationships": {
+        "participants": {
+          "data": [
+            {
+              "type": "participant",
+              "id": "5cba6714-61c7-40e1-ad32-f0685d7c0363"
+            },
+            {
+              "type": "participant",
+              "id": "3e8c4259-5b0f-4345-a4a4-90cd9c33726f"
+            }
+          ]
+        },
+        "team": {
+          "data": null
+        }
+      }
+    },
+    {
+      "type": "participant",
+      "id": "118311c2-ecf7-4e53-92a5-154379ec4e26",
+      "attributes": {
+        "actor": "870711570",
+        "shardId": "global",
+        "stats": {
+          "abilityUses": 540,
+          "attachment": 1760313033,
+          "damageDone": 5070,
+          "damageReceived": 2649,
+          "deaths": 2,
+          "disablesDone": 789,
+          "disablesReceived": 795,
+          "emote": 507740994,
+          "energyGained": 1926,
+          "energyUsed": 1525,
+          "healingDone": 471,
+          "healingReceived": 1256,
+          "kills": 3,
+          "mount": 1302058678,
+          "outfit": 1963815198,
+          "score": 6330,
+          "side": 2,
+          "timeAlive": 572
+        }
+      },
+      "relationships": {
+        "player": {
+          "data": {
+            "type": "player",
+            "id": "4855"
+          }
+        }
+      }
+    },
+    {
+      "type": "roster",
+      "id": "745ecbc8-16cc-4aaf-81bd-632f5b1fbe60",
+      "attributes": {
+        "shardId": "global",
+        "stats": {
+          "score": 0
+        },
+        "won": "false"
+      },
+      "relationships": {
+        "participants": {
+          "data": [
+            {
+              "type": "participant",
+              "id": "b230d75a-0a25-410c-a9da-e76ea1bc1532"
+            },
+            {
+              "type": "participant",
+              "id": "8a4ba50c-8031-441c-bc08-2ac83e23d5c2"
+            }
+          ]
+        },
+        "team": {
+          "data": null
+        }
+      }
+    },
+    {
+      "type": "player",
+      "id": "779484442292019200",
+      "attributes": {
+        "name": "",
+        "patchVersion": "",
+        "shardId": "",
+        "stats": null,
+        "titleId": ""
+      },
+      "relationships": {
+        "assets": {
+          "data": []
+        }
+      },
+      "links": {
+        "schema": "",
+        "self": "https://api.dc01.gamelockerapp.com/shards//players/779484442292019200"
+      }
+    },
+    {
+      "type": "player",
+      "id": "6641",
+      "attributes": {
+        "name": "",
+        "patchVersion": "",
+        "shardId": "",
+        "stats": null,
+        "titleId": ""
+      },
+      "relationships": {
+        "assets": {
+          "data": []
+        }
+      },
+      "links": {
+        "schema": "",
+        "self": "https://api.dc01.gamelockerapp.com/shards//players/6641"
+      }
+    },
+    {
+      "type": "roster",
+      "id": "77dd5257-ae68-496c-a101-ba04c4aca6fb",
+      "attributes": {
+        "shardId": "global",
+        "stats": {
+          "score": 3
+        },
+        "won": "true"
+      },
+      "relationships": {
+        "participants": {
+          "data": [
+            {
+              "type": "participant",
+              "id": "43dfda0a-58db-4076-9d3e-431b3831024b"
+            },
+            {
+              "type": "participant",
+              "id": "118311c2-ecf7-4e53-92a5-154379ec4e26"
+            }
+          ]
+        },
+        "team": {
+          "data": null
+        }
+      }
+    },
+    {
+      "type": "participant",
+      "id": "b230d75a-0a25-410c-a9da-e76ea1bc1532",
+      "attributes": {
+        "actor": "543520739",
+        "shardId": "global",
+        "stats": {
+          "abilityUses": 233,
+          "attachment": 556549694,
+          "damageDone": 900,
+          "damageReceived": 1618,
+          "deaths": 3,
+          "disablesDone": 179,
+          "disablesReceived": 123,
+          "emote": 358973016,
+          "energyGained": 889,
+          "energyUsed": 275,
+          "healingDone": 1769,
+          "healingReceived": 914,
+          "kills": 0,
+          "mount": 1028397764,
+          "outfit": 543768686,
+          "score": 2848,
+          "side": 1,
+          "timeAlive": 314
+        }
+      },
+      "relationships": {
+        "player": {
+          "data": {
+            "type": "player",
+            "id": "928789171630428160"
+          }
+        }
+      }
+    },
+    {
+      "type": "participant",
+      "id": "3e8c4259-5b0f-4345-a4a4-90cd9c33726f",
+      "attributes": {
+        "actor": "1208445212",
+        "shardId": "global",
+        "stats": {
+          "abilityUses": 392,
+          "attachment": 486225385,
+          "damageDone": 2452,
+          "damageReceived": 1147,
+          "deaths": 0,
+          "disablesDone": 212,
+          "disablesReceived": 297,
+          "emote": 790301296,
+          "energyGained": 1094,
+          "energyUsed": 925,
+          "healingDone": 640,
+          "healingReceived": 833,
+          "kills": 3,
+          "mount": 1123808577,
+          "outfit": 125921637,
+          "score": 3304,
+          "side": 1,
+          "timeAlive": 304
+        }
+      },
+      "relationships": {
+        "player": {
+          "data": {
+            "type": "player",
+            "id": "779479758588243968"
+          }
+        }
+      }
+    },
+    {
+      "type": "roster",
+      "id": "d5fdfb3d-c837-435f-b299-12173fb42c5e",
+      "attributes": {
+        "shardId": "global",
+        "stats": {
+          "score": 0
+        },
+        "won": "false"
+      },
+      "relationships": {
+        "participants": {
+          "data": [
+            {
+              "type": "participant",
+              "id": "81b699b8-0025-4d2b-9637-ece20db5b619"
+            },
+            {
+              "type": "participant",
+              "id": "fc5adac9-7e70-46b0-b500-eb3976365cf4"
+            }
+          ]
+        },
+        "team": {
+          "data": null
+        }
+      }
+    },
+    {
+      "type": "participant",
+      "id": "5312f447-c8a7-4a28-aef5-16825113bb3c",
+      "attributes": {
+        "actor": "1208445212",
+        "shardId": "global",
+        "stats": {
+          "abilityUses": 227,
+          "attachment": 486225385,
+          "damageDone": 1126,
+          "damageReceived": 409,
+          "deaths": 0,
+          "disablesDone": 109,
+          "disablesReceived": 41,
+          "emote": 790301296,
+          "energyGained": 723,
+          "energyUsed": 350,
+          "healingDone": 232,
+          "healingReceived": 262,
+          "kills": 3,
+          "mount": 1123808577,
+          "outfit": 125921637,
+          "score": 1467,
+          "side": 2,
+          "timeAlive": 146
+        }
+      },
+      "relationships": {
+        "player": {
+          "data": {
+            "type": "player",
+            "id": "779479758588243968"
+          }
+        }
+      }
+    },
+    {
+      "type": "round",
+      "id": "5ea8146e-1fc8-4b31-8f07-8797f5035c12",
+      "attributes": {
+        "duration": 51,
+        "ordinal": 2,
+        "stats": {
+          "winningTeam": 2
+        }
+      }
+    },
+    {
+      "type": "participant",
+      "id": "8a4ba50c-8031-441c-bc08-2ac83e23d5c2",
+      "attributes": {
+        "actor": "870711570",
+        "shardId": "global",
+        "stats": {
+          "abilityUses": 274,
+          "attachment": 561043051,
+          "damageDone": 1708,
+          "damageReceived": 1905,
+          "deaths": 3,
+          "disablesDone": 215,
+          "disablesReceived": 308,
+          "emote": 507740994,
+          "energyGained": 981,
+          "energyUsed": 700,
+          "healingDone": 80,
+          "healingReceived": 1019,
+          "kills": 0,
+          "mount": 1514111634,
+          "outfit": 258487385,
+          "score": 2003,
+          "side": 1,
+          "timeAlive": 318
+        }
+      },
+      "relationships": {
+        "player": {
+          "data": {
+            "type": "player",
+            "id": "791040928038137856"
+          }
+        }
+      }
+    },
+    {
+      "type": "round",
+      "id": "730df477-fbdd-414d-a4cf-76a9ed2e4179",
+      "attributes": {
+        "duration": 101,
+        "ordinal": 0,
+        "stats": {
+          "winningTeam": 1
+        }
+      }
+    },
+    {
+      "type": "participant",
+      "id": "43dfda0a-58db-4076-9d3e-431b3831024b",
+      "attributes": {
+        "actor": "1649551456",
+        "shardId": "global",
+        "stats": {
+          "abilityUses": 480,
+          "attachment": 57863255,
+          "damageDone": 2490,
+          "damageReceived": 2422,
+          "deaths": 2,
+          "disablesDone": 446,
+          "disablesReceived": 587,
+          "emote": 1285177405,
+          "energyGained": 1387,
+          "energyUsed": 375,
+          "healingDone": 1798,
+          "healingReceived": 1458,
+          "kills": 2,
+          "mount": 1302058678,
+          "outfit": 303690117,
+          "score": 4736,
+          "side": 2,
+          "timeAlive": 548
+        }
+      },
+      "relationships": {
+        "player": {
+          "data": {
+            "type": "player",
+            "id": "1761"
+          }
+        }
+      }
+    },
+    {
+      "type": "roster",
+      "id": "dfe6245d-1554-4d04-97bd-068e5a8cb40e",
+      "attributes": {
+        "shardId": "global",
+        "stats": {
+          "score": 0
+        },
+        "won": "false"
+      },
+      "relationships": {
+        "participants": {
+          "data": [
+            {
+              "type": "participant",
+              "id": "0a32207c-4adb-4b56-bc0f-a68289e607fe"
+            },
+            {
+              "type": "participant",
+              "id": "b375b559-1ac1-482f-b229-ae05538c6905"
+            }
+          ]
+        },
+        "team": {
+          "data": null
+        }
+      }
+    },
+    {
+      "type": "round",
+      "id": "bb74e50e-8c4e-47d5-bd6b-540b75348f24",
+      "attributes": {
+        "duration": 69,
+        "ordinal": 0,
+        "stats": {
+          "winningTeam": 1
+        }
+      }
+    },
+    {
+      "type": "participant",
+      "id": "6761f8c6-b151-47d1-b2ec-f94d1366472e",
+      "attributes": {
+        "actor": "613085868",
+        "shardId": "global",
+        "stats": {
+          "abilityUses": 424,
+          "attachment": 408327069,
+          "damageDone": 2826,
+          "damageReceived": 1363,
+          "deaths": 0,
+          "disablesDone": 165,
+          "disablesReceived": 224,
+          "emote": 824900579,
+          "energyGained": 1392,
+          "energyUsed": 1100,
+          "healingDone": 110,
+          "healingReceived": 793,
+          "kills": 2,
+          "mount": 1302058678,
+          "outfit": 1711378052,
+          "score": 3101,
+          "side": 2,
+          "timeAlive": 357
+        }
+      },
+      "relationships": {
+        "player": {
+          "data": {
+            "type": "player",
+            "id": "4855"
+          }
+        }
+      }
+    },
+    {
+      "type": "participant",
+      "id": "81b699b8-0025-4d2b-9637-ece20db5b619",
+      "attributes": {
+        "actor": "1649551456",
+        "shardId": "global",
+        "stats": {
+          "abilityUses": 221,
+          "attachment": 716058445,
+          "damageDone": 956,
+          "damageReceived": 1563,
+          "deaths": 3,
+          "disablesDone": 265,
+          "disablesReceived": 128,
+          "emote": 380171576,
+          "energyGained": 526,
+          "energyUsed": 250,
+          "healingDone": 1369,
+          "healingReceived": 852,
+          "kills": 0,
+          "mount": 1874996628,
+          "outfit": 2114774088,
+          "score": 2590,
+          "side": 2,
+          "timeAlive": 257
+        }
+      },
+      "relationships": {
+        "player": {
+          "data": {
+            "type": "player",
+            "id": "1861"
+          }
+        }
+      }
+    },
+    {
+      "type": "asset",
+      "id": "9e04de71-e531-11e7-a8ef-0a586460f089",
+      "attributes": {
+        "URL": "https://cdn.gamelockerapp.com/stunlock-studios-battlerite/global/2017/12/20/02/58/9e04de71-e531-11e7-a8ef-0a586460f089-telemetry.json",
+        "createdAt": "2017-12-20T02:58:12Z",
+        "description": "",
+        "name": "telemetry"
+      }
+    },
+    {
+      "type": "participant",
+      "id": "58b6a61c-335d-47e7-89c4-35896c7f2f30",
+      "attributes": {
+        "actor": "1318732017",
+        "shardId": "global",
+        "stats": {
+          "abilityUses": 421,
+          "attachment": 1141397546,
+          "damageDone": 3093,
+          "damageReceived": 3417,
+          "deaths": 3,
+          "disablesDone": 800,
+          "disablesReceived": 776,
+          "emote": 734380444,
+          "energyGained": 1417,
+          "energyUsed": 1000,
+          "healingDone": 1113,
+          "healingReceived": 1988,
+          "kills": 4,
+          "mount": 1389972632,
+          "outfit": 128404859,
+          "score": 5011,
+          "side": 1,
+          "timeAlive": 488
+        }
+      },
+      "relationships": {
+        "player": {
+          "data": {
+            "type": "player",
+            "id": "873659835646885888"
+          }
+        }
+      }
+    },
+    {
+      "type": "player",
+      "id": "1761",
+      "attributes": {
+        "name": "",
+        "patchVersion": "",
+        "shardId": "",
+        "stats": null,
+        "titleId": ""
+      },
+      "relationships": {
+        "assets": {
+          "data": []
+        }
+      },
+      "links": {
+        "schema": "",
+        "self": "https://api.dc01.gamelockerapp.com/shards//players/1761"
+      }
+    },
+    {
+      "type": "round",
+      "id": "59d84344-6457-426d-92b1-8dd3bba20441",
+      "attributes": {
+        "duration": 118,
+        "ordinal": 1,
+        "stats": {
+          "winningTeam": 1
+        }
+      }
+    },
+    {
+      "type": "participant",
+      "id": "ea978d99-a9ff-4f52-a06f-877601a02ef8",
+      "attributes": {
+        "actor": "1908945514",
+        "shardId": "global",
+        "stats": {
+          "abilityUses": 139,
+          "attachment": 1766635475,
+          "damageDone": 210,
+          "damageReceived": 918,
+          "deaths": 3,
+          "disablesDone": 33,
+          "disablesReceived": 107,
+          "emote": 1074976139,
+          "energyGained": 472,
+          "energyUsed": 75,
+          "healingDone": 336,
+          "healingReceived": 246,
+          "kills": 0,
+          "mount": 1610417478,
+          "outfit": 2060697858,
+          "score": 579,
+          "side": 1,
+          "timeAlive": 98
+        }
+      },
+      "relationships": {
+        "player": {
+          "data": {
+            "type": "player",
+            "id": "781618467731296256"
+          }
+        }
+      }
+    },
+    {
+      "type": "roster",
+      "id": "d397875c-4853-4902-8dcb-d3c7ce3bc1b0",
+      "attributes": {
+        "shardId": "global",
+        "stats": {
+          "score": 2
+        },
+        "won": "false"
+      },
+      "relationships": {
+        "participants": {
+          "data": [
+            {
+              "type": "participant",
+              "id": "58b6a61c-335d-47e7-89c4-35896c7f2f30"
+            },
+            {
+              "type": "participant",
+              "id": "1ef53dc3-3801-4fd5-9675-66517adb5709"
+            }
+          ]
+        },
+        "team": {
+          "data": null
+        }
+      }
+    },
+    {
+      "type": "round",
+      "id": "65003a67-bfd0-459f-8b5e-0d4eabcce547",
+      "attributes": {
+        "duration": 161,
+        "ordinal": 0,
+        "stats": {
+          "winningTeam": 2
+        }
+      }
+    },
+    {
+      "type": "round",
+      "id": "6566d256-5a3c-40da-a6b8-a74459e58844",
+      "attributes": {
+        "duration": 70,
+        "ordinal": 1,
+        "stats": {
+          "winningTeam": 2
+        }
+      }
+    },
+    {
+      "type": "player",
+      "id": "781618467731296256",
+      "attributes": {
+        "name": "",
+        "patchVersion": "",
+        "shardId": "",
+        "stats": null,
+        "titleId": ""
+      },
+      "relationships": {
+        "assets": {
+          "data": []
+        }
+      },
+      "links": {
+        "schema": "",
+        "self": "https://api.dc01.gamelockerapp.com/shards//players/781618467731296256"
+      }
+    },
+    {
+      "type": "participant",
+      "id": "1ef53dc3-3801-4fd5-9675-66517adb5709",
+      "attributes": {
+        "actor": "1649551456",
+        "shardId": "global",
+        "stats": {
+          "abilityUses": 593,
+          "attachment": 2035859159,
+          "damageDone": 2147,
+          "damageReceived": 2803,
+          "deaths": 3,
+          "disablesDone": 582,
+          "disablesReceived": 459,
+          "emote": 311831565,
+          "energyGained": 1612,
+          "energyUsed": 650,
+          "healingDone": 2294,
+          "healingReceived": 1908,
+          "kills": 0,
+          "mount": 68356694,
+          "outfit": 2114774088,
+          "score": 5023,
+          "side": 1,
+          "timeAlive": 577
+        }
+      },
+      "relationships": {
+        "player": {
+          "data": {
+            "type": "player",
+            "id": "6641"
+          }
+        }
+      }
+    },
+    {
+      "type": "round",
+      "id": "66e3d8fe-ded0-42c4-94ec-6cf0695bed0c",
+      "attributes": {
+        "duration": 134,
+        "ordinal": 4,
+        "stats": {
+          "winningTeam": 2
+        }
+      }
+    },
+    {
+      "type": "asset",
+      "id": "5420a920-e2ba-11e7-b839-0a586460dca1",
+      "attributes": {
+        "URL": "https://cdn.gamelockerapp.com/stunlock-studios-battlerite/global/2017/12/16/23/39/5420a920-e2ba-11e7-b839-0a586460dca1-telemetry.json",
+        "createdAt": "2017-12-16T23:39:16Z",
+        "description": "",
+        "name": "telemetry"
+      }
+    },
+    {
+      "type": "round",
+      "id": "1cd513a3-125b-4097-9d32-ca0bad4ada5a",
+      "attributes": {
+        "duration": 51,
+        "ordinal": 2,
+        "stats": {
+          "winningTeam": 1
+        }
+      }
+    },
+    {
+      "type": "player",
+      "id": "873659835646885888",
+      "attributes": {
+        "name": "",
+        "patchVersion": "",
+        "shardId": "",
+        "stats": null,
+        "titleId": ""
+      },
+      "relationships": {
+        "assets": {
+          "data": []
+        }
+      },
+      "links": {
+        "schema": "",
+        "self": "https://api.dc01.gamelockerapp.com/shards//players/873659835646885888"
+      }
+    },
+    {
+      "type": "round",
+      "id": "acc985d4-9c8f-4818-b60e-68f9f801c21d",
+      "attributes": {
+        "duration": 89,
+        "ordinal": 2,
+        "stats": {
+          "winningTeam": 2
+        }
+      }
+    },
+    {
+      "type": "round",
+      "id": "1b6bfe53-4619-4fdc-b468-9f4afb6b7a24",
+      "attributes": {
+        "duration": 48,
+        "ordinal": 0,
+        "stats": {
+          "winningTeam": 2
+        }
+      }
+    },
+    {
+      "type": "round",
+      "id": "8d98e28f-2ac9-4c2c-a481-963da94f2228",
+      "attributes": {
+        "duration": 197,
+        "ordinal": 3,
+        "stats": {
+          "winningTeam": 2
+        }
+      }
+    },
+    {
+      "type": "player",
+      "id": "928789171630428160",
+      "attributes": {
+        "name": "",
+        "patchVersion": "",
+        "shardId": "",
+        "stats": null,
+        "titleId": ""
+      },
+      "relationships": {
+        "assets": {
+          "data": []
+        }
+      },
+      "links": {
+        "schema": "",
+        "self": "https://api.dc01.gamelockerapp.com/shards//players/928789171630428160"
+      }
+    },
+    {
+      "type": "player",
+      "id": "1861",
+      "attributes": {
+        "name": "",
+        "patchVersion": "",
+        "shardId": "",
+        "stats": null,
+        "titleId": ""
+      },
+      "relationships": {
+        "assets": {
+          "data": []
+        }
+      },
+      "links": {
+        "schema": "",
+        "self": "https://api.dc01.gamelockerapp.com/shards//players/1861"
+      }
+    },
+    {
+      "type": "participant",
+      "id": "0a32207c-4adb-4b56-bc0f-a68289e607fe",
+      "attributes": {
+        "actor": "1649551456",
+        "shardId": "global",
+        "stats": {
+          "abilityUses": 124,
+          "attachment": 716058445,
+          "damageDone": 380,
+          "damageReceived": 1270,
+          "deaths": 3,
+          "disablesDone": 140,
+          "disablesReceived": 162,
+          "emote": 380171576,
+          "energyGained": 262,
+          "energyUsed": 100,
+          "healingDone": 728,
+          "healingReceived": 566,
+          "kills": 0,
+          "mount": 1874996628,
+          "outfit": 2114774088,
+          "score": 1248,
+          "side": 2,
+          "timeAlive": 171
+        }
+      },
+      "relationships": {
+        "player": {
+          "data": {
+            "type": "player",
+            "id": "1861"
+          }
+        }
+      }
+    },
+    {
+      "type": "roster",
+      "id": "db0bb8c9-3c3f-400c-942c-486fb11528f7",
+      "attributes": {
+        "shardId": "global",
+        "stats": {
+          "score": 3
+        },
+        "won": "true"
+      },
+      "relationships": {
+        "participants": {
+          "data": [
+            {
+              "type": "participant",
+              "id": "2cf71bc4-0d4e-43ed-86c6-54ce82772a99"
+            },
+            {
+              "type": "participant",
+              "id": "9f50590c-455d-48d0-ae2f-2c8a7cf67725"
+            }
+          ]
+        },
+        "team": {
+          "data": null
+        }
+      }
+    },
+    {
+      "type": "asset",
+      "id": "22a28d73-e534-11e7-b839-0a586460dca1",
+      "attributes": {
+        "URL": "https://cdn.gamelockerapp.com/stunlock-studios-battlerite/global/2017/12/20/03/16/22a28d73-e534-11e7-b839-0a586460dca1-telemetry.json",
+        "createdAt": "2017-12-20T03:16:14Z",
+        "description": "",
+        "name": "telemetry"
+      }
+    },
+    {
+      "type": "round",
+      "id": "21871cbd-0ff6-4549-83f5-3c92352e6892",
+      "attributes": {
+        "duration": 126,
+        "ordinal": 2,
+        "stats": {
+          "winningTeam": 2
+        }
+      }
+    },
+    {
+      "type": "round",
+      "id": "6b22dc2f-fa96-4afc-b9ce-bfb0d4a35c5b",
+      "attributes": {
+        "duration": 47,
+        "ordinal": 1,
+        "stats": {
+          "winningTeam": 2
+        }
+      }
+    },
+    {
+      "type": "asset",
+      "id": "0be0545e-e533-11e7-b839-0a586460dca1",
+      "attributes": {
+        "URL": "https://cdn.gamelockerapp.com/stunlock-studios-battlerite/global/2017/12/20/03/08/0be0545e-e533-11e7-b839-0a586460dca1-telemetry.json",
+        "createdAt": "2017-12-20T03:08:26Z",
+        "description": "",
+        "name": "telemetry"
+      }
+    },
+    {
+      "type": "round",
+      "id": "22a287b5-3223-4eaf-aa61-894e7e7b9748",
+      "attributes": {
+        "duration": 53,
+        "ordinal": 0,
+        "stats": {
+          "winningTeam": 1
+        }
+      }
+    },
+    {
+      "type": "participant",
+      "id": "5cba6714-61c7-40e1-ad32-f0685d7c0363",
+      "attributes": {
+        "actor": "870711570",
+        "shardId": "global",
+        "stats": {
+          "abilityUses": 305,
+          "attachment": 1760313033,
+          "damageDone": 1899,
+          "damageReceived": 973,
+          "deaths": 1,
+          "disablesDone": 292,
+          "disablesReceived": 308,
+          "emote": 507740994,
+          "energyGained": 1018,
+          "energyUsed": 800,
+          "healingDone": 202,
+          "healingReceived": 144,
+          "kills": 3,
+          "mount": 1302058678,
+          "outfit": 1963815198,
+          "score": 2393,
+          "side": 1,
+          "timeAlive": 262
+        }
+      },
+      "relationships": {
+        "player": {
+          "data": {
+            "type": "player",
+            "id": "4855"
+          }
+        }
+      }
+    },
+    {
+      "type": "participant",
+      "id": "2582591d-ef63-46d5-8062-56e3fcaf666a",
+      "attributes": {
+        "actor": "613085868",
+        "shardId": "global",
+        "stats": {
+          "abilityUses": 120,
+          "attachment": 1010514858,
+          "damageDone": 489,
+          "damageReceived": 1008,
+          "deaths": 3,
+          "disablesDone": 16,
+          "disablesReceived": 143,
+          "emote": 1328656584,
+          "energyGained": 294,
+          "energyUsed": 175,
+          "healingDone": 92,
+          "healingReceived": 223,
+          "kills": 0,
+          "mount": 303336846,
+          "outfit": 1910020468,
+          "score": 597,
+          "side": 1,
+          "timeAlive": 143
+        }
+      },
+      "relationships": {
+        "player": {
+          "data": {
+            "type": "player",
+            "id": "778306229628964864"
+          }
+        }
+      }
+    },
+    {
+      "type": "round",
+      "id": "42cbaeba-2e6a-409e-8b55-8299b2455f52",
+      "attributes": {
+        "duration": 99,
+        "ordinal": 1,
+        "stats": {
+          "winningTeam": 1
+        }
+      }
+    },
+    {
+      "type": "round",
+      "id": "42128164-24f7-42d5-bf8c-f5e8f9a029dc",
+      "attributes": {
+        "duration": 91,
+        "ordinal": 1,
+        "stats": {
+          "winningTeam": 1
+        }
+      }
+    },
+    {
+      "type": "asset",
+      "id": "137a556d-e618-11e7-9182-0a586460f08c",
+      "attributes": {
+        "URL": "https://cdn.gamelockerapp.com/stunlock-studios-battlerite/global/2017/12/21/06/27/137a556d-e618-11e7-9182-0a586460f08c-telemetry.json",
+        "createdAt": "2017-12-21T06:27:53Z",
+        "description": "",
+        "name": "telemetry"
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.dc01.gamelockerapp.com/shards/global/matches?filter[playerIds]=4855"
+  },
+  "meta": {}
+}

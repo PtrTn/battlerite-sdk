@@ -1,0 +1,128 @@
+{
+  "data": [
+    {
+      "type": "team",
+      "id": "866121135559942144",
+      "attributes": {
+        "name": "",
+        "shardId": "global",
+        "stats": {
+          "avatar": 0,
+          "division": 7,
+          "divisionRating": 94,
+          "league": 3,
+          "losses": 0,
+          "members": [
+            84
+          ],
+          "placementGamesLeft": 0,
+          "topDivision": 0,
+          "topDivisionRating": 0,
+          "topLeague": 0,
+          "wins": 0
+        },
+        "titleId": "stunlock-studios-battlerite"
+      },
+      "relationships": {
+        "assets": {
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "team",
+      "id": "866121217558589440",
+      "attributes": {
+        "name": "game still alive?",
+        "shardId": "global",
+        "stats": {
+          "avatar": 36003,
+          "division": 3,
+          "divisionRating": 68,
+          "league": 4,
+          "losses": 2,
+          "members": [
+            102,
+            84
+          ],
+          "placementGamesLeft": 0,
+          "topDivision": 3,
+          "topDivisionRating": 82,
+          "topLeague": 4,
+          "wins": 14
+        },
+        "titleId": "stunlock-studios-battlerite"
+      },
+      "relationships": {
+        "assets": {
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "team",
+      "id": "866754358933594112",
+      "attributes": {
+        "name": "This IVA bad mane",
+        "shardId": "global",
+        "stats": {
+          "avatar": 39005,
+          "division": 1,
+          "divisionRating": 50,
+          "league": 3,
+          "losses": 2,
+          "members": [
+            778570947933380600,
+            102,
+            84
+          ],
+          "placementGamesLeft": 0,
+          "topDivision": 1,
+          "topDivisionRating": 50,
+          "topLeague": 3,
+          "wins": 7
+        },
+        "titleId": "stunlock-studios-battlerite"
+      },
+      "relationships": {
+        "assets": {
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "team",
+      "id": "879461570483208192",
+      "attributes": {
+        "name": "RipDiamondDream",
+        "shardId": "global",
+        "stats": {
+          "avatar": 36011,
+          "division": 4,
+          "divisionRating": 96,
+          "league": 4,
+          "losses": 1,
+          "members": [
+            778570947933380600,
+            84
+          ],
+          "placementGamesLeft": 0,
+          "topDivision": 4,
+          "topDivisionRating": 22,
+          "topLeague": 4,
+          "wins": 4
+        },
+        "titleId": "stunlock-studios-battlerite"
+      },
+      "relationships": {
+        "assets": {
+          "data": []
+        }
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.dc01.gamelockerapp.com/shards/global/teams?tag[playerIds]=84\u0026tag[season]=3"
+  },
+  "meta": {}
+}
