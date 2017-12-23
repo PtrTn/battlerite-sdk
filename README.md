@@ -50,6 +50,13 @@ $teams = $client->getTeams(
 $client = \PtrTn\Battlerite\Client::create('your-api-key');
 $match = $client->getMatch('AB9C81FABFD748C8A7EC545AA6AF97CC');
 ```
+
+<details/>
+  <summary>Data structure for a detailed match</summary>
+  
+![Detailed match data structure](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/PtrTn/battlerite-sdk/feature/uml-docs/docs/puml/DetailedMatch.puml)
+</details>
+
 ### Retrieving detailed player data
 ```php
 $client = \PtrTn\Battlerite\Client::create('your-api-key');
