@@ -10,6 +10,7 @@ skinparam Class {
 	BorderColor #8CAAA9
 	HeaderBackgroundColor #8CAAA9
 }
+skinparam backgroundcolor transparent
 
 Assets -- DetailedMatch
 Participants -- DetailedMatch
