@@ -6,9 +6,12 @@ use PtrTn\Battlerite\Dto\Match\Roster;
 
 class RostersTest extends \PHPUnit_Framework_TestCase
 {
+    /**
+     * @test
+     */
     public function shouldCreateFromArray()
     {
-        $roster = json_decode(
+        $fixture =
             '{
                 "type": "roster",
                 "id": "eb7710c3-1647-41af-bef7-716171f43ae1",
@@ -36,9 +39,9 @@ class RostersTest extends \PHPUnit_Framework_TestCase
                   "data": null
                 }
                 }
-            }'
-        );
-        $roster = Roster::createFromArray($roster);
+            }';
+        $fixtureData =  \GuzzleHttp\json_decode($fixture, true);
+        $roster = Roster::createFromArray($fixtureData);
         $this->assertEquals('eb7710c3-1647-41af-bef7-716171f43ae1', $roster->id);
         $this->assertCount(2, $roster->participants);
     }
