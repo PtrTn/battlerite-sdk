@@ -1,9 +1,9 @@
 <?php
 namespace Tests\Unit\PtrTn\Battlerite\Dto\Player;
 
-use PtrTn\Battlerite\Dto\Match\Player;
+use PtrTn\Battlerite\Dto\Player\DetailedPlayer;
 
-class PlayerTest extends \PHPUnit_Framework_TestCase
+class DetailedPlayerTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @test
@@ -12,7 +12,7 @@ class PlayerTest extends \PHPUnit_Framework_TestCase
     {
         $fixture = file_get_contents(__DIR__ . '/../../fixtures/player/player-response-84.json');
         $fixtureData =  \GuzzleHttp\json_decode($fixture, true);
-        $player = Player::createFromArray($fixtureData['data']);
+        $player = DetailedPlayer::createFromArray($fixtureData['data']);
         $this->assertEquals('84', $player->id);
     }
 }
