@@ -4,9 +4,6 @@ namespace Tests\Unit\PtrTn\Battlerite\Dto\Matches;
 use PtrTn\Battlerite\Dto\Matches\Match;
 use PtrTn\Battlerite\Dto\Matches\Matches;
 
-/**
- * @requires PHP 7.2
- */
 class MatchesTest extends \PHPUnit_Framework_TestCase
 {
     /**
@@ -14,13 +11,12 @@ class MatchesTest extends \PHPUnit_Framework_TestCase
      */
     public function shouldCreateMatchesFromArray()
     {
-        $fixture = json_decode(
-            file_get_contents(__DIR__ . '/../../fixtures/match/match-response-AB9C81FABFD748C8A7EC545AA6AF97CC.json'),
+        $fixture = \GuzzleHttp\json_decode(
+            file_get_contents(__DIR__ . '/../../fixtures/matches/matches-response-932292498397777920.json'),
             true
         );
-        $matchesArray = \GuzzleHttp\json_decode($fixture, true);
 
-        $matches = Matches::createFromArray($matchesArray['data']);
+        $matches = Matches::createFromArray($fixture['data']);
 
         $this->assertInstanceOf(Matches::class, $matches);
         $this->assertCount(5, $matches);
@@ -34,13 +30,12 @@ class MatchesTest extends \PHPUnit_Framework_TestCase
      */
     public function shouldNotErrorForNoMatches()
     {
-        $fixture = json_decode(
-            file_get_contents(__DIR__ . '/../../fixtures/match/match-response-AB9C81FABFD748C8A7EC545AA6AF97CC.json'),
+        $fixture = \GuzzleHttp\json_decode(
+            file_get_contents(__DIR__ . '/../../fixtures/matches/matches-response-empty.json'),
             true
         );
-        $matchesArray = \GuzzleHttp\json_decode($fixture, true);
 
-        $matches = Matches::createFromArray($matchesArray['data']);
+        $matches = Matches::createFromArray($fixture['data']);
 
         $this->assertInstanceOf(Matches::class, $matches);
         $this->assertCount(0, $matches);
