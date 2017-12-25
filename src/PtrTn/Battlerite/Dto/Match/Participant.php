@@ -13,7 +13,7 @@ class Participant
      * @var string
      */
     public $type;
-
+    
     /**
      * @var string
      */
@@ -30,7 +30,7 @@ class Participant
     public $shardId;
 
     /**
-     * @var int
+     * @var int|null
      */
     public $abilityUses;
 
@@ -40,27 +40,27 @@ class Participant
     public $attachment;
 
     /**
-     * @var int
+     * @var int|null
      */
     public $damageDone;
 
     /**
-     * @var int
+     * @var int|null
      */
     public $damageReceived;
 
     /**
-     * @var int
+     * @var int|null
      */
     public $deaths;
 
     /**
-     * @var int
+     * @var int|null
      */
     public $disablesDone;
 
     /**
-     * @var int
+     * @var int|null
      */
     public $disablesReceived;
 
@@ -70,27 +70,27 @@ class Participant
     public $emote;
 
     /**
-     * @var int
+     * @var int|null
      */
     public $energyGained;
 
     /**
-     * @var int
+     * @var int|null
      */
     public $energyUsed;
 
     /**
-     * @var int
+     * @var int|null
      */
     public $healingDone;
 
     /**
-     * @var int
+     * @var int|null
      */
     public $healingReceived;
 
     /**
-     * @var int
+     * @var int|null
      */
     public $kills;
 
@@ -105,7 +105,7 @@ class Participant
     public $outfit;
 
     /**
-     * @var int
+     * @var int|null
      */
     public $score;
 
@@ -115,7 +115,7 @@ class Participant
     public $side;
 
     /**
-     * @var int
+     * @var int|null
      */
     public $timeAlive;
 
@@ -127,29 +127,29 @@ class Participant
     /**
      * @SuppressWarnings(PHPMD.ExcessiveParameterList)
      */
-    private function __construct(
+    public function __construct(
         string $type,
         string $id,
         string $actor,
         string $shardId,
-        int $abilityUses,
+        ?int $abilityUses,
         int $attachment,
-        int $damageDone,
-        int $damageReceived,
-        int $deaths,
-        int $disablesDone,
-        int $disablesReceived,
+        ?int $damageDone,
+        ?int $damageReceived,
+        ?int $deaths,
+        ?int $disablesDone,
+        ?int $disablesReceived,
         int $emote,
-        int $energyGained,
-        int $energyUsed,
-        int $healingDone,
-        int $healingReceived,
-        int $kills,
+        ?int $energyGained,
+        ?int $energyUsed,
+        ?int $healingDone,
+        ?int $healingReceived,
+        ?int $kills,
         int $mount,
         int $outfit,
-        int $score,
+        ?int $score,
         int $side,
-        int $timeAlive,
+        ?int $timeAlive,
         string $userID
     ) {
         $this->type = $type;
@@ -179,33 +179,47 @@ class Participant
 
     public static function createFromArray(array $participant): self
     {
+        $abilityUses = $participant['attributes']['stats']['abilityUses'] ?? null;
+        $damageDone = $participant['attributes']['stats']['damageDone'] ?? null;
+        $damageReceived = $participant['attributes']['stats']['damageReceived'] ?? null;
+        $deaths = $participant['attributes']['stats']['deaths'] ?? null;
+        $disablesDone = $participant['attributes']['stats']['disablesDone'] ?? null;
+        $disablesReceived = $participant['attributes']['stats']['disablesReceived'] ?? null;
+        $energyGained = $participant['attributes']['stats']['energyGained'] ?? null;
+        $energyUsed = $participant['attributes']['stats']['energyUsed'] ?? null;
+        $healingDone = $participant['attributes']['stats']['healingDone'] ?? null;
+        $healingReceived = $participant['attributes']['stats']['healingReceived'] ?? null;
+        $kills = $participant['attributes']['stats']['kills'] ?? null;
+        $score = $participant['attributes']['stats']['score'] ?? null;
+        $timeAlive = $participant['attributes']['stats']['timeAlive'] ?? null;
+
         Assert::string($participant['type']);
         Assert::string($participant['id']);
         Assert::string($participant['attributes']['actor']);
         Assert::string($participant['attributes']['shardId']);
-        Assert::integer($participant['attributes']['stats']['abilityUses']);
+        Assert::nullOrInteger($abilityUses);
         Assert::integer($participant['attributes']['stats']['attachment']);
-        Assert::integer($participant['attributes']['stats']['damageDone']);
-        Assert::integer($participant['attributes']['stats']['damageReceived']);
-        Assert::integer($participant['attributes']['stats']['deaths']);
-        Assert::integer($participant['attributes']['stats']['disablesDone']);
-        Assert::integer($participant['attributes']['stats']['disablesReceived']);
+        Assert::nullOrInteger($damageDone);
+        Assert::nullOrInteger($damageReceived);
+        Assert::nullOrInteger($deaths);
+        Assert::nullOrInteger($disablesDone);
+        Assert::nullOrInteger($disablesReceived);
         Assert::integer($participant['attributes']['stats']['emote']);
-        Assert::integer($participant['attributes']['stats']['energyGained']);
-        Assert::integer($participant['attributes']['stats']['energyUsed']);
-        Assert::integer($participant['attributes']['stats']['healingDone']);
-        Assert::integer($participant['attributes']['stats']['healingReceived']);
-        Assert::integer($participant['attributes']['stats']['kills']);
+        Assert::nullOrInteger($energyGained);
+        Assert::nullOrInteger($energyUsed);
+        Assert::nullOrInteger($healingDone);
+        Assert::nullOrInteger($healingReceived);
+        Assert::nullOrInteger($kills);
         Assert::integer($participant['attributes']['stats']['mount']);
         Assert::integer($participant['attributes']['stats']['outfit']);
-        Assert::integer($participant['attributes']['stats']['score']);
+        Assert::nullOrInteger($score);
         Assert::integer($participant['attributes']['stats']['side']);
-        Assert::integer($participant['attributes']['stats']['timeAlive']);
+        Assert::nullOrInteger($timeAlive);
 
         if (isset($participant['attributes']['stats']['userID'])) {
-            $userId = $participant['attributes']['stats']['userID'];
+            $userId = (string) $participant['attributes']['stats']['userID'];
         } else {
-            $userId = $participant['relationships']['player']['data']['id'];
+            $userId = (string) $participant['relationships']['player']['data']['id'];
         }
         Assert::string($userId);
 
@@ -214,24 +228,24 @@ class Participant
             $participant['id'],
             $participant['attributes']['actor'],
             $participant['attributes']['shardId'],
-            $participant['attributes']['stats']['abilityUses'],
+            $abilityUses,
             $participant['attributes']['stats']['attachment'],
-            $participant['attributes']['stats']['damageDone'],
-            $participant['attributes']['stats']['damageReceived'],
-            $participant['attributes']['stats']['deaths'],
-            $participant['attributes']['stats']['disablesDone'],
-            $participant['attributes']['stats']['disablesReceived'],
+            $damageDone,
+            $damageReceived,
+            $deaths,
+            $disablesDone,
+            $disablesReceived,
             $participant['attributes']['stats']['emote'],
-            $participant['attributes']['stats']['energyGained'],
-            $participant['attributes']['stats']['energyUsed'],
-            $participant['attributes']['stats']['healingDone'],
-            $participant['attributes']['stats']['healingReceived'],
-            $participant['attributes']['stats']['kills'],
+            $energyGained,
+            $energyUsed,
+            $healingDone,
+            $healingReceived,
+            $kills,
             $participant['attributes']['stats']['mount'],
             $participant['attributes']['stats']['outfit'],
-            $participant['attributes']['stats']['score'],
+            $score,
             $participant['attributes']['stats']['side'],
-            $participant['attributes']['stats']['timeAlive'],
+            $timeAlive,
             $userId
         );
     }
