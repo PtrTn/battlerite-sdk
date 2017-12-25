@@ -12,6 +12,7 @@ use PtrTn\Battlerite\Dto\Match\DetailedMatch;
 use PtrTn\Battlerite\Dto\Matches\Matches;
 use PtrTn\Battlerite\Dto\Player\DetailedPlayer;
 use PtrTn\Battlerite\Dto\Players\Players;
+use PtrTn\Battlerite\Dto\Status\Status;
 use PtrTn\Battlerite\Dto\Teams\Teams;
 
 class ClientTest extends \PHPUnit_Framework_TestCase
@@ -50,6 +51,23 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $matches = $apiClient->getMatches();
 
         $this->assertInstanceOf(Matches::class, $matches);
+    }
+
+    /**
+     * @test
+     */
+    public function shouldRetrieveStats()
+    {
+        $fixtureData = $this->loadFixtureDataFromFile('status-response.json');
+        $apiClientMock = Mockery::mock(ApiClient::class);
+        $apiClientMock
+            ->shouldReceive('sendRequestToEndPoint')
+            ->andReturn($fixtureData)
+            ->once();
+
+        $client = new Client($apiClientMock);
+        $matches = $client->getStatus();
+        $this->assertInstanceOf(Status::class, $matches);
     }
 
     /**
@@ -182,8 +200,8 @@ class ClientTest extends \PHPUnit_Framework_TestCase
             ->once();
 
         $client = new Client($apiClientMock);
-        $match = $client->getPlayer('some-player-id');
-        $this->assertInstanceOf(DetailedPlayer::class, $match);
+        $player = $client->getPlayer('some-player-id');
+        $this->assertInstanceOf(DetailedPlayer::class, $player);
     }
 
     public function getDetailedPlayerFixtures()
