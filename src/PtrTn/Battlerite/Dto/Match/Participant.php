@@ -127,7 +127,7 @@ class Participant
     /**
      * @SuppressWarnings(PHPMD.ExcessiveParameterList)
      */
-    public function __construct(
+    private function __construct(
         string $type,
         string $id,
         string $actor,
