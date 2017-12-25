@@ -11,10 +11,12 @@ class MatchesTest extends \PHPUnit_Framework_TestCase
      */
     public function shouldCreateMatchesFromArray()
     {
-        $fixture = file_get_contents(__DIR__ . '/../../fixtures/matches-response.json');
-        $matchesArray = \GuzzleHttp\json_decode($fixture, true);
+        $fixture = \GuzzleHttp\json_decode(
+            file_get_contents(__DIR__ . '/../../fixtures/matches/matches-response-932292498397777920.json'),
+            true
+        );
 
-        $matches = Matches::createFromArray($matchesArray['data']);
+        $matches = Matches::createFromArray($fixture['data']);
 
         $this->assertInstanceOf(Matches::class, $matches);
         $this->assertCount(5, $matches);
@@ -28,10 +30,12 @@ class MatchesTest extends \PHPUnit_Framework_TestCase
      */
     public function shouldNotErrorForNoMatches()
     {
-        $fixture = file_get_contents(__DIR__ . '/../../fixtures/matches-response-empty.json');
-        $matchesArray = \GuzzleHttp\json_decode($fixture, true);
+        $fixture = \GuzzleHttp\json_decode(
+            file_get_contents(__DIR__ . '/../../fixtures/matches/matches-response-empty.json'),
+            true
+        );
 
-        $matches = Matches::createFromArray($matchesArray['data']);
+        $matches = Matches::createFromArray($fixture['data']);
 
         $this->assertInstanceOf(Matches::class, $matches);
         $this->assertCount(0, $matches);

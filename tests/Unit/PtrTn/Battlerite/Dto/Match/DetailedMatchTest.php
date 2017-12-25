@@ -10,7 +10,10 @@ class DetailedMatchTest extends \PHPUnit_Framework_TestCase
      */
     public function shouldGetParticipantByPlayerId()
     {
-        $fixture = json_decode(file_get_contents(__DIR__ . '/../../fixtures/match-response.json'), true);
+        $fixture = json_decode(
+            file_get_contents(__DIR__ . '/../../fixtures/match/match-response-AB9C81FABFD748C8A7EC545AA6AF97CC.json'),
+            true
+        );
         $match = DetailedMatch::createFromArray($fixture);
         $participant = $match->getParticipantByPlayerId('786059759278252032');
         $this->assertEquals('fcb9ecaf-8976-4c0d-8a23-b80d2155c240', $participant->id);
@@ -21,7 +24,10 @@ class DetailedMatchTest extends \PHPUnit_Framework_TestCase
      */
     public function shouldCheckIfPlayerHasWon()
     {
-        $fixture = json_decode(file_get_contents(__DIR__ . '/../../fixtures/match-response.json'), true);
+        $fixture = json_decode(
+            file_get_contents(__DIR__ . '/../../fixtures/match/match-response-AB9C81FABFD748C8A7EC545AA6AF97CC.json'),
+            true
+        );
         $match = DetailedMatch::createFromArray($fixture);
 
         $this->assertFalse($match->hasPlayerWon('783082365810540544'));

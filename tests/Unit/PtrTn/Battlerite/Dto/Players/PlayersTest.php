@@ -10,7 +10,10 @@ class PlayersTest extends \PHPUnit_Framework_TestCase
      */
     public function shouldGetPlayerByShard()
     {
-        $fixture = json_decode(file_get_contents(__DIR__ . '/../../fixtures/players-response.json'), true);
+        $fixture = json_decode(
+            file_get_contents(__DIR__ . '/../../fixtures/players/players-response-PlakkeStrasser-Genaan.json'),
+            true
+        );
         $players = Players::createFromArray($fixture['data']);
 
         $player = $players->getPlayerByNameAndShard('PlakkeStrasser', 'global');
