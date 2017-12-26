@@ -1,0 +1,2680 @@
+{
+  "2": {
+    "stat": "Wins"
+  },
+  "3": {
+    "stat": "Losses"
+  },
+  "4": {
+    "stat": "GradeScore"
+  },
+  "8": {
+    "stat": "TimePlayed"
+  },
+  "10": {
+    "stat": "Ranked2v2Wins"
+  },
+  "11": {
+    "stat": "Ranked2v2Losses"
+  },
+  "12": {
+    "stat": "Ranked3v3Wins"
+  },
+  "13": {
+    "stat": "Ranked3v3Losses"
+  },
+  "14": {
+    "stat": "Unranked2v2Wins"
+  },
+  "15": {
+    "stat": "Unranked2v2Losses"
+  },
+  "16": {
+    "stat": "Unranked3v3Wins"
+  },
+  "17": {
+    "stat": "Unranked3v3Losses"
+  },
+  "18": {
+    "stat": "BrawlWins"
+  },
+  "19": {
+    "stat": "BrawlLosses"
+  },
+  "22": {
+    "stat": "BattlegroundsWins"
+  },
+  "23": {
+    "stat": "BattlegroundsLosses"
+  },
+  "25": {
+    "stat": "AccountXP"
+  },
+  "26": {
+    "stat": "AccountLevel"
+  },
+  "27": {
+    "stat": "TwitchAccountLinked"
+  },
+  "56": {
+    "stat": "VsAIPlayed"
+  },
+  "70": {
+    "stat": "RatingMean"
+  },
+  "71": {
+    "stat": "RatingDev"
+  },
+  "1001": {
+    "stat": "MapWins",
+    "map": "Map1_Aras"
+  },
+  "1002": {
+    "stat": "MapWins",
+    "map": "Map2_Spirit"
+  },
+  "1003": {
+    "stat": "MapWins",
+    "map": "Map1_Aras_Night"
+  },
+  "1004": {
+    "stat": "MapWins",
+    "map": "Map2_Spirit_Night"
+  },
+  "1005": {
+    "stat": "MapWins",
+    "map": "Map3_Cloud"
+  },
+  "1006": {
+    "stat": "MapWins",
+    "map": "Map3_Cloud_Night"
+  },
+  "1007": {
+    "stat": "MapWins",
+    "map": "Map4_Fortress"
+  },
+  "1008": {
+    "stat": "MapWins",
+    "map": "Map4_Fortress_Night"
+  },
+  "1009": {
+    "stat": "MapWins",
+    "map": "Map5_China"
+  },
+  "1013": {
+    "stat": "MapWins",
+    "map": "Map5_China_Night"
+  },
+  "1014": {
+    "stat": "MapWins",
+    "map": "Map2_Spirit_Expanded"
+  },
+  "1015": {
+    "stat": "MapWins",
+    "map": "Map3_Cloud_Expanded"
+  },
+  "1016": {
+    "stat": "MapWins",
+    "map": "Map5_China_Expanded"
+  },
+  "1101": {
+    "stat": "MapLosses",
+    "map": "Map1_Aras"
+  },
+  "1102": {
+    "stat": "MapLosses",
+    "map": "Map2_Spirit"
+  },
+  "1103": {
+    "stat": "MapLosses",
+    "map": "Map1_Aras_Night"
+  },
+  "1104": {
+    "stat": "MapLosses",
+    "map": "Map2_Spirit_Night"
+  },
+  "1105": {
+    "stat": "MapLosses",
+    "map": "Map3_Cloud"
+  },
+  "1106": {
+    "stat": "MapLosses",
+    "map": "Map3_Cloud_Night"
+  },
+  "1107": {
+    "stat": "MapLosses",
+    "map": "Map4_Fortress"
+  },
+  "1108": {
+    "stat": "MapLosses",
+    "map": "Map4_Fortress_Night"
+  },
+  "1109": {
+    "stat": "MapLosses",
+    "map": "Map5_China"
+  },
+  "1113": {
+    "stat": "MapLosses",
+    "map": "Map5_China_Night"
+  },
+  "1114": {
+    "stat": "MapLosses",
+    "map": "Map2_Spirit_Expanded"
+  },
+  "1115": {
+    "stat": "MapLosses",
+    "map": "Map3_Cloud_Expanded"
+  },
+  "1116": {
+    "stat": "MapLosses",
+    "map": "Map5_China_Expanded"
+  },
+  "11001": {
+    "stat": "XP",
+    "champion": "Alchemist"
+  },
+  "11002": {
+    "stat": "XP",
+    "champion": "Astronomer"
+  },
+  "11003": {
+    "stat": "XP",
+    "champion": "Engineer"
+  },
+  "11004": {
+    "stat": "XP",
+    "champion": "Gunner"
+  },
+  "11005": {
+    "stat": "XP",
+    "champion": "Harbinger"
+  },
+  "11006": {
+    "stat": "XP",
+    "champion": "Herald"
+  },
+  "11007": {
+    "stat": "XP",
+    "champion": "Igniter"
+  },
+  "11008": {
+    "stat": "XP",
+    "champion": "Inhibitor"
+  },
+  "11009": {
+    "stat": "XP",
+    "champion": "Inquisitor"
+  },
+  "11010": {
+    "stat": "XP",
+    "champion": "Nomad"
+  },
+  "11011": {
+    "stat": "XP",
+    "champion": "Psychopomp"
+  },
+  "11012": {
+    "stat": "XP",
+    "champion": "Ranid"
+  },
+  "11013": {
+    "stat": "XP",
+    "champion": "Ravener"
+  },
+  "11014": {
+    "stat": "XP",
+    "champion": "Seeker"
+  },
+  "11015": {
+    "stat": "XP",
+    "champion": "Spearmaster"
+  },
+  "11016": {
+    "stat": "XP",
+    "champion": "Stormcaller"
+  },
+  "11017": {
+    "stat": "XP",
+    "champion": "Vanguard"
+  },
+  "11018": {
+    "stat": "XP",
+    "champion": "Glutton"
+  },
+  "11019": {
+    "stat": "XP",
+    "champion": "BloodPriest"
+  },
+  "11020": {
+    "stat": "XP",
+    "champion": "MetalWarden"
+  },
+  "11021": {
+    "stat": "XP",
+    "champion": "Swordmaster"
+  },
+  "11022": {
+    "stat": "XP",
+    "champion": "Druid"
+  },
+  "11023": {
+    "stat": "XP",
+    "champion": "Bakko_EasterEvent"
+  },
+  "11025": {
+    "stat": "XP",
+    "champion": "Thorn"
+  },
+  "11026": {
+    "stat": "XP",
+    "champion": "AshkaCampaign"
+  },
+  "11027": {
+    "stat": "XP",
+    "champion": "FreyaCampaign"
+  },
+  "11028": {
+    "stat": "XP",
+    "champion": "JumongCampaign"
+  },
+  "11029": {
+    "stat": "XP",
+    "champion": "RaigonCampaign"
+  },
+  "11030": {
+    "stat": "XP",
+    "champion": "RookCampaign"
+  },
+  "11031": {
+    "stat": "XP",
+    "champion": "SiriusCampaign"
+  },
+  "11038": {
+    "stat": "XP",
+    "champion": "JadeCampaign"
+  },
+  "11040": {
+    "stat": "XP",
+    "champion": "RandomChampion"
+  },
+  "11041": {
+    "stat": "XP",
+    "champion": "FrostMage"
+  },
+  "12001": {
+    "stat": "CharacterWins",
+    "champion": "Alchemist"
+  },
+  "12002": {
+    "stat": "CharacterWins",
+    "champion": "Astronomer"
+  },
+  "12003": {
+    "stat": "CharacterWins",
+    "champion": "Engineer"
+  },
+  "12004": {
+    "stat": "CharacterWins",
+    "champion": "Gunner"
+  },
+  "12005": {
+    "stat": "CharacterWins",
+    "champion": "Harbinger"
+  },
+  "12006": {
+    "stat": "CharacterWins",
+    "champion": "Herald"
+  },
+  "12007": {
+    "stat": "CharacterWins",
+    "champion": "Igniter"
+  },
+  "12008": {
+    "stat": "CharacterWins",
+    "champion": "Inhibitor"
+  },
+  "12009": {
+    "stat": "CharacterWins",
+    "champion": "Inquisitor"
+  },
+  "12010": {
+    "stat": "CharacterWins",
+    "champion": "Nomad"
+  },
+  "12011": {
+    "stat": "CharacterWins",
+    "champion": "Psychopomp"
+  },
+  "12012": {
+    "stat": "CharacterWins",
+    "champion": "Ranid"
+  },
+  "12013": {
+    "stat": "CharacterWins",
+    "champion": "Ravener"
+  },
+  "12014": {
+    "stat": "CharacterWins",
+    "champion": "Seeker"
+  },
+  "12015": {
+    "stat": "CharacterWins",
+    "champion": "Spearmaster"
+  },
+  "12016": {
+    "stat": "CharacterWins",
+    "champion": "Stormcaller"
+  },
+  "12017": {
+    "stat": "CharacterWins",
+    "champion": "Vanguard"
+  },
+  "12018": {
+    "stat": "CharacterWins",
+    "champion": "Glutton"
+  },
+  "12019": {
+    "stat": "CharacterWins",
+    "champion": "BloodPriest"
+  },
+  "12020": {
+    "stat": "CharacterWins",
+    "champion": "MetalWarden"
+  },
+  "12021": {
+    "stat": "CharacterWins",
+    "champion": "Swordmaster"
+  },
+  "12022": {
+    "stat": "CharacterWins",
+    "champion": "Druid"
+  },
+  "12023": {
+    "stat": "CharacterWins",
+    "champion": "Bakko_EasterEvent"
+  },
+  "12025": {
+    "stat": "CharacterWins",
+    "champion": "Thorn"
+  },
+  "12026": {
+    "stat": "CharacterWins",
+    "champion": "AshkaCampaign"
+  },
+  "12027": {
+    "stat": "CharacterWins",
+    "champion": "FreyaCampaign"
+  },
+  "12028": {
+    "stat": "CharacterWins",
+    "champion": "JumongCampaign"
+  },
+  "12029": {
+    "stat": "CharacterWins",
+    "champion": "RaigonCampaign"
+  },
+  "12030": {
+    "stat": "CharacterWins",
+    "champion": "RookCampaign"
+  },
+  "12031": {
+    "stat": "CharacterWins",
+    "champion": "SiriusCampaign"
+  },
+  "12038": {
+    "stat": "CharacterWins",
+    "champion": "JadeCampaign"
+  },
+  "12040": {
+    "stat": "CharacterWins",
+    "champion": "RandomChampion"
+  },
+  "12041": {
+    "stat": "CharacterWins",
+    "champion": "FrostMage"
+  },
+  "13001": {
+    "stat": "CharacterLosses",
+    "champion": "Alchemist"
+  },
+  "13002": {
+    "stat": "CharacterLosses",
+    "champion": "Astronomer"
+  },
+  "13003": {
+    "stat": "CharacterLosses",
+    "champion": "Engineer"
+  },
+  "13004": {
+    "stat": "CharacterLosses",
+    "champion": "Gunner"
+  },
+  "13005": {
+    "stat": "CharacterLosses",
+    "champion": "Harbinger"
+  },
+  "13006": {
+    "stat": "CharacterLosses",
+    "champion": "Herald"
+  },
+  "13007": {
+    "stat": "CharacterLosses",
+    "champion": "Igniter"
+  },
+  "13008": {
+    "stat": "CharacterLosses",
+    "champion": "Inhibitor"
+  },
+  "13009": {
+    "stat": "CharacterLosses",
+    "champion": "Inquisitor"
+  },
+  "13010": {
+    "stat": "CharacterLosses",
+    "champion": "Nomad"
+  },
+  "13011": {
+    "stat": "CharacterLosses",
+    "champion": "Psychopomp"
+  },
+  "13012": {
+    "stat": "CharacterLosses",
+    "champion": "Ranid"
+  },
+  "13013": {
+    "stat": "CharacterLosses",
+    "champion": "Ravener"
+  },
+  "13014": {
+    "stat": "CharacterLosses",
+    "champion": "Seeker"
+  },
+  "13015": {
+    "stat": "CharacterLosses",
+    "champion": "Spearmaster"
+  },
+  "13016": {
+    "stat": "CharacterLosses",
+    "champion": "Stormcaller"
+  },
+  "13017": {
+    "stat": "CharacterLosses",
+    "champion": "Vanguard"
+  },
+  "13018": {
+    "stat": "CharacterLosses",
+    "champion": "Glutton"
+  },
+  "13019": {
+    "stat": "CharacterLosses",
+    "champion": "BloodPriest"
+  },
+  "13020": {
+    "stat": "CharacterLosses",
+    "champion": "MetalWarden"
+  },
+  "13021": {
+    "stat": "CharacterLosses",
+    "champion": "Swordmaster"
+  },
+  "13022": {
+    "stat": "CharacterLosses",
+    "champion": "Druid"
+  },
+  "13023": {
+    "stat": "CharacterLosses",
+    "champion": "Bakko_EasterEvent"
+  },
+  "13025": {
+    "stat": "CharacterLosses",
+    "champion": "Thorn"
+  },
+  "13026": {
+    "stat": "CharacterLosses",
+    "champion": "AshkaCampaign"
+  },
+  "13027": {
+    "stat": "CharacterLosses",
+    "champion": "FreyaCampaign"
+  },
+  "13028": {
+    "stat": "CharacterLosses",
+    "champion": "JumongCampaign"
+  },
+  "13029": {
+    "stat": "CharacterLosses",
+    "champion": "RaigonCampaign"
+  },
+  "13030": {
+    "stat": "CharacterLosses",
+    "champion": "RookCampaign"
+  },
+  "13031": {
+    "stat": "CharacterLosses",
+    "champion": "SiriusCampaign"
+  },
+  "13038": {
+    "stat": "CharacterLosses",
+    "champion": "JadeCampaign"
+  },
+  "13040": {
+    "stat": "CharacterLosses",
+    "champion": "RandomChampion"
+  },
+  "13041": {
+    "stat": "CharacterLosses",
+    "champion": "FrostMage"
+  },
+  "14001": {
+    "stat": "CharacterKills",
+    "champion": "Alchemist"
+  },
+  "14002": {
+    "stat": "CharacterKills",
+    "champion": "Astronomer"
+  },
+  "14003": {
+    "stat": "CharacterKills",
+    "champion": "Engineer"
+  },
+  "14004": {
+    "stat": "CharacterKills",
+    "champion": "Gunner"
+  },
+  "14005": {
+    "stat": "CharacterKills",
+    "champion": "Harbinger"
+  },
+  "14006": {
+    "stat": "CharacterKills",
+    "champion": "Herald"
+  },
+  "14007": {
+    "stat": "CharacterKills",
+    "champion": "Igniter"
+  },
+  "14008": {
+    "stat": "CharacterKills",
+    "champion": "Inhibitor"
+  },
+  "14009": {
+    "stat": "CharacterKills",
+    "champion": "Inquisitor"
+  },
+  "14010": {
+    "stat": "CharacterKills",
+    "champion": "Nomad"
+  },
+  "14011": {
+    "stat": "CharacterKills",
+    "champion": "Psychopomp"
+  },
+  "14012": {
+    "stat": "CharacterKills",
+    "champion": "Ranid"
+  },
+  "14013": {
+    "stat": "CharacterKills",
+    "champion": "Ravener"
+  },
+  "14014": {
+    "stat": "CharacterKills",
+    "champion": "Seeker"
+  },
+  "14015": {
+    "stat": "CharacterKills",
+    "champion": "Spearmaster"
+  },
+  "14016": {
+    "stat": "CharacterKills",
+    "champion": "Stormcaller"
+  },
+  "14017": {
+    "stat": "CharacterKills",
+    "champion": "Vanguard"
+  },
+  "14018": {
+    "stat": "CharacterKills",
+    "champion": "Glutton"
+  },
+  "14019": {
+    "stat": "CharacterKills",
+    "champion": "BloodPriest"
+  },
+  "14020": {
+    "stat": "CharacterKills",
+    "champion": "MetalWarden"
+  },
+  "14021": {
+    "stat": "CharacterKills",
+    "champion": "Swordmaster"
+  },
+  "14022": {
+    "stat": "CharacterKills",
+    "champion": "Druid"
+  },
+  "14023": {
+    "stat": "CharacterKills",
+    "champion": "Bakko_EasterEvent"
+  },
+  "14025": {
+    "stat": "CharacterKills",
+    "champion": "Thorn"
+  },
+  "14026": {
+    "stat": "CharacterKills",
+    "champion": "AshkaCampaign"
+  },
+  "14027": {
+    "stat": "CharacterKills",
+    "champion": "FreyaCampaign"
+  },
+  "14028": {
+    "stat": "CharacterKills",
+    "champion": "JumongCampaign"
+  },
+  "14029": {
+    "stat": "CharacterKills",
+    "champion": "RaigonCampaign"
+  },
+  "14030": {
+    "stat": "CharacterKills",
+    "champion": "RookCampaign"
+  },
+  "14031": {
+    "stat": "CharacterKills",
+    "champion": "SiriusCampaign"
+  },
+  "14038": {
+    "stat": "CharacterKills",
+    "champion": "JadeCampaign"
+  },
+  "14040": {
+    "stat": "CharacterKills",
+    "champion": "RandomChampion"
+  },
+  "14041": {
+    "stat": "CharacterKills",
+    "champion": "FrostMage"
+  },
+  "15001": {
+    "stat": "CharacterDeaths",
+    "champion": "Alchemist"
+  },
+  "15002": {
+    "stat": "CharacterDeaths",
+    "champion": "Astronomer"
+  },
+  "15003": {
+    "stat": "CharacterDeaths",
+    "champion": "Engineer"
+  },
+  "15004": {
+    "stat": "CharacterDeaths",
+    "champion": "Gunner"
+  },
+  "15005": {
+    "stat": "CharacterDeaths",
+    "champion": "Harbinger"
+  },
+  "15006": {
+    "stat": "CharacterDeaths",
+    "champion": "Herald"
+  },
+  "15007": {
+    "stat": "CharacterDeaths",
+    "champion": "Igniter"
+  },
+  "15008": {
+    "stat": "CharacterDeaths",
+    "champion": "Inhibitor"
+  },
+  "15009": {
+    "stat": "CharacterDeaths",
+    "champion": "Inquisitor"
+  },
+  "15010": {
+    "stat": "CharacterDeaths",
+    "champion": "Nomad"
+  },
+  "15011": {
+    "stat": "CharacterDeaths",
+    "champion": "Psychopomp"
+  },
+  "15012": {
+    "stat": "CharacterDeaths",
+    "champion": "Ranid"
+  },
+  "15013": {
+    "stat": "CharacterDeaths",
+    "champion": "Ravener"
+  },
+  "15014": {
+    "stat": "CharacterDeaths",
+    "champion": "Seeker"
+  },
+  "15015": {
+    "stat": "CharacterDeaths",
+    "champion": "Spearmaster"
+  },
+  "15016": {
+    "stat": "CharacterDeaths",
+    "champion": "Stormcaller"
+  },
+  "15017": {
+    "stat": "CharacterDeaths",
+    "champion": "Vanguard"
+  },
+  "15018": {
+    "stat": "CharacterDeaths",
+    "champion": "Glutton"
+  },
+  "15019": {
+    "stat": "CharacterDeaths",
+    "champion": "BloodPriest"
+  },
+  "15020": {
+    "stat": "CharacterDeaths",
+    "champion": "MetalWarden"
+  },
+  "15021": {
+    "stat": "CharacterDeaths",
+    "champion": "Swordmaster"
+  },
+  "15022": {
+    "stat": "CharacterDeaths",
+    "champion": "Druid"
+  },
+  "15023": {
+    "stat": "CharacterDeaths",
+    "champion": "Bakko_EasterEvent"
+  },
+  "15025": {
+    "stat": "CharacterDeaths",
+    "champion": "Thorn"
+  },
+  "15026": {
+    "stat": "CharacterDeaths",
+    "champion": "AshkaCampaign"
+  },
+  "15027": {
+    "stat": "CharacterDeaths",
+    "champion": "FreyaCampaign"
+  },
+  "15028": {
+    "stat": "CharacterDeaths",
+    "champion": "JumongCampaign"
+  },
+  "15029": {
+    "stat": "CharacterDeaths",
+    "champion": "RaigonCampaign"
+  },
+  "15030": {
+    "stat": "CharacterDeaths",
+    "champion": "RookCampaign"
+  },
+  "15031": {
+    "stat": "CharacterDeaths",
+    "champion": "SiriusCampaign"
+  },
+  "15038": {
+    "stat": "CharacterDeaths",
+    "champion": "JadeCampaign"
+  },
+  "15040": {
+    "stat": "CharacterDeaths",
+    "champion": "RandomChampion"
+  },
+  "15041": {
+    "stat": "CharacterDeaths",
+    "champion": "FrostMage"
+  },
+  "16001": {
+    "stat": "CharacterTimePlayed",
+    "champion": "Alchemist"
+  },
+  "16002": {
+    "stat": "CharacterTimePlayed",
+    "champion": "Astronomer"
+  },
+  "16003": {
+    "stat": "CharacterTimePlayed",
+    "champion": "Engineer"
+  },
+  "16004": {
+    "stat": "CharacterTimePlayed",
+    "champion": "Gunner"
+  },
+  "16005": {
+    "stat": "CharacterTimePlayed",
+    "champion": "Harbinger"
+  },
+  "16006": {
+    "stat": "CharacterTimePlayed",
+    "champion": "Herald"
+  },
+  "16007": {
+    "stat": "CharacterTimePlayed",
+    "champion": "Igniter"
+  },
+  "16008": {
+    "stat": "CharacterTimePlayed",
+    "champion": "Inhibitor"
+  },
+  "16009": {
+    "stat": "CharacterTimePlayed",
+    "champion": "Inquisitor"
+  },
+  "16010": {
+    "stat": "CharacterTimePlayed",
+    "champion": "Nomad"
+  },
+  "16011": {
+    "stat": "CharacterTimePlayed",
+    "champion": "Psychopomp"
+  },
+  "16012": {
+    "stat": "CharacterTimePlayed",
+    "champion": "Ranid"
+  },
+  "16013": {
+    "stat": "CharacterTimePlayed",
+    "champion": "Ravener"
+  },
+  "16014": {
+    "stat": "CharacterTimePlayed",
+    "champion": "Seeker"
+  },
+  "16015": {
+    "stat": "CharacterTimePlayed",
+    "champion": "Spearmaster"
+  },
+  "16016": {
+    "stat": "CharacterTimePlayed",
+    "champion": "Stormcaller"
+  },
+  "16017": {
+    "stat": "CharacterTimePlayed",
+    "champion": "Vanguard"
+  },
+  "16018": {
+    "stat": "CharacterTimePlayed",
+    "champion": "Glutton"
+  },
+  "16019": {
+    "stat": "CharacterTimePlayed",
+    "champion": "BloodPriest"
+  },
+  "16020": {
+    "stat": "CharacterTimePlayed",
+    "champion": "MetalWarden"
+  },
+  "16021": {
+    "stat": "CharacterTimePlayed",
+    "champion": "Swordmaster"
+  },
+  "16022": {
+    "stat": "CharacterTimePlayed",
+    "champion": "Druid"
+  },
+  "16023": {
+    "stat": "CharacterTimePlayed",
+    "champion": "Bakko_EasterEvent"
+  },
+  "16025": {
+    "stat": "CharacterTimePlayed",
+    "champion": "Thorn"
+  },
+  "16026": {
+    "stat": "CharacterTimePlayed",
+    "champion": "AshkaCampaign"
+  },
+  "16027": {
+    "stat": "CharacterTimePlayed",
+    "champion": "FreyaCampaign"
+  },
+  "16028": {
+    "stat": "CharacterTimePlayed",
+    "champion": "JumongCampaign"
+  },
+  "16029": {
+    "stat": "CharacterTimePlayed",
+    "champion": "RaigonCampaign"
+  },
+  "16030": {
+    "stat": "CharacterTimePlayed",
+    "champion": "RookCampaign"
+  },
+  "16031": {
+    "stat": "CharacterTimePlayed",
+    "champion": "SiriusCampaign"
+  },
+  "16038": {
+    "stat": "CharacterTimePlayed",
+    "champion": "JadeCampaign"
+  },
+  "16040": {
+    "stat": "CharacterTimePlayed",
+    "champion": "RandomChampion"
+  },
+  "16041": {
+    "stat": "CharacterTimePlayed",
+    "champion": "FrostMage"
+  },
+  "17001": {
+    "stat": "CharacterRanked2v2Wins",
+    "champion": "Alchemist"
+  },
+  "17002": {
+    "stat": "CharacterRanked2v2Wins",
+    "champion": "Astronomer"
+  },
+  "17003": {
+    "stat": "CharacterRanked2v2Wins",
+    "champion": "Engineer"
+  },
+  "17004": {
+    "stat": "CharacterRanked2v2Wins",
+    "champion": "Gunner"
+  },
+  "17005": {
+    "stat": "CharacterRanked2v2Wins",
+    "champion": "Harbinger"
+  },
+  "17006": {
+    "stat": "CharacterRanked2v2Wins",
+    "champion": "Herald"
+  },
+  "17007": {
+    "stat": "CharacterRanked2v2Wins",
+    "champion": "Igniter"
+  },
+  "17008": {
+    "stat": "CharacterRanked2v2Wins",
+    "champion": "Inhibitor"
+  },
+  "17009": {
+    "stat": "CharacterRanked2v2Wins",
+    "champion": "Inquisitor"
+  },
+  "17010": {
+    "stat": "CharacterRanked2v2Wins",
+    "champion": "Nomad"
+  },
+  "17011": {
+    "stat": "CharacterRanked2v2Wins",
+    "champion": "Psychopomp"
+  },
+  "17012": {
+    "stat": "CharacterRanked2v2Wins",
+    "champion": "Ranid"
+  },
+  "17013": {
+    "stat": "CharacterRanked2v2Wins",
+    "champion": "Ravener"
+  },
+  "17014": {
+    "stat": "CharacterRanked2v2Wins",
+    "champion": "Seeker"
+  },
+  "17015": {
+    "stat": "CharacterRanked2v2Wins",
+    "champion": "Spearmaster"
+  },
+  "17016": {
+    "stat": "CharacterRanked2v2Wins",
+    "champion": "Stormcaller"
+  },
+  "17017": {
+    "stat": "CharacterRanked2v2Wins",
+    "champion": "Vanguard"
+  },
+  "17018": {
+    "stat": "CharacterRanked2v2Wins",
+    "champion": "Glutton"
+  },
+  "17019": {
+    "stat": "CharacterRanked2v2Wins",
+    "champion": "BloodPriest"
+  },
+  "17020": {
+    "stat": "CharacterRanked2v2Wins",
+    "champion": "MetalWarden"
+  },
+  "17021": {
+    "stat": "CharacterRanked2v2Wins",
+    "champion": "Swordmaster"
+  },
+  "17022": {
+    "stat": "CharacterRanked2v2Wins",
+    "champion": "Druid"
+  },
+  "17023": {
+    "stat": "CharacterRanked2v2Wins",
+    "champion": "Bakko_EasterEvent"
+  },
+  "17025": {
+    "stat": "CharacterRanked2v2Wins",
+    "champion": "Thorn"
+  },
+  "17026": {
+    "stat": "CharacterRanked2v2Wins",
+    "champion": "AshkaCampaign"
+  },
+  "17027": {
+    "stat": "CharacterRanked2v2Wins",
+    "champion": "FreyaCampaign"
+  },
+  "17028": {
+    "stat": "CharacterRanked2v2Wins",
+    "champion": "JumongCampaign"
+  },
+  "17029": {
+    "stat": "CharacterRanked2v2Wins",
+    "champion": "RaigonCampaign"
+  },
+  "17030": {
+    "stat": "CharacterRanked2v2Wins",
+    "champion": "RookCampaign"
+  },
+  "17031": {
+    "stat": "CharacterRanked2v2Wins",
+    "champion": "SiriusCampaign"
+  },
+  "17038": {
+    "stat": "CharacterRanked2v2Wins",
+    "champion": "JadeCampaign"
+  },
+  "17040": {
+    "stat": "CharacterRanked2v2Wins",
+    "champion": "RandomChampion"
+  },
+  "17041": {
+    "stat": "CharacterRanked2v2Wins",
+    "champion": "FrostMage"
+  },
+  "18001": {
+    "stat": "CharacterRanked2v2Losses",
+    "champion": "Alchemist"
+  },
+  "18002": {
+    "stat": "CharacterRanked2v2Losses",
+    "champion": "Astronomer"
+  },
+  "18003": {
+    "stat": "CharacterRanked2v2Losses",
+    "champion": "Engineer"
+  },
+  "18004": {
+    "stat": "CharacterRanked2v2Losses",
+    "champion": "Gunner"
+  },
+  "18005": {
+    "stat": "CharacterRanked2v2Losses",
+    "champion": "Harbinger"
+  },
+  "18006": {
+    "stat": "CharacterRanked2v2Losses",
+    "champion": "Herald"
+  },
+  "18007": {
+    "stat": "CharacterRanked2v2Losses",
+    "champion": "Igniter"
+  },
+  "18008": {
+    "stat": "CharacterRanked2v2Losses",
+    "champion": "Inhibitor"
+  },
+  "18009": {
+    "stat": "CharacterRanked2v2Losses",
+    "champion": "Inquisitor"
+  },
+  "18010": {
+    "stat": "CharacterRanked2v2Losses",
+    "champion": "Nomad"
+  },
+  "18011": {
+    "stat": "CharacterRanked2v2Losses",
+    "champion": "Psychopomp"
+  },
+  "18012": {
+    "stat": "CharacterRanked2v2Losses",
+    "champion": "Ranid"
+  },
+  "18013": {
+    "stat": "CharacterRanked2v2Losses",
+    "champion": "Ravener"
+  },
+  "18014": {
+    "stat": "CharacterRanked2v2Losses",
+    "champion": "Seeker"
+  },
+  "18015": {
+    "stat": "CharacterRanked2v2Losses",
+    "champion": "Spearmaster"
+  },
+  "18016": {
+    "stat": "CharacterRanked2v2Losses",
+    "champion": "Stormcaller"
+  },
+  "18017": {
+    "stat": "CharacterRanked2v2Losses",
+    "champion": "Vanguard"
+  },
+  "18018": {
+    "stat": "CharacterRanked2v2Losses",
+    "champion": "Glutton"
+  },
+  "18019": {
+    "stat": "CharacterRanked2v2Losses",
+    "champion": "BloodPriest"
+  },
+  "18020": {
+    "stat": "CharacterRanked2v2Losses",
+    "champion": "MetalWarden"
+  },
+  "18021": {
+    "stat": "CharacterRanked2v2Losses",
+    "champion": "Swordmaster"
+  },
+  "18022": {
+    "stat": "CharacterRanked2v2Losses",
+    "champion": "Druid"
+  },
+  "18023": {
+    "stat": "CharacterRanked2v2Losses",
+    "champion": "Bakko_EasterEvent"
+  },
+  "18025": {
+    "stat": "CharacterRanked2v2Losses",
+    "champion": "Thorn"
+  },
+  "18026": {
+    "stat": "CharacterRanked2v2Losses",
+    "champion": "AshkaCampaign"
+  },
+  "18027": {
+    "stat": "CharacterRanked2v2Losses",
+    "champion": "FreyaCampaign"
+  },
+  "18028": {
+    "stat": "CharacterRanked2v2Losses",
+    "champion": "JumongCampaign"
+  },
+  "18029": {
+    "stat": "CharacterRanked2v2Losses",
+    "champion": "RaigonCampaign"
+  },
+  "18030": {
+    "stat": "CharacterRanked2v2Losses",
+    "champion": "RookCampaign"
+  },
+  "18031": {
+    "stat": "CharacterRanked2v2Losses",
+    "champion": "SiriusCampaign"
+  },
+  "18038": {
+    "stat": "CharacterRanked2v2Losses",
+    "champion": "JadeCampaign"
+  },
+  "18040": {
+    "stat": "CharacterRanked2v2Losses",
+    "champion": "RandomChampion"
+  },
+  "18041": {
+    "stat": "CharacterRanked2v2Losses",
+    "champion": "FrostMage"
+  },
+  "19001": {
+    "stat": "CharacterRanked3v3Wins",
+    "champion": "Alchemist"
+  },
+  "19002": {
+    "stat": "CharacterRanked3v3Wins",
+    "champion": "Astronomer"
+  },
+  "19003": {
+    "stat": "CharacterRanked3v3Wins",
+    "champion": "Engineer"
+  },
+  "19004": {
+    "stat": "CharacterRanked3v3Wins",
+    "champion": "Gunner"
+  },
+  "19005": {
+    "stat": "CharacterRanked3v3Wins",
+    "champion": "Harbinger"
+  },
+  "19006": {
+    "stat": "CharacterRanked3v3Wins",
+    "champion": "Herald"
+  },
+  "19007": {
+    "stat": "CharacterRanked3v3Wins",
+    "champion": "Igniter"
+  },
+  "19008": {
+    "stat": "CharacterRanked3v3Wins",
+    "champion": "Inhibitor"
+  },
+  "19009": {
+    "stat": "CharacterRanked3v3Wins",
+    "champion": "Inquisitor"
+  },
+  "19010": {
+    "stat": "CharacterRanked3v3Wins",
+    "champion": "Nomad"
+  },
+  "19011": {
+    "stat": "CharacterRanked3v3Wins",
+    "champion": "Psychopomp"
+  },
+  "19012": {
+    "stat": "CharacterRanked3v3Wins",
+    "champion": "Ranid"
+  },
+  "19013": {
+    "stat": "CharacterRanked3v3Wins",
+    "champion": "Ravener"
+  },
+  "19014": {
+    "stat": "CharacterRanked3v3Wins",
+    "champion": "Seeker"
+  },
+  "19015": {
+    "stat": "CharacterRanked3v3Wins",
+    "champion": "Spearmaster"
+  },
+  "19016": {
+    "stat": "CharacterRanked3v3Wins",
+    "champion": "Stormcaller"
+  },
+  "19017": {
+    "stat": "CharacterRanked3v3Wins",
+    "champion": "Vanguard"
+  },
+  "19018": {
+    "stat": "CharacterRanked3v3Wins",
+    "champion": "Glutton"
+  },
+  "19019": {
+    "stat": "CharacterRanked3v3Wins",
+    "champion": "BloodPriest"
+  },
+  "19020": {
+    "stat": "CharacterRanked3v3Wins",
+    "champion": "MetalWarden"
+  },
+  "19021": {
+    "stat": "CharacterRanked3v3Wins",
+    "champion": "Swordmaster"
+  },
+  "19022": {
+    "stat": "CharacterRanked3v3Wins",
+    "champion": "Druid"
+  },
+  "19023": {
+    "stat": "CharacterRanked3v3Wins",
+    "champion": "Bakko_EasterEvent"
+  },
+  "19025": {
+    "stat": "CharacterRanked3v3Wins",
+    "champion": "Thorn"
+  },
+  "19026": {
+    "stat": "CharacterRanked3v3Wins",
+    "champion": "AshkaCampaign"
+  },
+  "19027": {
+    "stat": "CharacterRanked3v3Wins",
+    "champion": "FreyaCampaign"
+  },
+  "19028": {
+    "stat": "CharacterRanked3v3Wins",
+    "champion": "JumongCampaign"
+  },
+  "19029": {
+    "stat": "CharacterRanked3v3Wins",
+    "champion": "RaigonCampaign"
+  },
+  "19030": {
+    "stat": "CharacterRanked3v3Wins",
+    "champion": "RookCampaign"
+  },
+  "19031": {
+    "stat": "CharacterRanked3v3Wins",
+    "champion": "SiriusCampaign"
+  },
+  "19038": {
+    "stat": "CharacterRanked3v3Wins",
+    "champion": "JadeCampaign"
+  },
+  "19040": {
+    "stat": "CharacterRanked3v3Wins",
+    "champion": "RandomChampion"
+  },
+  "19041": {
+    "stat": "CharacterRanked3v3Wins",
+    "champion": "FrostMage"
+  },
+  "20001": {
+    "stat": "CharacterRanked3v3Losses",
+    "champion": "Alchemist"
+  },
+  "20002": {
+    "stat": "CharacterRanked3v3Losses",
+    "champion": "Astronomer"
+  },
+  "20003": {
+    "stat": "CharacterRanked3v3Losses",
+    "champion": "Engineer"
+  },
+  "20004": {
+    "stat": "CharacterRanked3v3Losses",
+    "champion": "Gunner"
+  },
+  "20005": {
+    "stat": "CharacterRanked3v3Losses",
+    "champion": "Harbinger"
+  },
+  "20006": {
+    "stat": "CharacterRanked3v3Losses",
+    "champion": "Herald"
+  },
+  "20007": {
+    "stat": "CharacterRanked3v3Losses",
+    "champion": "Igniter"
+  },
+  "20008": {
+    "stat": "CharacterRanked3v3Losses",
+    "champion": "Inhibitor"
+  },
+  "20009": {
+    "stat": "CharacterRanked3v3Losses",
+    "champion": "Inquisitor"
+  },
+  "20010": {
+    "stat": "CharacterRanked3v3Losses",
+    "champion": "Nomad"
+  },
+  "20011": {
+    "stat": "CharacterRanked3v3Losses",
+    "champion": "Psychopomp"
+  },
+  "20012": {
+    "stat": "CharacterRanked3v3Losses",
+    "champion": "Ranid"
+  },
+  "20013": {
+    "stat": "CharacterRanked3v3Losses",
+    "champion": "Ravener"
+  },
+  "20014": {
+    "stat": "CharacterRanked3v3Losses",
+    "champion": "Seeker"
+  },
+  "20015": {
+    "stat": "CharacterRanked3v3Losses",
+    "champion": "Spearmaster"
+  },
+  "20016": {
+    "stat": "CharacterRanked3v3Losses",
+    "champion": "Stormcaller"
+  },
+  "20017": {
+    "stat": "CharacterRanked3v3Losses",
+    "champion": "Vanguard"
+  },
+  "20018": {
+    "stat": "CharacterRanked3v3Losses",
+    "champion": "Glutton"
+  },
+  "20019": {
+    "stat": "CharacterRanked3v3Losses",
+    "champion": "BloodPriest"
+  },
+  "20020": {
+    "stat": "CharacterRanked3v3Losses",
+    "champion": "MetalWarden"
+  },
+  "20021": {
+    "stat": "CharacterRanked3v3Losses",
+    "champion": "Swordmaster"
+  },
+  "20022": {
+    "stat": "CharacterRanked3v3Losses",
+    "champion": "Druid"
+  },
+  "20023": {
+    "stat": "CharacterRanked3v3Losses",
+    "champion": "Bakko_EasterEvent"
+  },
+  "20025": {
+    "stat": "CharacterRanked3v3Losses",
+    "champion": "Thorn"
+  },
+  "20026": {
+    "stat": "CharacterRanked3v3Losses",
+    "champion": "AshkaCampaign"
+  },
+  "20027": {
+    "stat": "CharacterRanked3v3Losses",
+    "champion": "FreyaCampaign"
+  },
+  "20028": {
+    "stat": "CharacterRanked3v3Losses",
+    "champion": "JumongCampaign"
+  },
+  "20029": {
+    "stat": "CharacterRanked3v3Losses",
+    "champion": "RaigonCampaign"
+  },
+  "20030": {
+    "stat": "CharacterRanked3v3Losses",
+    "champion": "RookCampaign"
+  },
+  "20031": {
+    "stat": "CharacterRanked3v3Losses",
+    "champion": "SiriusCampaign"
+  },
+  "20038": {
+    "stat": "CharacterRanked3v3Losses",
+    "champion": "JadeCampaign"
+  },
+  "20040": {
+    "stat": "CharacterRanked3v3Losses",
+    "champion": "RandomChampion"
+  },
+  "20041": {
+    "stat": "CharacterRanked3v3Losses",
+    "champion": "FrostMage"
+  },
+  "21001": {
+    "stat": "CharacterUnranked2v2Wins",
+    "champion": "Alchemist"
+  },
+  "21002": {
+    "stat": "CharacterUnranked2v2Wins",
+    "champion": "Astronomer"
+  },
+  "21003": {
+    "stat": "CharacterUnranked2v2Wins",
+    "champion": "Engineer"
+  },
+  "21004": {
+    "stat": "CharacterUnranked2v2Wins",
+    "champion": "Gunner"
+  },
+  "21005": {
+    "stat": "CharacterUnranked2v2Wins",
+    "champion": "Harbinger"
+  },
+  "21006": {
+    "stat": "CharacterUnranked2v2Wins",
+    "champion": "Herald"
+  },
+  "21007": {
+    "stat": "CharacterUnranked2v2Wins",
+    "champion": "Igniter"
+  },
+  "21008": {
+    "stat": "CharacterUnranked2v2Wins",
+    "champion": "Inhibitor"
+  },
+  "21009": {
+    "stat": "CharacterUnranked2v2Wins",
+    "champion": "Inquisitor"
+  },
+  "21010": {
+    "stat": "CharacterUnranked2v2Wins",
+    "champion": "Nomad"
+  },
+  "21011": {
+    "stat": "CharacterUnranked2v2Wins",
+    "champion": "Psychopomp"
+  },
+  "21012": {
+    "stat": "CharacterUnranked2v2Wins",
+    "champion": "Ranid"
+  },
+  "21013": {
+    "stat": "CharacterUnranked2v2Wins",
+    "champion": "Ravener"
+  },
+  "21014": {
+    "stat": "CharacterUnranked2v2Wins",
+    "champion": "Seeker"
+  },
+  "21015": {
+    "stat": "CharacterUnranked2v2Wins",
+    "champion": "Spearmaster"
+  },
+  "21016": {
+    "stat": "CharacterUnranked2v2Wins",
+    "champion": "Stormcaller"
+  },
+  "21017": {
+    "stat": "CharacterUnranked2v2Wins",
+    "champion": "Vanguard"
+  },
+  "21018": {
+    "stat": "CharacterUnranked2v2Wins",
+    "champion": "Glutton"
+  },
+  "21019": {
+    "stat": "CharacterUnranked2v2Wins",
+    "champion": "BloodPriest"
+  },
+  "21020": {
+    "stat": "CharacterUnranked2v2Wins",
+    "champion": "MetalWarden"
+  },
+  "21021": {
+    "stat": "CharacterUnranked2v2Wins",
+    "champion": "Swordmaster"
+  },
+  "21022": {
+    "stat": "CharacterUnranked2v2Wins",
+    "champion": "Druid"
+  },
+  "21023": {
+    "stat": "CharacterUnranked2v2Wins",
+    "champion": "Bakko_EasterEvent"
+  },
+  "21025": {
+    "stat": "CharacterUnranked2v2Wins",
+    "champion": "Thorn"
+  },
+  "21026": {
+    "stat": "CharacterUnranked2v2Wins",
+    "champion": "AshkaCampaign"
+  },
+  "21027": {
+    "stat": "CharacterUnranked2v2Wins",
+    "champion": "FreyaCampaign"
+  },
+  "21028": {
+    "stat": "CharacterUnranked2v2Wins",
+    "champion": "JumongCampaign"
+  },
+  "21029": {
+    "stat": "CharacterUnranked2v2Wins",
+    "champion": "RaigonCampaign"
+  },
+  "21030": {
+    "stat": "CharacterUnranked2v2Wins",
+    "champion": "RookCampaign"
+  },
+  "21031": {
+    "stat": "CharacterUnranked2v2Wins",
+    "champion": "SiriusCampaign"
+  },
+  "21038": {
+    "stat": "CharacterUnranked2v2Wins",
+    "champion": "JadeCampaign"
+  },
+  "21040": {
+    "stat": "CharacterUnranked2v2Wins",
+    "champion": "RandomChampion"
+  },
+  "21041": {
+    "stat": "CharacterUnranked2v2Wins",
+    "champion": "FrostMage"
+  },
+  "22001": {
+    "stat": "CharacterUnranked2v2Losses",
+    "champion": "Alchemist"
+  },
+  "22002": {
+    "stat": "CharacterUnranked2v2Losses",
+    "champion": "Astronomer"
+  },
+  "22003": {
+    "stat": "CharacterUnranked2v2Losses",
+    "champion": "Engineer"
+  },
+  "22004": {
+    "stat": "CharacterUnranked2v2Losses",
+    "champion": "Gunner"
+  },
+  "22005": {
+    "stat": "CharacterUnranked2v2Losses",
+    "champion": "Harbinger"
+  },
+  "22006": {
+    "stat": "CharacterUnranked2v2Losses",
+    "champion": "Herald"
+  },
+  "22007": {
+    "stat": "CharacterUnranked2v2Losses",
+    "champion": "Igniter"
+  },
+  "22008": {
+    "stat": "CharacterUnranked2v2Losses",
+    "champion": "Inhibitor"
+  },
+  "22009": {
+    "stat": "CharacterUnranked2v2Losses",
+    "champion": "Inquisitor"
+  },
+  "22010": {
+    "stat": "CharacterUnranked2v2Losses",
+    "champion": "Nomad"
+  },
+  "22011": {
+    "stat": "CharacterUnranked2v2Losses",
+    "champion": "Psychopomp"
+  },
+  "22012": {
+    "stat": "CharacterUnranked2v2Losses",
+    "champion": "Ranid"
+  },
+  "22013": {
+    "stat": "CharacterUnranked2v2Losses",
+    "champion": "Ravener"
+  },
+  "22014": {
+    "stat": "CharacterUnranked2v2Losses",
+    "champion": "Seeker"
+  },
+  "22015": {
+    "stat": "CharacterUnranked2v2Losses",
+    "champion": "Spearmaster"
+  },
+  "22016": {
+    "stat": "CharacterUnranked2v2Losses",
+    "champion": "Stormcaller"
+  },
+  "22017": {
+    "stat": "CharacterUnranked2v2Losses",
+    "champion": "Vanguard"
+  },
+  "22018": {
+    "stat": "CharacterUnranked2v2Losses",
+    "champion": "Glutton"
+  },
+  "22019": {
+    "stat": "CharacterUnranked2v2Losses",
+    "champion": "BloodPriest"
+  },
+  "22020": {
+    "stat": "CharacterUnranked2v2Losses",
+    "champion": "MetalWarden"
+  },
+  "22021": {
+    "stat": "CharacterUnranked2v2Losses",
+    "champion": "Swordmaster"
+  },
+  "22022": {
+    "stat": "CharacterUnranked2v2Losses",
+    "champion": "Druid"
+  },
+  "22023": {
+    "stat": "CharacterUnranked2v2Losses",
+    "champion": "Bakko_EasterEvent"
+  },
+  "22025": {
+    "stat": "CharacterUnranked2v2Losses",
+    "champion": "Thorn"
+  },
+  "22026": {
+    "stat": "CharacterUnranked2v2Losses",
+    "champion": "AshkaCampaign"
+  },
+  "22027": {
+    "stat": "CharacterUnranked2v2Losses",
+    "champion": "FreyaCampaign"
+  },
+  "22028": {
+    "stat": "CharacterUnranked2v2Losses",
+    "champion": "JumongCampaign"
+  },
+  "22029": {
+    "stat": "CharacterUnranked2v2Losses",
+    "champion": "RaigonCampaign"
+  },
+  "22030": {
+    "stat": "CharacterUnranked2v2Losses",
+    "champion": "RookCampaign"
+  },
+  "22031": {
+    "stat": "CharacterUnranked2v2Losses",
+    "champion": "SiriusCampaign"
+  },
+  "22038": {
+    "stat": "CharacterUnranked2v2Losses",
+    "champion": "JadeCampaign"
+  },
+  "22040": {
+    "stat": "CharacterUnranked2v2Losses",
+    "champion": "RandomChampion"
+  },
+  "22041": {
+    "stat": "CharacterUnranked2v2Losses",
+    "champion": "FrostMage"
+  },
+  "23001": {
+    "stat": "CharacterUnranked3v3Wins",
+    "champion": "Alchemist"
+  },
+  "23002": {
+    "stat": "CharacterUnranked3v3Wins",
+    "champion": "Astronomer"
+  },
+  "23003": {
+    "stat": "CharacterUnranked3v3Wins",
+    "champion": "Engineer"
+  },
+  "23004": {
+    "stat": "CharacterUnranked3v3Wins",
+    "champion": "Gunner"
+  },
+  "23005": {
+    "stat": "CharacterUnranked3v3Wins",
+    "champion": "Harbinger"
+  },
+  "23006": {
+    "stat": "CharacterUnranked3v3Wins",
+    "champion": "Herald"
+  },
+  "23007": {
+    "stat": "CharacterUnranked3v3Wins",
+    "champion": "Igniter"
+  },
+  "23008": {
+    "stat": "CharacterUnranked3v3Wins",
+    "champion": "Inhibitor"
+  },
+  "23009": {
+    "stat": "CharacterUnranked3v3Wins",
+    "champion": "Inquisitor"
+  },
+  "23010": {
+    "stat": "CharacterUnranked3v3Wins",
+    "champion": "Nomad"
+  },
+  "23011": {
+    "stat": "CharacterUnranked3v3Wins",
+    "champion": "Psychopomp"
+  },
+  "23012": {
+    "stat": "CharacterUnranked3v3Wins",
+    "champion": "Ranid"
+  },
+  "23013": {
+    "stat": "CharacterUnranked3v3Wins",
+    "champion": "Ravener"
+  },
+  "23014": {
+    "stat": "CharacterUnranked3v3Wins",
+    "champion": "Seeker"
+  },
+  "23015": {
+    "stat": "CharacterUnranked3v3Wins",
+    "champion": "Spearmaster"
+  },
+  "23016": {
+    "stat": "CharacterUnranked3v3Wins",
+    "champion": "Stormcaller"
+  },
+  "23017": {
+    "stat": "CharacterUnranked3v3Wins",
+    "champion": "Vanguard"
+  },
+  "23018": {
+    "stat": "CharacterUnranked3v3Wins",
+    "champion": "Glutton"
+  },
+  "23019": {
+    "stat": "CharacterUnranked3v3Wins",
+    "champion": "BloodPriest"
+  },
+  "23020": {
+    "stat": "CharacterUnranked3v3Wins",
+    "champion": "MetalWarden"
+  },
+  "23021": {
+    "stat": "CharacterUnranked3v3Wins",
+    "champion": "Swordmaster"
+  },
+  "23022": {
+    "stat": "CharacterUnranked3v3Wins",
+    "champion": "Druid"
+  },
+  "23023": {
+    "stat": "CharacterUnranked3v3Wins",
+    "champion": "Bakko_EasterEvent"
+  },
+  "23025": {
+    "stat": "CharacterUnranked3v3Wins",
+    "champion": "Thorn"
+  },
+  "23026": {
+    "stat": "CharacterUnranked3v3Wins",
+    "champion": "AshkaCampaign"
+  },
+  "23027": {
+    "stat": "CharacterUnranked3v3Wins",
+    "champion": "FreyaCampaign"
+  },
+  "23028": {
+    "stat": "CharacterUnranked3v3Wins",
+    "champion": "JumongCampaign"
+  },
+  "23029": {
+    "stat": "CharacterUnranked3v3Wins",
+    "champion": "RaigonCampaign"
+  },
+  "23030": {
+    "stat": "CharacterUnranked3v3Wins",
+    "champion": "RookCampaign"
+  },
+  "23031": {
+    "stat": "CharacterUnranked3v3Wins",
+    "champion": "SiriusCampaign"
+  },
+  "23038": {
+    "stat": "CharacterUnranked3v3Wins",
+    "champion": "JadeCampaign"
+  },
+  "23040": {
+    "stat": "CharacterUnranked3v3Wins",
+    "champion": "RandomChampion"
+  },
+  "23041": {
+    "stat": "CharacterUnranked3v3Wins",
+    "champion": "FrostMage"
+  },
+  "24001": {
+    "stat": "CharacterUnranked3v3Losses",
+    "champion": "Alchemist"
+  },
+  "24002": {
+    "stat": "CharacterUnranked3v3Losses",
+    "champion": "Astronomer"
+  },
+  "24003": {
+    "stat": "CharacterUnranked3v3Losses",
+    "champion": "Engineer"
+  },
+  "24004": {
+    "stat": "CharacterUnranked3v3Losses",
+    "champion": "Gunner"
+  },
+  "24005": {
+    "stat": "CharacterUnranked3v3Losses",
+    "champion": "Harbinger"
+  },
+  "24006": {
+    "stat": "CharacterUnranked3v3Losses",
+    "champion": "Herald"
+  },
+  "24007": {
+    "stat": "CharacterUnranked3v3Losses",
+    "champion": "Igniter"
+  },
+  "24008": {
+    "stat": "CharacterUnranked3v3Losses",
+    "champion": "Inhibitor"
+  },
+  "24009": {
+    "stat": "CharacterUnranked3v3Losses",
+    "champion": "Inquisitor"
+  },
+  "24010": {
+    "stat": "CharacterUnranked3v3Losses",
+    "champion": "Nomad"
+  },
+  "24011": {
+    "stat": "CharacterUnranked3v3Losses",
+    "champion": "Psychopomp"
+  },
+  "24012": {
+    "stat": "CharacterUnranked3v3Losses",
+    "champion": "Ranid"
+  },
+  "24013": {
+    "stat": "CharacterUnranked3v3Losses",
+    "champion": "Ravener"
+  },
+  "24014": {
+    "stat": "CharacterUnranked3v3Losses",
+    "champion": "Seeker"
+  },
+  "24015": {
+    "stat": "CharacterUnranked3v3Losses",
+    "champion": "Spearmaster"
+  },
+  "24016": {
+    "stat": "CharacterUnranked3v3Losses",
+    "champion": "Stormcaller"
+  },
+  "24017": {
+    "stat": "CharacterUnranked3v3Losses",
+    "champion": "Vanguard"
+  },
+  "24018": {
+    "stat": "CharacterUnranked3v3Losses",
+    "champion": "Glutton"
+  },
+  "24019": {
+    "stat": "CharacterUnranked3v3Losses",
+    "champion": "BloodPriest"
+  },
+  "24020": {
+    "stat": "CharacterUnranked3v3Losses",
+    "champion": "MetalWarden"
+  },
+  "24021": {
+    "stat": "CharacterUnranked3v3Losses",
+    "champion": "Swordmaster"
+  },
+  "24022": {
+    "stat": "CharacterUnranked3v3Losses",
+    "champion": "Druid"
+  },
+  "24023": {
+    "stat": "CharacterUnranked3v3Losses",
+    "champion": "Bakko_EasterEvent"
+  },
+  "24025": {
+    "stat": "CharacterUnranked3v3Losses",
+    "champion": "Thorn"
+  },
+  "24026": {
+    "stat": "CharacterUnranked3v3Losses",
+    "champion": "AshkaCampaign"
+  },
+  "24027": {
+    "stat": "CharacterUnranked3v3Losses",
+    "champion": "FreyaCampaign"
+  },
+  "24028": {
+    "stat": "CharacterUnranked3v3Losses",
+    "champion": "JumongCampaign"
+  },
+  "24029": {
+    "stat": "CharacterUnranked3v3Losses",
+    "champion": "RaigonCampaign"
+  },
+  "24030": {
+    "stat": "CharacterUnranked3v3Losses",
+    "champion": "RookCampaign"
+  },
+  "24031": {
+    "stat": "CharacterUnranked3v3Losses",
+    "champion": "SiriusCampaign"
+  },
+  "24038": {
+    "stat": "CharacterUnranked3v3Losses",
+    "champion": "JadeCampaign"
+  },
+  "24040": {
+    "stat": "CharacterUnranked3v3Losses",
+    "champion": "RandomChampion"
+  },
+  "24041": {
+    "stat": "CharacterUnranked3v3Losses",
+    "champion": "FrostMage"
+  },
+  "25001": {
+    "stat": "CharacterBrawlWins",
+    "champion": "Alchemist"
+  },
+  "25002": {
+    "stat": "CharacterBrawlWins",
+    "champion": "Astronomer"
+  },
+  "25003": {
+    "stat": "CharacterBrawlWins",
+    "champion": "Engineer"
+  },
+  "25004": {
+    "stat": "CharacterBrawlWins",
+    "champion": "Gunner"
+  },
+  "25005": {
+    "stat": "CharacterBrawlWins",
+    "champion": "Harbinger"
+  },
+  "25006": {
+    "stat": "CharacterBrawlWins",
+    "champion": "Herald"
+  },
+  "25007": {
+    "stat": "CharacterBrawlWins",
+    "champion": "Igniter"
+  },
+  "25008": {
+    "stat": "CharacterBrawlWins",
+    "champion": "Inhibitor"
+  },
+  "25009": {
+    "stat": "CharacterBrawlWins",
+    "champion": "Inquisitor"
+  },
+  "25010": {
+    "stat": "CharacterBrawlWins",
+    "champion": "Nomad"
+  },
+  "25011": {
+    "stat": "CharacterBrawlWins",
+    "champion": "Psychopomp"
+  },
+  "25012": {
+    "stat": "CharacterBrawlWins",
+    "champion": "Ranid"
+  },
+  "25013": {
+    "stat": "CharacterBrawlWins",
+    "champion": "Ravener"
+  },
+  "25014": {
+    "stat": "CharacterBrawlWins",
+    "champion": "Seeker"
+  },
+  "25015": {
+    "stat": "CharacterBrawlWins",
+    "champion": "Spearmaster"
+  },
+  "25016": {
+    "stat": "CharacterBrawlWins",
+    "champion": "Stormcaller"
+  },
+  "25017": {
+    "stat": "CharacterBrawlWins",
+    "champion": "Vanguard"
+  },
+  "25018": {
+    "stat": "CharacterBrawlWins",
+    "champion": "Glutton"
+  },
+  "25019": {
+    "stat": "CharacterBrawlWins",
+    "champion": "BloodPriest"
+  },
+  "25020": {
+    "stat": "CharacterBrawlWins",
+    "champion": "MetalWarden"
+  },
+  "25021": {
+    "stat": "CharacterBrawlWins",
+    "champion": "Swordmaster"
+  },
+  "25022": {
+    "stat": "CharacterBrawlWins",
+    "champion": "Druid"
+  },
+  "25023": {
+    "stat": "CharacterBrawlWins",
+    "champion": "Bakko_EasterEvent"
+  },
+  "25025": {
+    "stat": "CharacterBrawlWins",
+    "champion": "Thorn"
+  },
+  "25026": {
+    "stat": "CharacterBrawlWins",
+    "champion": "AshkaCampaign"
+  },
+  "25027": {
+    "stat": "CharacterBrawlWins",
+    "champion": "FreyaCampaign"
+  },
+  "25028": {
+    "stat": "CharacterBrawlWins",
+    "champion": "JumongCampaign"
+  },
+  "25029": {
+    "stat": "CharacterBrawlWins",
+    "champion": "RaigonCampaign"
+  },
+  "25030": {
+    "stat": "CharacterBrawlWins",
+    "champion": "RookCampaign"
+  },
+  "25031": {
+    "stat": "CharacterBrawlWins",
+    "champion": "SiriusCampaign"
+  },
+  "25038": {
+    "stat": "CharacterBrawlWins",
+    "champion": "JadeCampaign"
+  },
+  "25040": {
+    "stat": "CharacterBrawlWins",
+    "champion": "RandomChampion"
+  },
+  "25041": {
+    "stat": "CharacterBrawlWins",
+    "champion": "FrostMage"
+  },
+  "26001": {
+    "stat": "CharacterBrawlLosses",
+    "champion": "Alchemist"
+  },
+  "26002": {
+    "stat": "CharacterBrawlLosses",
+    "champion": "Astronomer"
+  },
+  "26003": {
+    "stat": "CharacterBrawlLosses",
+    "champion": "Engineer"
+  },
+  "26004": {
+    "stat": "CharacterBrawlLosses",
+    "champion": "Gunner"
+  },
+  "26005": {
+    "stat": "CharacterBrawlLosses",
+    "champion": "Harbinger"
+  },
+  "26006": {
+    "stat": "CharacterBrawlLosses",
+    "champion": "Herald"
+  },
+  "26007": {
+    "stat": "CharacterBrawlLosses",
+    "champion": "Igniter"
+  },
+  "26008": {
+    "stat": "CharacterBrawlLosses",
+    "champion": "Inhibitor"
+  },
+  "26009": {
+    "stat": "CharacterBrawlLosses",
+    "champion": "Inquisitor"
+  },
+  "26010": {
+    "stat": "CharacterBrawlLosses",
+    "champion": "Nomad"
+  },
+  "26011": {
+    "stat": "CharacterBrawlLosses",
+    "champion": "Psychopomp"
+  },
+  "26012": {
+    "stat": "CharacterBrawlLosses",
+    "champion": "Ranid"
+  },
+  "26013": {
+    "stat": "CharacterBrawlLosses",
+    "champion": "Ravener"
+  },
+  "26014": {
+    "stat": "CharacterBrawlLosses",
+    "champion": "Seeker"
+  },
+  "26015": {
+    "stat": "CharacterBrawlLosses",
+    "champion": "Spearmaster"
+  },
+  "26016": {
+    "stat": "CharacterBrawlLosses",
+    "champion": "Stormcaller"
+  },
+  "26017": {
+    "stat": "CharacterBrawlLosses",
+    "champion": "Vanguard"
+  },
+  "26018": {
+    "stat": "CharacterBrawlLosses",
+    "champion": "Glutton"
+  },
+  "26019": {
+    "stat": "CharacterBrawlLosses",
+    "champion": "BloodPriest"
+  },
+  "26020": {
+    "stat": "CharacterBrawlLosses",
+    "champion": "MetalWarden"
+  },
+  "26021": {
+    "stat": "CharacterBrawlLosses",
+    "champion": "Swordmaster"
+  },
+  "26022": {
+    "stat": "CharacterBrawlLosses",
+    "champion": "Druid"
+  },
+  "26023": {
+    "stat": "CharacterBrawlLosses",
+    "champion": "Bakko_EasterEvent"
+  },
+  "26025": {
+    "stat": "CharacterBrawlLosses",
+    "champion": "Thorn"
+  },
+  "26026": {
+    "stat": "CharacterBrawlLosses",
+    "champion": "AshkaCampaign"
+  },
+  "26027": {
+    "stat": "CharacterBrawlLosses",
+    "champion": "FreyaCampaign"
+  },
+  "26028": {
+    "stat": "CharacterBrawlLosses",
+    "champion": "JumongCampaign"
+  },
+  "26029": {
+    "stat": "CharacterBrawlLosses",
+    "champion": "RaigonCampaign"
+  },
+  "26030": {
+    "stat": "CharacterBrawlLosses",
+    "champion": "RookCampaign"
+  },
+  "26031": {
+    "stat": "CharacterBrawlLosses",
+    "champion": "SiriusCampaign"
+  },
+  "26038": {
+    "stat": "CharacterBrawlLosses",
+    "champion": "JadeCampaign"
+  },
+  "26040": {
+    "stat": "CharacterBrawlLosses",
+    "champion": "RandomChampion"
+  },
+  "26041": {
+    "stat": "CharacterBrawlLosses",
+    "champion": "FrostMage"
+  },
+  "27001": {
+    "stat": "CharacterBattlegroundsWins",
+    "champion": "Alchemist"
+  },
+  "27002": {
+    "stat": "CharacterBattlegroundsWins",
+    "champion": "Astronomer"
+  },
+  "27003": {
+    "stat": "CharacterBattlegroundsWins",
+    "champion": "Engineer"
+  },
+  "27004": {
+    "stat": "CharacterBattlegroundsWins",
+    "champion": "Gunner"
+  },
+  "27005": {
+    "stat": "CharacterBattlegroundsWins",
+    "champion": "Harbinger"
+  },
+  "27006": {
+    "stat": "CharacterBattlegroundsWins",
+    "champion": "Herald"
+  },
+  "27007": {
+    "stat": "CharacterBattlegroundsWins",
+    "champion": "Igniter"
+  },
+  "27008": {
+    "stat": "CharacterBattlegroundsWins",
+    "champion": "Inhibitor"
+  },
+  "27009": {
+    "stat": "CharacterBattlegroundsWins",
+    "champion": "Inquisitor"
+  },
+  "27010": {
+    "stat": "CharacterBattlegroundsWins",
+    "champion": "Nomad"
+  },
+  "27011": {
+    "stat": "CharacterBattlegroundsWins",
+    "champion": "Psychopomp"
+  },
+  "27012": {
+    "stat": "CharacterBattlegroundsWins",
+    "champion": "Ranid"
+  },
+  "27013": {
+    "stat": "CharacterBattlegroundsWins",
+    "champion": "Ravener"
+  },
+  "27014": {
+    "stat": "CharacterBattlegroundsWins",
+    "champion": "Seeker"
+  },
+  "27015": {
+    "stat": "CharacterBattlegroundsWins",
+    "champion": "Spearmaster"
+  },
+  "27016": {
+    "stat": "CharacterBattlegroundsWins",
+    "champion": "Stormcaller"
+  },
+  "27017": {
+    "stat": "CharacterBattlegroundsWins",
+    "champion": "Vanguard"
+  },
+  "27018": {
+    "stat": "CharacterBattlegroundsWins",
+    "champion": "Glutton"
+  },
+  "27019": {
+    "stat": "CharacterBattlegroundsWins",
+    "champion": "BloodPriest"
+  },
+  "27020": {
+    "stat": "CharacterBattlegroundsWins",
+    "champion": "MetalWarden"
+  },
+  "27021": {
+    "stat": "CharacterBattlegroundsWins",
+    "champion": "Swordmaster"
+  },
+  "27022": {
+    "stat": "CharacterBattlegroundsWins",
+    "champion": "Druid"
+  },
+  "27023": {
+    "stat": "CharacterBattlegroundsWins",
+    "champion": "Bakko_EasterEvent"
+  },
+  "27025": {
+    "stat": "CharacterBattlegroundsWins",
+    "champion": "Thorn"
+  },
+  "27026": {
+    "stat": "CharacterBattlegroundsWins",
+    "champion": "AshkaCampaign"
+  },
+  "27027": {
+    "stat": "CharacterBattlegroundsWins",
+    "champion": "FreyaCampaign"
+  },
+  "27028": {
+    "stat": "CharacterBattlegroundsWins",
+    "champion": "JumongCampaign"
+  },
+  "27029": {
+    "stat": "CharacterBattlegroundsWins",
+    "champion": "RaigonCampaign"
+  },
+  "27030": {
+    "stat": "CharacterBattlegroundsWins",
+    "champion": "RookCampaign"
+  },
+  "27031": {
+    "stat": "CharacterBattlegroundsWins",
+    "champion": "SiriusCampaign"
+  },
+  "27038": {
+    "stat": "CharacterBattlegroundsWins",
+    "champion": "JadeCampaign"
+  },
+  "27040": {
+    "stat": "CharacterBattlegroundsWins",
+    "champion": "RandomChampion"
+  },
+  "27041": {
+    "stat": "CharacterBattlegroundsWins",
+    "champion": "FrostMage"
+  },
+  "28001": {
+    "stat": "CharacterBattlegroundsLosses",
+    "champion": "Alchemist"
+  },
+  "28002": {
+    "stat": "CharacterBattlegroundsLosses",
+    "champion": "Astronomer"
+  },
+  "28003": {
+    "stat": "CharacterBattlegroundsLosses",
+    "champion": "Engineer"
+  },
+  "28004": {
+    "stat": "CharacterBattlegroundsLosses",
+    "champion": "Gunner"
+  },
+  "28005": {
+    "stat": "CharacterBattlegroundsLosses",
+    "champion": "Harbinger"
+  },
+  "28006": {
+    "stat": "CharacterBattlegroundsLosses",
+    "champion": "Herald"
+  },
+  "28007": {
+    "stat": "CharacterBattlegroundsLosses",
+    "champion": "Igniter"
+  },
+  "28008": {
+    "stat": "CharacterBattlegroundsLosses",
+    "champion": "Inhibitor"
+  },
+  "28009": {
+    "stat": "CharacterBattlegroundsLosses",
+    "champion": "Inquisitor"
+  },
+  "28010": {
+    "stat": "CharacterBattlegroundsLosses",
+    "champion": "Nomad"
+  },
+  "28011": {
+    "stat": "CharacterBattlegroundsLosses",
+    "champion": "Psychopomp"
+  },
+  "28012": {
+    "stat": "CharacterBattlegroundsLosses",
+    "champion": "Ranid"
+  },
+  "28013": {
+    "stat": "CharacterBattlegroundsLosses",
+    "champion": "Ravener"
+  },
+  "28014": {
+    "stat": "CharacterBattlegroundsLosses",
+    "champion": "Seeker"
+  },
+  "28015": {
+    "stat": "CharacterBattlegroundsLosses",
+    "champion": "Spearmaster"
+  },
+  "28016": {
+    "stat": "CharacterBattlegroundsLosses",
+    "champion": "Stormcaller"
+  },
+  "28017": {
+    "stat": "CharacterBattlegroundsLosses",
+    "champion": "Vanguard"
+  },
+  "28018": {
+    "stat": "CharacterBattlegroundsLosses",
+    "champion": "Glutton"
+  },
+  "28019": {
+    "stat": "CharacterBattlegroundsLosses",
+    "champion": "BloodPriest"
+  },
+  "28020": {
+    "stat": "CharacterBattlegroundsLosses",
+    "champion": "MetalWarden"
+  },
+  "28021": {
+    "stat": "CharacterBattlegroundsLosses",
+    "champion": "Swordmaster"
+  },
+  "28022": {
+    "stat": "CharacterBattlegroundsLosses",
+    "champion": "Druid"
+  },
+  "28023": {
+    "stat": "CharacterBattlegroundsLosses",
+    "champion": "Bakko_EasterEvent"
+  },
+  "28025": {
+    "stat": "CharacterBattlegroundsLosses",
+    "champion": "Thorn"
+  },
+  "28026": {
+    "stat": "CharacterBattlegroundsLosses",
+    "champion": "AshkaCampaign"
+  },
+  "28027": {
+    "stat": "CharacterBattlegroundsLosses",
+    "champion": "FreyaCampaign"
+  },
+  "28028": {
+    "stat": "CharacterBattlegroundsLosses",
+    "champion": "JumongCampaign"
+  },
+  "28029": {
+    "stat": "CharacterBattlegroundsLosses",
+    "champion": "RaigonCampaign"
+  },
+  "28030": {
+    "stat": "CharacterBattlegroundsLosses",
+    "champion": "RookCampaign"
+  },
+  "28031": {
+    "stat": "CharacterBattlegroundsLosses",
+    "champion": "SiriusCampaign"
+  },
+  "28038": {
+    "stat": "CharacterBattlegroundsLosses",
+    "champion": "JadeCampaign"
+  },
+  "28040": {
+    "stat": "CharacterBattlegroundsLosses",
+    "champion": "RandomChampion"
+  },
+  "28041": {
+    "stat": "CharacterBattlegroundsLosses",
+    "champion": "FrostMage"
+  },
+  "40001": {
+    "stat": "Level",
+    "champion": "Alchemist"
+  },
+  "40002": {
+    "stat": "Level",
+    "champion": "Astronomer"
+  },
+  "40003": {
+    "stat": "Level",
+    "champion": "Engineer"
+  },
+  "40004": {
+    "stat": "Level",
+    "champion": "Gunner"
+  },
+  "40005": {
+    "stat": "Level",
+    "champion": "Harbinger"
+  },
+  "40006": {
+    "stat": "Level",
+    "champion": "Herald"
+  },
+  "40007": {
+    "stat": "Level",
+    "champion": "Igniter"
+  },
+  "40008": {
+    "stat": "Level",
+    "champion": "Inhibitor"
+  },
+  "40009": {
+    "stat": "Level",
+    "champion": "Inquisitor"
+  },
+  "40010": {
+    "stat": "Level",
+    "champion": "Nomad"
+  },
+  "40011": {
+    "stat": "Level",
+    "champion": "Psychopomp"
+  },
+  "40012": {
+    "stat": "Level",
+    "champion": "Ranid"
+  },
+  "40013": {
+    "stat": "Level",
+    "champion": "Ravener"
+  },
+  "40014": {
+    "stat": "Level",
+    "champion": "Seeker"
+  },
+  "40015": {
+    "stat": "Level",
+    "champion": "Spearmaster"
+  },
+  "40016": {
+    "stat": "Level",
+    "champion": "Stormcaller"
+  },
+  "40017": {
+    "stat": "Level",
+    "champion": "Vanguard"
+  },
+  "40018": {
+    "stat": "Level",
+    "champion": "Glutton"
+  },
+  "40019": {
+    "stat": "Level",
+    "champion": "BloodPriest"
+  },
+  "40020": {
+    "stat": "Level",
+    "champion": "MetalWarden"
+  },
+  "40021": {
+    "stat": "Level",
+    "champion": "Swordmaster"
+  },
+  "40022": {
+    "stat": "Level",
+    "champion": "Druid"
+  },
+  "40023": {
+    "stat": "Level",
+    "champion": "Bakko_EasterEvent"
+  },
+  "40025": {
+    "stat": "Level",
+    "champion": "Thorn"
+  },
+  "40026": {
+    "stat": "Level",
+    "champion": "AshkaCampaign"
+  },
+  "40027": {
+    "stat": "Level",
+    "champion": "FreyaCampaign"
+  },
+  "40028": {
+    "stat": "Level",
+    "champion": "JumongCampaign"
+  },
+  "40029": {
+    "stat": "Level",
+    "champion": "RaigonCampaign"
+  },
+  "40030": {
+    "stat": "Level",
+    "champion": "RookCampaign"
+  },
+  "40031": {
+    "stat": "Level",
+    "champion": "SiriusCampaign"
+  },
+  "40038": {
+    "stat": "Level",
+    "champion": "JadeCampaign"
+  },
+  "40040": {
+    "stat": "Level",
+    "champion": "RandomChampion"
+  },
+  "40041": {
+    "stat": "Level",
+    "champion": "FrostMage"
+  }
+}
