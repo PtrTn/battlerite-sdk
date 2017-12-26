@@ -2,12 +2,12 @@
 
 namespace PtrTn\Battlerite\Repository\Dto;
 
-class Stat
+class StatMapping
 {
     /**
      * @var string
      */
-    public $name;
+    public $statName;
 
     /**
      * @var null|string
@@ -21,7 +21,7 @@ class Stat
 
     public function __construct(string $name, ?string $champion, ?string $map)
     {
-        $this->name = $name;
+        $this->statName = $name;
         $this->champion = $champion;
         $this->map = $map;
     }
@@ -37,11 +37,11 @@ class Stat
 
     public function isXp(): bool
     {
-        return $this->name === 'XP';
+        return $this->statName === 'XP';
     }
 
     public function isLevel(): bool
     {
-        return $this->name === 'Level';
+        return $this->statName === 'Level';
     }
 }

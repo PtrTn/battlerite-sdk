@@ -2,7 +2,7 @@
 
 namespace PtrTn\Battlerite\Repository;
 
-use PtrTn\Battlerite\Repository\Dto\Stat;
+use PtrTn\Battlerite\Repository\Dto\StatMapping;
 
 class DataMappingRepository
 {
@@ -11,7 +11,7 @@ class DataMappingRepository
      */
     private $mapping;
 
-    public function getStatMapping($statKey): ?Stat
+    public function getStatMapping($statKey): ?StatMapping
     {
         $this->lazyLoadData();
 
@@ -19,7 +19,7 @@ class DataMappingRepository
             return null;
         }
 
-        return Stat::createFromArray($this->mapping[$statKey]);
+        return StatMapping::createFromArray($this->mapping[$statKey]);
     }
 
     private function lazyLoadData(): void

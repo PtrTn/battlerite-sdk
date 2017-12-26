@@ -20,10 +20,10 @@ class DataMappingRepositoryTest extends \PHPUnit_Framework_TestCase
      */
     public function shouldGetStatMapping()
     {
-        $this->assertEquals('Wins', $this->repository->getStatMapping('2')->name);
-        $this->assertEquals('Ranked2v2Wins', $this->repository->getStatMapping('10')->name);
-        $this->assertEquals('AccountLevel', $this->repository->getStatMapping('26')->name);
-        $this->assertEquals('RatingMean', $this->repository->getStatMapping('70')->name);
+        $this->assertEquals('Wins', $this->repository->getStatMapping('2')->statName);
+        $this->assertEquals('Ranked2v2Wins', $this->repository->getStatMapping('10')->statName);
+        $this->assertEquals('AccountLevel', $this->repository->getStatMapping('26')->statName);
+        $this->assertEquals('RatingMean', $this->repository->getStatMapping('70')->statName);
     }
 
     /**
