@@ -40,7 +40,7 @@ class DataMappingRepositoryTest extends \PHPUnit_Framework_TestCase
     public function shouldGetChampionStatMapping()
     {
         $stat = $this->repository->getStatMapping('11001');
-        $this->assertTrue($stat->isXp());
+        $this->assertTrue($stat->isChampionStat());
         $this->assertEquals('Alchemist', $stat->champion);
     }
 }

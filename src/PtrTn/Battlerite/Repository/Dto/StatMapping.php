@@ -35,13 +35,13 @@ class StatMapping
         );
     }
 
-    public function isXp(): bool
+    public function isChampionStat(): bool
     {
-        return $this->statName === 'XP';
+        return isset($this->champion);
     }
 
-    public function isLevel(): bool
+    public function isMapStat(): bool
     {
-        return $this->statName === 'Level';
+        return isset($this->map);
     }
 }
