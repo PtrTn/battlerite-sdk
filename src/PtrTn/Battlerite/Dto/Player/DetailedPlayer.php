@@ -2,8 +2,6 @@
 
 namespace PtrTn\Battlerite\Dto\Player;
 
-use Webmozart\Assert\Assert;
-
 class DetailedPlayer
 {
     /**
@@ -46,7 +44,12 @@ class DetailedPlayer
      */
     public $titleId;
 
-    private function __construct(
+    /**
+     * @var Stats
+     */
+    public $stats;
+
+    public function __construct(
         string $type,
         string $id,
         string $name,
@@ -54,7 +57,8 @@ class DetailedPlayer
         string $shardId,
         int $picture,
         int $title,
-        string $titleId
+        string $titleId,
+        Stats $stats
     ) {
         $this->type = $type;
         $this->id = $id;
@@ -64,28 +68,6 @@ class DetailedPlayer
         $this->picture = $picture;
         $this->title = $title;
         $this->titleId = $titleId;
-    }
-
-    public static function createFromArray(array $player): self
-    {
-        Assert::string($player['type']);
-        Assert::string($player['id']);
-        Assert::string($player['attributes']['name']);
-        Assert::string($player['attributes']['patchVersion']);
-        Assert::string($player['attributes']['shardId']);
-        Assert::integer($player['attributes']['stats']['picture']);
-        Assert::integer($player['attributes']['stats']['title']);
-        Assert::string($player['attributes']['titleId']);
-
-        return new self(
-            $player['type'],
-            $player['id'],
-            $player['attributes']['name'],
-            $player['attributes']['patchVersion'],
-            $player['attributes']['shardId'],
-            $player['attributes']['stats']['picture'],
-            $player['attributes']['stats']['title'],
-            $player['attributes']['titleId']
-        );
+        $this->stats = $stats;
     }
 }
