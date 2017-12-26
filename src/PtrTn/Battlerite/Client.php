@@ -15,6 +15,9 @@ use PtrTn\Battlerite\Query\Players\PlayersQuery;
 use PtrTn\Battlerite\Query\Teams\TeamsQuery;
 use PtrTn\Battlerite\Repository\DataMappingRepository;
 
+/**
+ * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
+ */
 class Client
 {
     /**
