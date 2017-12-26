@@ -2,6 +2,9 @@
 
 namespace PtrTn\Battlerite\Dto\Player;
 
+/**
+ * @SuppressWarnings(PHPMD.TooManyFields)
+ */
 class Champion
 {
     /**
