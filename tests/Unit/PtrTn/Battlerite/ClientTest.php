@@ -14,6 +14,8 @@ use PtrTn\Battlerite\Dto\Player\DetailedPlayer;
 use PtrTn\Battlerite\Dto\Players\Players;
 use PtrTn\Battlerite\Dto\Status\Status;
 use PtrTn\Battlerite\Dto\Teams\Teams;
+use PtrTn\Battlerite\Factory\DetailedPlayerFactory;
+use PtrTn\Battlerite\Repository\DataMappingRepository;
 
 class ClientTest extends \PHPUnit_Framework_TestCase
 {
@@ -47,8 +49,8 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         ]);
         $handler = HandlerStack::create($mockHandler);
         $mockClient = new GuzzleClient(['handler' => $handler]);
-        $apiClient = new Client(new ApiClient('fake-api-key', $mockClient));
-        $matches = $apiClient->getMatches();
+        $client = $this->createClientForApi(new ApiClient('fake-api-key', $mockClient));
+        $matches = $client->getMatches();
 
         $this->assertInstanceOf(Matches::class, $matches);
     }
@@ -65,7 +67,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
             ->andReturn($fixtureData)
             ->once();
 
-        $client = new Client($apiClientMock);
+        $client = $this->createClientForApi($apiClientMock);
         $matches = $client->getStatus();
         $this->assertInstanceOf(Status::class, $matches);
     }
@@ -82,7 +84,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
             ->andReturn($fixtureData)
             ->once();
 
-        $client = new Client($apiClientMock);
+        $client = $this->createClientForApi($apiClientMock);
         $matches = $client->getMatches();
         $this->assertInstanceOf(Matches::class, $matches);
     }
@@ -112,7 +114,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
             ->andReturn($fixtureData)
             ->once();
 
-        $client = new Client($apiClientMock);
+        $client = $this->createClientForApi($apiClientMock);
         $match = $client->getMatch('some-match-id');
         $this->assertInstanceOf(DetailedMatch::class, $match);
     }
@@ -142,7 +144,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
             ->andReturn($fixtureData)
             ->once();
 
-        $client = new Client($apiClientMock);
+        $client = $this->createClientForApi($apiClientMock);
         $match = $client->getPlayers();
         $this->assertInstanceOf(Players::class, $match);
     }
@@ -170,7 +172,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
             ->andReturn($fixtureData)
             ->once();
 
-        $client = new Client($apiClientMock);
+        $client = $this->createClientForApi($apiClientMock);
         $match = $client->getTeams();
         $this->assertInstanceOf(Teams::class, $match);
     }
@@ -199,7 +201,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
             ->andReturn($fixtureData)
             ->once();
 
-        $client = new Client($apiClientMock);
+        $client = $this->createClientForApi($apiClientMock);
         $player = $client->getPlayer('some-player-id');
         $this->assertInstanceOf(DetailedPlayer::class, $player);
     }
@@ -222,5 +224,10 @@ class ClientTest extends \PHPUnit_Framework_TestCase
     {
         $fixture = file_get_contents(__DIR__ . '/fixtures/' . $filePath);
         return \GuzzleHttp\json_decode($fixture, true);
+    }
+
+    private function createClientForApi($apiClient):Client
+    {
+        return new Client($apiClient, new DetailedPlayerFactory(new DataMappingRepository()));
     }
 }
