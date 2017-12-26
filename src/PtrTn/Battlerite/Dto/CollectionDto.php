@@ -7,6 +7,9 @@ use Countable;
 use IteratorAggregate;
 use Webmozart\Assert\Assert;
 
+/**
+ * @SuppressWarnings(PHPMD.NumberOfChildren)
+ */
 abstract class CollectionDto implements IteratorAggregate, Countable, ArrayAccess
 {
     /**

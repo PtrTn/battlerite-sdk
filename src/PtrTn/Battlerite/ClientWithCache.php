@@ -11,9 +11,11 @@ use PtrTn\Battlerite\Dto\Player\DetailedPlayer;
 use PtrTn\Battlerite\Dto\Players\Players;
 use PtrTn\Battlerite\Dto\Status\Status;
 use PtrTn\Battlerite\Dto\Teams\Teams;
+use PtrTn\Battlerite\Factory\DetailedPlayerFactory;
 use PtrTn\Battlerite\Query\Matches\MatchesQuery;
 use PtrTn\Battlerite\Query\Players\PlayersQuery;
 use PtrTn\Battlerite\Query\Teams\TeamsQuery;
+use PtrTn\Battlerite\Repository\DataMappingRepository;
 
 class ClientWithCache
 {
@@ -53,6 +55,9 @@ class ClientWithCache
                 new ApiClient(
                     $apiKey,
                     new GuzzleClient()
+                ),
+                new DetailedPlayerFactory(
+                    new DataMappingRepository()
                 )
             ),
             new FilesystemCache(self::CACHE_DIR, '.cache'),
@@ -70,6 +75,9 @@ class ClientWithCache
                 new ApiClient(
                     $apiKey,
                     new GuzzleClient()
+                ),
+                new DetailedPlayerFactory(
+                    new DataMappingRepository()
                 )
             ),
             $cache,

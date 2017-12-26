@@ -9,24 +9,37 @@ use PtrTn\Battlerite\Dto\Player\DetailedPlayer;
 use PtrTn\Battlerite\Dto\Players\Players;
 use PtrTn\Battlerite\Dto\Status\Status;
 use PtrTn\Battlerite\Dto\Teams\Teams;
+use PtrTn\Battlerite\Factory\DetailedPlayerFactory;
 use PtrTn\Battlerite\Query\Matches\MatchesQuery;
 use PtrTn\Battlerite\Query\Players\PlayersQuery;
 use PtrTn\Battlerite\Query\Teams\TeamsQuery;
+use PtrTn\Battlerite\Repository\DataMappingRepository;
 
+/**
+ * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
+ */
 class Client
 {
     /**
      * @var ApiClient
      */
     private $apiClient;
+    /**
+     * @var DetailedPlayerFactory
+     */
+    private $detailedPlayerFactory;
 
-    public function __construct(ApiClient $apiClient)
-    {
+    public function __construct(
+        ApiClient $apiClient,
+        DetailedPlayerFactory $detailedPlayerFactory
+    ) {
         $this->apiClient = $apiClient;
+        $this->detailedPlayerFactory = $detailedPlayerFactory;
     }
 
     /**
      * Create default API client setup
+     * @todo, move this method to a factory or possibly a builder class.
      */
     public static function create(string $apiKey): self
     {
@@ -34,6 +47,9 @@ class Client
             new ApiClient(
                 $apiKey,
                 new GuzzleClient()
+            ),
+            new DetailedPlayerFactory(
+                new DataMappingRepository()
             )
         );
     }
@@ -77,7 +93,7 @@ class Client
         $responseData = $this->apiClient->sendRequestToEndPoint(
             '/shards/global/players/' . $playerId
         );
-        return DetailedPlayer::createFromArray($responseData['data']);
+        return $this->detailedPlayerFactory->createFromArray($responseData['data']);
     }
 
     public function getTeams(TeamsQuery $query = null): Teams
