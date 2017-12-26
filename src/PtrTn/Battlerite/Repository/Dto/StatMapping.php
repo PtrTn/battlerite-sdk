@@ -17,7 +17,7 @@ class StatMapping
     /**
      * @var null|string
      */
-    private $map;
+    public $map;
 
     public function __construct(string $name, ?string $champion, ?string $map)
     {
